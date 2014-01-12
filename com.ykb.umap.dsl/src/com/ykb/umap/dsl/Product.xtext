@@ -1,0 +1,64 @@
+grammar com.ykb.umap.dsl.Product with org.eclipse.xtext.common.Terminals
+
+generate product "http://www.ykb.com/umap/dsl/Product"
+
+Product:
+	elements+=AbstractElement
+;
+
+AbstractElement:
+	namespace=NamespaceElement (use=UseStatement)? product=ProductElement
+;
+
+NamespaceElement:
+	'namespace' name=QualifiedID
+;
+
+ProductElement:
+	'product' name= ID ('parameters' parameters=MultiParameterElement)? 
+		operation=OperationElement 
+;
+
+MultiParameterElement:
+	params+=ParameterElement*
+;
+
+ParameterElement:
+	name=ID (':' type=('BRANCH'|'CLIENT'|'CURRENCY'|ID))?
+;
+
+OperationElement:
+	'operation' name=ID 'is' (controls=ControlBlockElement)?	
+;
+
+ControlBlockElement:
+	'controls' (controls+=ControlStatementElement)+
+;
+
+ControlStatementElement:
+	expression=ExpressionElement '=>' statement=StatementElement
+;
+
+ExpressionElement:
+	parameter=[ParameterElement] operator=('=>'|'is'|'is not') right=('valid'|'empty')
+;
+
+StaticOperationElement:
+	opName=('valid'|'empty')
+;
+
+StatementElement:
+	'sss'
+;
+
+OperatorElement:
+	('=>'|'is'|'is not')
+;
+
+QualifiedID:
+	ID ('.' ID)*	
+;
+
+UseStatement:
+	'use' product=[ProductElement]
+;

@@ -1,0 +1,9 @@
+grammar com.ykb.xtext.Test with org.eclipse.xtext.common.Terminals
+
+generate test "http://www.ykb.com/xtext/Test"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' xx=ID '!';

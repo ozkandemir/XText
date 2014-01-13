@@ -2,63 +2,61 @@ grammar com.ykb.umap.dsl.Product with org.eclipse.xtext.common.Terminals
 
 generate product "http://www.ykb.com/umap/dsl/Product"
 
-Product:
-	elements+=AbstractElement
+Product returns EProduct:
+	elements+=CompilationUnit
 ;
 
-AbstractElement:
-	namespace=NamespaceElement (use=UseStatement)? product=ProductElement
+CompilationUnit returns ECompilationUnit:
+	namespaceUnit=NamespaceUnit (useUnit=UseUnit)? productUnit=ProductUnit
 ;
 
-NamespaceElement:
-	'namespace' name=QualifiedID
+UseUnit returns EUseUnit:
+	'use' productUnit=[EProductUnit | QUALIFIEDID]
 ;
 
-ProductElement:
-	'product' name= ID ('parameters' parameters=MultiParameterElement)? 
-		operation=OperationElement 
+NamespaceUnit returns ENamespaceUnit:
+	'namespace' name=QUALIFIEDID
 ;
 
-MultiParameterElement:
-	params+=ParameterElement*
-;
-
-ParameterElement:
-	name=ID (':' type=('BRANCH'|'CLIENT'|'CURRENCY'|ID))?
-;
-
-OperationElement:
-	'operation' name=ID 'is' (controls=ControlBlockElement)?	
-;
-
-ControlBlockElement:
-	'controls' (controls+=ControlStatementElement)+
-;
-
-ControlStatementElement:
-	expression=ExpressionElement '=>' statement=StatementElement
-;
-
-ExpressionElement:
-	parameter=[ParameterElement] operator=('=>'|'is'|'is not') right=('valid'|'empty')
-;
-
-StaticOperationElement:
-	opName=('valid'|'empty')
-;
-
-StatementElement:
-	'sss'
-;
-
-OperatorElement:
-	('=>'|'is'|'is not')
-;
-
-QualifiedID:
+QUALIFIEDID:
 	ID ('.' ID)*	
 ;
 
-UseStatement:
-	'use' product=[ProductElement]
+ProductUnit returns EProductUnit:
+	'product' name=ID 
+	('parameters' (parameters+=ParameterElement)*) 
+	operationUnit=OperationUnit
 ;
+
+ParameterElement returns EParameterElement:
+	name=ID (':' type=UMAPDataTypes)?
+;
+
+enum UMAPDataTypes:
+	BRANCH = 'BRANCH' | CLIENT= 'CLIENT' | CURRENCY= 'CURRENCY' | NUMBER = 'NUMBER' | STRING = 'STRING'
+;
+
+OperationUnit returns EOperationUnit:
+	'operation' name=ID 'is' ('controls' controls+=ControlElement)?	
+;
+
+ControlElement returns EControlElement:
+	expression=ExpressionElement '=>' controlStatement=ControlStatementElement
+;
+
+ExpressionElement returns EExpressionElement:
+	parameter=[EParameterElement] operator=OPERATORS right=([EOperationUnit | ID] | [EOperationUnit])
+;
+
+enum OPERATORS:
+	IS= 'is' | NOT='is not' 
+;
+
+
+ControlStatementElement returns EControlStatementElement:
+	'Error' '(' '"' message=ANY_OTHER '"' ')' 
+;
+
+
+
+

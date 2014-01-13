@@ -2,8 +2,8 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.MultiParameterElement;
-import com.ykb.umap.dsl.product.ParameterElement;
+import com.ykb.umap.dsl.product.ECompilationUnit;
+import com.ykb.umap.dsl.product.EProduct;
 import com.ykb.umap.dsl.product.ProductPackage;
 
 import java.util.Collection;
@@ -22,35 +22,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Multi Parameter Element</b></em>'.
+ * An implementation of the model object '<em><b>EProduct</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.MultiParameterElementImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EProductImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MultiParameterElementImpl extends MinimalEObjectImpl.Container implements MultiParameterElement
+public class EProductImpl extends MinimalEObjectImpl.Container implements EProduct
 {
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getElements()
    * @generated
    * @ordered
    */
-  protected EList<ParameterElement> params;
+  protected EList<ECompilationUnit> elements;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MultiParameterElementImpl()
+  protected EProductImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.MULTI_PARAMETER_ELEMENT;
+    return ProductPackage.Literals.EPRODUCT;
   }
 
   /**
@@ -71,13 +71,13 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ParameterElement> getParams()
+  public EList<ECompilationUnit> getElements()
   {
-    if (params == null)
+    if (elements == null)
     {
-      params = new EObjectContainmentEList<ParameterElement>(ParameterElement.class, this, ProductPackage.MULTI_PARAMETER_ELEMENT__PARAMS);
+      elements = new EObjectContainmentEList<ECompilationUnit>(ECompilationUnit.class, this, ProductPackage.EPRODUCT__ELEMENTS);
     }
-    return params;
+    return elements;
   }
 
   /**
@@ -90,8 +90,8 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case ProductPackage.MULTI_PARAMETER_ELEMENT__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case ProductPackage.EPRODUCT__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case ProductPackage.MULTI_PARAMETER_ELEMENT__PARAMS:
-        return getParams();
+      case ProductPackage.EPRODUCT__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case ProductPackage.MULTI_PARAMETER_ELEMENT__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends ParameterElement>)newValue);
+      case ProductPackage.EPRODUCT__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends ECompilationUnit>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case ProductPackage.MULTI_PARAMETER_ELEMENT__PARAMS:
-        getParams().clear();
+      case ProductPackage.EPRODUCT__ELEMENTS:
+        getElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class MultiParameterElementImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case ProductPackage.MULTI_PARAMETER_ELEMENT__PARAMS:
-        return params != null && !params.isEmpty();
+      case ProductPackage.EPRODUCT__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //MultiParameterElementImpl
+} //EProductImpl

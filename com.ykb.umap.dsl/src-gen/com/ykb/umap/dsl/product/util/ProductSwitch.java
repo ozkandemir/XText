@@ -72,87 +72,73 @@ public class ProductSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case ProductPackage.PRODUCT:
+      case ProductPackage.EPRODUCT:
       {
-        Product product = (Product)theEObject;
-        T result = caseProduct(product);
+        EProduct eProduct = (EProduct)theEObject;
+        T result = caseEProduct(eProduct);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.ABSTRACT_ELEMENT:
+      case ProductPackage.ECOMPILATION_UNIT:
       {
-        AbstractElement abstractElement = (AbstractElement)theEObject;
-        T result = caseAbstractElement(abstractElement);
+        ECompilationUnit eCompilationUnit = (ECompilationUnit)theEObject;
+        T result = caseECompilationUnit(eCompilationUnit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.NAMESPACE_ELEMENT:
+      case ProductPackage.EUSE_UNIT:
       {
-        NamespaceElement namespaceElement = (NamespaceElement)theEObject;
-        T result = caseNamespaceElement(namespaceElement);
+        EUseUnit eUseUnit = (EUseUnit)theEObject;
+        T result = caseEUseUnit(eUseUnit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.PRODUCT_ELEMENT:
+      case ProductPackage.ENAMESPACE_UNIT:
       {
-        ProductElement productElement = (ProductElement)theEObject;
-        T result = caseProductElement(productElement);
+        ENamespaceUnit eNamespaceUnit = (ENamespaceUnit)theEObject;
+        T result = caseENamespaceUnit(eNamespaceUnit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.MULTI_PARAMETER_ELEMENT:
+      case ProductPackage.EPRODUCT_UNIT:
       {
-        MultiParameterElement multiParameterElement = (MultiParameterElement)theEObject;
-        T result = caseMultiParameterElement(multiParameterElement);
+        EProductUnit eProductUnit = (EProductUnit)theEObject;
+        T result = caseEProductUnit(eProductUnit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.PARAMETER_ELEMENT:
+      case ProductPackage.EPARAMETER_ELEMENT:
       {
-        ParameterElement parameterElement = (ParameterElement)theEObject;
-        T result = caseParameterElement(parameterElement);
+        EParameterElement eParameterElement = (EParameterElement)theEObject;
+        T result = caseEParameterElement(eParameterElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.OPERATION_ELEMENT:
+      case ProductPackage.EOPERATION_UNIT:
       {
-        OperationElement operationElement = (OperationElement)theEObject;
-        T result = caseOperationElement(operationElement);
+        EOperationUnit eOperationUnit = (EOperationUnit)theEObject;
+        T result = caseEOperationUnit(eOperationUnit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.CONTROL_BLOCK_ELEMENT:
+      case ProductPackage.ECONTROL_ELEMENT:
       {
-        ControlBlockElement controlBlockElement = (ControlBlockElement)theEObject;
-        T result = caseControlBlockElement(controlBlockElement);
+        EControlElement eControlElement = (EControlElement)theEObject;
+        T result = caseEControlElement(eControlElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.CONTROL_STATEMENT_ELEMENT:
+      case ProductPackage.EEXPRESSION_ELEMENT:
       {
-        ControlStatementElement controlStatementElement = (ControlStatementElement)theEObject;
-        T result = caseControlStatementElement(controlStatementElement);
+        EExpressionElement eExpressionElement = (EExpressionElement)theEObject;
+        T result = caseEExpressionElement(eExpressionElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ProductPackage.EXPRESSION_ELEMENT:
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT:
       {
-        ExpressionElement expressionElement = (ExpressionElement)theEObject;
-        T result = caseExpressionElement(expressionElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ProductPackage.STATIC_OPERATION_ELEMENT:
-      {
-        StaticOperationElement staticOperationElement = (StaticOperationElement)theEObject;
-        T result = caseStaticOperationElement(staticOperationElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ProductPackage.USE_STATEMENT:
-      {
-        UseStatement useStatement = (UseStatement)theEObject;
-        T result = caseUseStatement(useStatement);
+        EControlStatementElement eControlStatementElement = (EControlStatementElement)theEObject;
+        T result = caseEControlStatementElement(eControlStatementElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,193 +147,161 @@ public class ProductSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Product</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EProduct</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Product</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EProduct</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProduct(Product object)
+  public T caseEProduct(EProduct object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>ECompilation Unit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Abstract Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>ECompilation Unit</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAbstractElement(AbstractElement object)
+  public T caseECompilationUnit(ECompilationUnit object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Namespace Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EUse Unit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Namespace Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EUse Unit</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNamespaceElement(NamespaceElement object)
+  public T caseEUseUnit(EUseUnit object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>ENamespace Unit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>ENamespace Unit</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProductElement(ProductElement object)
+  public T caseENamespaceUnit(ENamespaceUnit object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Multi Parameter Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EProduct Unit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Multi Parameter Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EProduct Unit</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMultiParameterElement(MultiParameterElement object)
+  public T caseEProductUnit(EProductUnit object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Parameter Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EParameter Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Parameter Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EParameter Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseParameterElement(ParameterElement object)
+  public T caseEParameterElement(EParameterElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operation Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EOperation Unit</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operation Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EOperation Unit</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOperationElement(OperationElement object)
+  public T caseEOperationUnit(EOperationUnit object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Control Block Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EControl Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Control Block Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EControl Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseControlBlockElement(ControlBlockElement object)
+  public T caseEControlElement(EControlElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Control Statement Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EExpression Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Control Statement Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EExpression Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseControlStatementElement(ControlStatementElement object)
+  public T caseEExpressionElement(EExpressionElement object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Expression Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EControl Statement Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expression Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EControl Statement Element</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseExpressionElement(ExpressionElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Static Operation Element</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Static Operation Element</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStaticOperationElement(StaticOperationElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Use Statement</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Use Statement</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUseStatement(UseStatement object)
+  public T caseEControlStatementElement(EControlStatementElement object)
   {
     return null;
   }

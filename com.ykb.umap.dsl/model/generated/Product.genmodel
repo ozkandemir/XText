@@ -7,50 +7,55 @@
     editorPluginID="com.ykb.umap.dsl.editor" runtimeVersion="2.9">
   <genPackages prefix="Product" basePackage="com.ykb.umap.dsl" disposableProviderFactory="true"
       fileExtensions="product" ecorePackage="Product.ecore#/">
-    <genClasses ecoreClass="Product.ecore#//Product">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//Product/elements"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Product.ecore#//UMAPDataTypes">
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//UMAPDataTypes/BRANCH"/>
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//UMAPDataTypes/CLIENT"/>
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//UMAPDataTypes/CURRENCY"/>
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//UMAPDataTypes/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//UMAPDataTypes/STRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Product.ecore#//OPERATORS">
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//OPERATORS/IS"/>
+      <genEnumLiterals ecoreEnumLiteral="Product.ecore#//OPERATORS/NOT"/>
+    </genEnums>
+    <genClasses ecoreClass="Product.ecore#//EProduct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EProduct/elements"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//AbstractElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//AbstractElement/namespace"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//AbstractElement/use"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//AbstractElement/product"/>
+    <genClasses ecoreClass="Product.ecore#//ECompilationUnit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/namespaceUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/useUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/productUnit"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//NamespaceElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//NamespaceElement/name"/>
+    <genClasses ecoreClass="Product.ecore#//EUseUnit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//EUseUnit/productUnit"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//ProductElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ProductElement/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ProductElement/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ProductElement/operation"/>
+    <genClasses ecoreClass="Product.ecore#//ENamespaceUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ENamespaceUnit/name"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//MultiParameterElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//MultiParameterElement/params"/>
+    <genClasses ecoreClass="Product.ecore#//EProductUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EProductUnit/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EProductUnit/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EProductUnit/operationUnit"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//ParameterElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ParameterElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ParameterElement/type"/>
+    <genClasses ecoreClass="Product.ecore#//EParameterElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EParameterElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EParameterElement/type"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//OperationElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//OperationElement/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//OperationElement/controls"/>
+    <genClasses ecoreClass="Product.ecore#//EOperationUnit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EOperationUnit/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EOperationUnit/controls"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//ControlBlockElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ControlBlockElement/controls"/>
+    <genClasses ecoreClass="Product.ecore#//EControlElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EControlElement/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EControlElement/controlStatement"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//ControlStatementElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ControlStatementElement/expression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ControlStatementElement/statement"/>
+    <genClasses ecoreClass="Product.ecore#//EExpressionElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//EExpressionElement/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EExpressionElement/operator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//EExpressionElement/right"/>
     </genClasses>
-    <genClasses ecoreClass="Product.ecore#//ExpressionElement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//ExpressionElement/parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ExpressionElement/operator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//ExpressionElement/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Product.ecore#//StaticOperationElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//StaticOperationElement/opName"/>
-    </genClasses>
-    <genClasses ecoreClass="Product.ecore#//UseStatement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//UseStatement/product"/>
+    <genClasses ecoreClass="Product.ecore#//EControlStatementElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EControlStatementElement/message"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

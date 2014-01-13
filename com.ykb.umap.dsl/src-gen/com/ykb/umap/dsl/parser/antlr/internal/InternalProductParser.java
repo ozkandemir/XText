@@ -5,6 +5,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -21,23 +22,26 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalProductParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'namespace'", "'product'", "'parameters'", "':'", "'BRANCH'", "'CLIENT'", "'CURRENCY'", "'operation'", "'is'", "'controls'", "'=>'", "'is not'", "'valid'", "'empty'", "'sss'", "'.'", "'use'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_ANY_OTHER", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'use'", "'namespace'", "'.'", "'product'", "'parameters'", "':'", "'operation'", "'is'", "'controls'", "'=>'", "'Error'", "'('", "'\"'", "')'", "'BRANCH'", "'CLIENT'", "'CURRENCY'", "'NUMBER'", "'STRING'", "'is not'"
     };
     public static final int RULE_ID=4;
+    public static final int T__29=29;
+    public static final int T__28=28;
     public static final int T__27=27;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ANY_OTHER=5;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=9;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=8;
+    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=7;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
@@ -46,8 +50,8 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=5;
-    public static final int RULE_WS=9;
+    public static final int RULE_INT=6;
+    public static final int RULE_WS=10;
 
     // delegates
     // delegators
@@ -88,7 +92,7 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProduct"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:67:1: entryRuleProduct returns [EObject current=null] : iv_ruleProduct= ruleProduct EOF ;
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:68:1: entryRuleProduct returns [EObject current=null] : iv_ruleProduct= ruleProduct EOF ;
     public final EObject entryRuleProduct() throws RecognitionException {
         EObject current = null;
 
@@ -96,8 +100,8 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:68:2: (iv_ruleProduct= ruleProduct EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:69:2: iv_ruleProduct= ruleProduct EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:69:2: (iv_ruleProduct= ruleProduct EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:70:2: iv_ruleProduct= ruleProduct EOF
             {
              newCompositeNode(grammarAccess.getProductRule()); 
             pushFollow(FOLLOW_ruleProduct_in_entryRuleProduct75);
@@ -124,7 +128,7 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProduct"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:76:1: ruleProduct returns [EObject current=null] : ( (lv_elements_0_0= ruleAbstractElement ) ) ;
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:77:1: ruleProduct returns [EObject current=null] : ( (lv_elements_0_0= ruleCompilationUnit ) ) ;
     public final EObject ruleProduct() throws RecognitionException {
         EObject current = null;
 
@@ -134,20 +138,20 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:79:28: ( ( (lv_elements_0_0= ruleAbstractElement ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:80:1: ( (lv_elements_0_0= ruleAbstractElement ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:80:28: ( ( (lv_elements_0_0= ruleCompilationUnit ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:81:1: ( (lv_elements_0_0= ruleCompilationUnit ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:80:1: ( (lv_elements_0_0= ruleAbstractElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:81:1: (lv_elements_0_0= ruleAbstractElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:81:1: ( (lv_elements_0_0= ruleCompilationUnit ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:82:1: (lv_elements_0_0= ruleCompilationUnit )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:81:1: (lv_elements_0_0= ruleAbstractElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:82:3: lv_elements_0_0= ruleAbstractElement
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:82:1: (lv_elements_0_0= ruleCompilationUnit )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:83:3: lv_elements_0_0= ruleCompilationUnit
             {
              
-            	        newCompositeNode(grammarAccess.getProductAccess().getElementsAbstractElementParserRuleCall_0()); 
+            	        newCompositeNode(grammarAccess.getProductAccess().getElementsCompilationUnitParserRuleCall_0()); 
             	    
-            pushFollow(FOLLOW_ruleAbstractElement_in_ruleProduct130);
-            lv_elements_0_0=ruleAbstractElement();
+            pushFollow(FOLLOW_ruleCompilationUnit_in_ruleProduct130);
+            lv_elements_0_0=ruleCompilationUnit();
 
             state._fsp--;
 
@@ -159,7 +163,7 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"elements",
                     		lv_elements_0_0, 
-                    		"AbstractElement");
+                    		"CompilationUnit");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -185,26 +189,26 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleProduct"
 
 
-    // $ANTLR start "entryRuleAbstractElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:106:1: entryRuleAbstractElement returns [EObject current=null] : iv_ruleAbstractElement= ruleAbstractElement EOF ;
-    public final EObject entryRuleAbstractElement() throws RecognitionException {
+    // $ANTLR start "entryRuleCompilationUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:107:1: entryRuleCompilationUnit returns [EObject current=null] : iv_ruleCompilationUnit= ruleCompilationUnit EOF ;
+    public final EObject entryRuleCompilationUnit() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleAbstractElement = null;
+        EObject iv_ruleCompilationUnit = null;
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:107:2: (iv_ruleAbstractElement= ruleAbstractElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:108:2: iv_ruleAbstractElement= ruleAbstractElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:108:2: (iv_ruleCompilationUnit= ruleCompilationUnit EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:109:2: iv_ruleCompilationUnit= ruleCompilationUnit EOF
             {
-             newCompositeNode(grammarAccess.getAbstractElementRule()); 
-            pushFollow(FOLLOW_ruleAbstractElement_in_entryRuleAbstractElement165);
-            iv_ruleAbstractElement=ruleAbstractElement();
+             newCompositeNode(grammarAccess.getCompilationUnitRule()); 
+            pushFollow(FOLLOW_ruleCompilationUnit_in_entryRuleCompilationUnit165);
+            iv_ruleCompilationUnit=ruleCompilationUnit();
 
             state._fsp--;
 
-             current =iv_ruleAbstractElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractElement175); 
+             current =iv_ruleCompilationUnit; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCompilationUnit175); 
 
             }
 
@@ -218,53 +222,53 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleAbstractElement"
+    // $ANTLR end "entryRuleCompilationUnit"
 
 
-    // $ANTLR start "ruleAbstractElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:115:1: ruleAbstractElement returns [EObject current=null] : ( ( (lv_namespace_0_0= ruleNamespaceElement ) ) ( (lv_use_1_0= ruleUseStatement ) )? ( (lv_product_2_0= ruleProductElement ) ) ) ;
-    public final EObject ruleAbstractElement() throws RecognitionException {
+    // $ANTLR start "ruleCompilationUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:116:1: ruleCompilationUnit returns [EObject current=null] : ( ( (lv_namespaceUnit_0_0= ruleNamespaceUnit ) ) ( (lv_useUnit_1_0= ruleUseUnit ) )? ( (lv_productUnit_2_0= ruleProductUnit ) ) ) ;
+    public final EObject ruleCompilationUnit() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_namespace_0_0 = null;
+        EObject lv_namespaceUnit_0_0 = null;
 
-        EObject lv_use_1_0 = null;
+        EObject lv_useUnit_1_0 = null;
 
-        EObject lv_product_2_0 = null;
+        EObject lv_productUnit_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:118:28: ( ( ( (lv_namespace_0_0= ruleNamespaceElement ) ) ( (lv_use_1_0= ruleUseStatement ) )? ( (lv_product_2_0= ruleProductElement ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:119:1: ( ( (lv_namespace_0_0= ruleNamespaceElement ) ) ( (lv_use_1_0= ruleUseStatement ) )? ( (lv_product_2_0= ruleProductElement ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:119:28: ( ( ( (lv_namespaceUnit_0_0= ruleNamespaceUnit ) ) ( (lv_useUnit_1_0= ruleUseUnit ) )? ( (lv_productUnit_2_0= ruleProductUnit ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:120:1: ( ( (lv_namespaceUnit_0_0= ruleNamespaceUnit ) ) ( (lv_useUnit_1_0= ruleUseUnit ) )? ( (lv_productUnit_2_0= ruleProductUnit ) ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:119:1: ( ( (lv_namespace_0_0= ruleNamespaceElement ) ) ( (lv_use_1_0= ruleUseStatement ) )? ( (lv_product_2_0= ruleProductElement ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:119:2: ( (lv_namespace_0_0= ruleNamespaceElement ) ) ( (lv_use_1_0= ruleUseStatement ) )? ( (lv_product_2_0= ruleProductElement ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:120:1: ( ( (lv_namespaceUnit_0_0= ruleNamespaceUnit ) ) ( (lv_useUnit_1_0= ruleUseUnit ) )? ( (lv_productUnit_2_0= ruleProductUnit ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:120:2: ( (lv_namespaceUnit_0_0= ruleNamespaceUnit ) ) ( (lv_useUnit_1_0= ruleUseUnit ) )? ( (lv_productUnit_2_0= ruleProductUnit ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:119:2: ( (lv_namespace_0_0= ruleNamespaceElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:120:1: (lv_namespace_0_0= ruleNamespaceElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:120:2: ( (lv_namespaceUnit_0_0= ruleNamespaceUnit ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:121:1: (lv_namespaceUnit_0_0= ruleNamespaceUnit )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:120:1: (lv_namespace_0_0= ruleNamespaceElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:121:3: lv_namespace_0_0= ruleNamespaceElement
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:121:1: (lv_namespaceUnit_0_0= ruleNamespaceUnit )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:122:3: lv_namespaceUnit_0_0= ruleNamespaceUnit
             {
              
-            	        newCompositeNode(grammarAccess.getAbstractElementAccess().getNamespaceNamespaceElementParserRuleCall_0_0()); 
+            	        newCompositeNode(grammarAccess.getCompilationUnitAccess().getNamespaceUnitNamespaceUnitParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleNamespaceElement_in_ruleAbstractElement221);
-            lv_namespace_0_0=ruleNamespaceElement();
+            pushFollow(FOLLOW_ruleNamespaceUnit_in_ruleCompilationUnit221);
+            lv_namespaceUnit_0_0=ruleNamespaceUnit();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getAbstractElementRule());
+            	            current = createModelElementForParent(grammarAccess.getCompilationUnitRule());
             	        }
                    		set(
                    			current, 
-                   			"namespace",
-                    		lv_namespace_0_0, 
-                    		"NamespaceElement");
+                   			"namespaceUnit",
+                    		lv_namespaceUnit_0_0, 
+                    		"NamespaceUnit");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -273,37 +277,37 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:137:2: ( (lv_use_1_0= ruleUseStatement ) )?
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:138:2: ( (lv_useUnit_1_0= ruleUseUnit ) )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==27) ) {
+            if ( (LA1_0==11) ) {
                 alt1=1;
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:138:1: (lv_use_1_0= ruleUseStatement )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:139:1: (lv_useUnit_1_0= ruleUseUnit )
                     {
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:138:1: (lv_use_1_0= ruleUseStatement )
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:139:3: lv_use_1_0= ruleUseStatement
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:139:1: (lv_useUnit_1_0= ruleUseUnit )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:140:3: lv_useUnit_1_0= ruleUseUnit
                     {
                      
-                    	        newCompositeNode(grammarAccess.getAbstractElementAccess().getUseUseStatementParserRuleCall_1_0()); 
+                    	        newCompositeNode(grammarAccess.getCompilationUnitAccess().getUseUnitUseUnitParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleUseStatement_in_ruleAbstractElement242);
-                    lv_use_1_0=ruleUseStatement();
+                    pushFollow(FOLLOW_ruleUseUnit_in_ruleCompilationUnit242);
+                    lv_useUnit_1_0=ruleUseUnit();
 
                     state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getAbstractElementRule());
+                    	            current = createModelElementForParent(grammarAccess.getCompilationUnitRule());
                     	        }
                            		set(
                            			current, 
-                           			"use",
-                            		lv_use_1_0, 
-                            		"UseStatement");
+                           			"useUnit",
+                            		lv_useUnit_1_0, 
+                            		"UseUnit");
                     	        afterParserOrEnumRuleCall();
                     	    
 
@@ -315,29 +319,29 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:155:3: ( (lv_product_2_0= ruleProductElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:156:1: (lv_product_2_0= ruleProductElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:156:3: ( (lv_productUnit_2_0= ruleProductUnit ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:157:1: (lv_productUnit_2_0= ruleProductUnit )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:156:1: (lv_product_2_0= ruleProductElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:157:3: lv_product_2_0= ruleProductElement
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:157:1: (lv_productUnit_2_0= ruleProductUnit )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:158:3: lv_productUnit_2_0= ruleProductUnit
             {
              
-            	        newCompositeNode(grammarAccess.getAbstractElementAccess().getProductProductElementParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getCompilationUnitAccess().getProductUnitProductUnitParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleProductElement_in_ruleAbstractElement264);
-            lv_product_2_0=ruleProductElement();
+            pushFollow(FOLLOW_ruleProductUnit_in_ruleCompilationUnit264);
+            lv_productUnit_2_0=ruleProductUnit();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getAbstractElementRule());
+            	            current = createModelElementForParent(grammarAccess.getCompilationUnitRule());
             	        }
                    		set(
                    			current, 
-                   			"product",
-                    		lv_product_2_0, 
-                    		"ProductElement");
+                   			"productUnit",
+                    		lv_productUnit_2_0, 
+                    		"ProductUnit");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -363,29 +367,29 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleAbstractElement"
+    // $ANTLR end "ruleCompilationUnit"
 
 
-    // $ANTLR start "entryRuleNamespaceElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:181:1: entryRuleNamespaceElement returns [EObject current=null] : iv_ruleNamespaceElement= ruleNamespaceElement EOF ;
-    public final EObject entryRuleNamespaceElement() throws RecognitionException {
+    // $ANTLR start "entryRuleUseUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:182:1: entryRuleUseUnit returns [EObject current=null] : iv_ruleUseUnit= ruleUseUnit EOF ;
+    public final EObject entryRuleUseUnit() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleNamespaceElement = null;
+        EObject iv_ruleUseUnit = null;
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:182:2: (iv_ruleNamespaceElement= ruleNamespaceElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:183:2: iv_ruleNamespaceElement= ruleNamespaceElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:183:2: (iv_ruleUseUnit= ruleUseUnit EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:184:2: iv_ruleUseUnit= ruleUseUnit EOF
             {
-             newCompositeNode(grammarAccess.getNamespaceElementRule()); 
-            pushFollow(FOLLOW_ruleNamespaceElement_in_entryRuleNamespaceElement300);
-            iv_ruleNamespaceElement=ruleNamespaceElement();
+             newCompositeNode(grammarAccess.getUseUnitRule()); 
+            pushFollow(FOLLOW_ruleUseUnit_in_entryRuleUseUnit300);
+            iv_ruleUseUnit=ruleUseUnit();
 
             state._fsp--;
 
-             current =iv_ruleNamespaceElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNamespaceElement310); 
+             current =iv_ruleUseUnit; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUseUnit310); 
 
             }
 
@@ -399,12 +403,116 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleNamespaceElement"
+    // $ANTLR end "entryRuleUseUnit"
 
 
-    // $ANTLR start "ruleNamespaceElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:190:1: ruleNamespaceElement returns [EObject current=null] : (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQualifiedID ) ) ) ;
-    public final EObject ruleNamespaceElement() throws RecognitionException {
+    // $ANTLR start "ruleUseUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:191:1: ruleUseUnit returns [EObject current=null] : (otherlv_0= 'use' ( ( ruleQUALIFIEDID ) ) ) ;
+    public final EObject ruleUseUnit() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:194:28: ( (otherlv_0= 'use' ( ( ruleQUALIFIEDID ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:195:1: (otherlv_0= 'use' ( ( ruleQUALIFIEDID ) ) )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:195:1: (otherlv_0= 'use' ( ( ruleQUALIFIEDID ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:195:3: otherlv_0= 'use' ( ( ruleQUALIFIEDID ) )
+            {
+            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleUseUnit347); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getUseUnitAccess().getUseKeyword_0());
+                
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:199:1: ( ( ruleQUALIFIEDID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:200:1: ( ruleQUALIFIEDID )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:200:1: ( ruleQUALIFIEDID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:201:3: ruleQUALIFIEDID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getUseUnitRule());
+            	        }
+                    
+             
+            	        newCompositeNode(grammarAccess.getUseUnitAccess().getProductUnitEProductUnitCrossReference_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleQUALIFIEDID_in_ruleUseUnit370);
+            ruleQUALIFIEDID();
+
+            state._fsp--;
+
+             
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleUseUnit"
+
+
+    // $ANTLR start "entryRuleNamespaceUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:222:1: entryRuleNamespaceUnit returns [EObject current=null] : iv_ruleNamespaceUnit= ruleNamespaceUnit EOF ;
+    public final EObject entryRuleNamespaceUnit() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNamespaceUnit = null;
+
+
+        try {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:223:2: (iv_ruleNamespaceUnit= ruleNamespaceUnit EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:224:2: iv_ruleNamespaceUnit= ruleNamespaceUnit EOF
+            {
+             newCompositeNode(grammarAccess.getNamespaceUnitRule()); 
+            pushFollow(FOLLOW_ruleNamespaceUnit_in_entryRuleNamespaceUnit406);
+            iv_ruleNamespaceUnit=ruleNamespaceUnit();
+
+            state._fsp--;
+
+             current =iv_ruleNamespaceUnit; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNamespaceUnit416); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNamespaceUnit"
+
+
+    // $ANTLR start "ruleNamespaceUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:231:1: ruleNamespaceUnit returns [EObject current=null] : (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQUALIFIEDID ) ) ) ;
+    public final EObject ruleNamespaceUnit() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -414,39 +522,39 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:193:28: ( (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQualifiedID ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:194:1: (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQualifiedID ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:234:28: ( (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQUALIFIEDID ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:235:1: (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQUALIFIEDID ) ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:194:1: (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQualifiedID ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:194:3: otherlv_0= 'namespace' ( (lv_name_1_0= ruleQualifiedID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:235:1: (otherlv_0= 'namespace' ( (lv_name_1_0= ruleQUALIFIEDID ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:235:3: otherlv_0= 'namespace' ( (lv_name_1_0= ruleQUALIFIEDID ) )
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleNamespaceElement347); 
+            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleNamespaceUnit453); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getNamespaceElementAccess().getNamespaceKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getNamespaceUnitAccess().getNamespaceKeyword_0());
                 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:198:1: ( (lv_name_1_0= ruleQualifiedID ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:199:1: (lv_name_1_0= ruleQualifiedID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:239:1: ( (lv_name_1_0= ruleQUALIFIEDID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:240:1: (lv_name_1_0= ruleQUALIFIEDID )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:199:1: (lv_name_1_0= ruleQualifiedID )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:200:3: lv_name_1_0= ruleQualifiedID
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:240:1: (lv_name_1_0= ruleQUALIFIEDID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:241:3: lv_name_1_0= ruleQUALIFIEDID
             {
              
-            	        newCompositeNode(grammarAccess.getNamespaceElementAccess().getNameQualifiedIDParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getNamespaceUnitAccess().getNameQUALIFIEDIDParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedID_in_ruleNamespaceElement368);
-            lv_name_1_0=ruleQualifiedID();
+            pushFollow(FOLLOW_ruleQUALIFIEDID_in_ruleNamespaceUnit474);
+            lv_name_1_0=ruleQUALIFIEDID();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getNamespaceElementRule());
+            	            current = createModelElementForParent(grammarAccess.getNamespaceUnitRule());
             	        }
                    		set(
                    			current, 
                    			"name",
                     		lv_name_1_0, 
-                    		"QualifiedID");
+                    		"QUALIFIEDID");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -472,29 +580,29 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleNamespaceElement"
+    // $ANTLR end "ruleNamespaceUnit"
 
 
-    // $ANTLR start "entryRuleProductElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:224:1: entryRuleProductElement returns [EObject current=null] : iv_ruleProductElement= ruleProductElement EOF ;
-    public final EObject entryRuleProductElement() throws RecognitionException {
-        EObject current = null;
+    // $ANTLR start "entryRuleQUALIFIEDID"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:265:1: entryRuleQUALIFIEDID returns [String current=null] : iv_ruleQUALIFIEDID= ruleQUALIFIEDID EOF ;
+    public final String entryRuleQUALIFIEDID() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleProductElement = null;
+        AntlrDatatypeRuleToken iv_ruleQUALIFIEDID = null;
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:225:2: (iv_ruleProductElement= ruleProductElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:226:2: iv_ruleProductElement= ruleProductElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:266:2: (iv_ruleQUALIFIEDID= ruleQUALIFIEDID EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:267:2: iv_ruleQUALIFIEDID= ruleQUALIFIEDID EOF
             {
-             newCompositeNode(grammarAccess.getProductElementRule()); 
-            pushFollow(FOLLOW_ruleProductElement_in_entryRuleProductElement404);
-            iv_ruleProductElement=ruleProductElement();
+             newCompositeNode(grammarAccess.getQUALIFIEDIDRule()); 
+            pushFollow(FOLLOW_ruleQUALIFIEDID_in_entryRuleQUALIFIEDID511);
+            iv_ruleQUALIFIEDID=ruleQUALIFIEDID();
 
             state._fsp--;
 
-             current =iv_ruleProductElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleProductElement414); 
+             current =iv_ruleQUALIFIEDID.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQUALIFIEDID522); 
 
             }
 
@@ -508,12 +616,129 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleProductElement"
+    // $ANTLR end "entryRuleQUALIFIEDID"
 
 
-    // $ANTLR start "ruleProductElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:233:1: ruleProductElement returns [EObject current=null] : (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) ) )? ( (lv_operation_4_0= ruleOperationElement ) ) ) ;
-    public final EObject ruleProductElement() throws RecognitionException {
+    // $ANTLR start "ruleQUALIFIEDID"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:274:1: ruleQUALIFIEDID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    public final AntlrDatatypeRuleToken ruleQUALIFIEDID() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_ID_0=null;
+        Token kw=null;
+        Token this_ID_2=null;
+
+         enterRule(); 
+            
+        try {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:277:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:278:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:278:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:278:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            {
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQUALIFIEDID562); 
+
+            		current.merge(this_ID_0);
+                
+             
+                newLeafNode(this_ID_0, grammarAccess.getQUALIFIEDIDAccess().getIDTerminalRuleCall_0()); 
+                
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:285:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
+
+                if ( (LA2_0==13) ) {
+                    alt2=1;
+                }
+
+
+                switch (alt2) {
+            	case 1 :
+            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:286:2: kw= '.' this_ID_2= RULE_ID
+            	    {
+            	    kw=(Token)match(input,13,FOLLOW_13_in_ruleQUALIFIEDID581); 
+
+            	            current.merge(kw);
+            	            newLeafNode(kw, grammarAccess.getQUALIFIEDIDAccess().getFullStopKeyword_1_0()); 
+            	        
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQUALIFIEDID596); 
+
+            	    		current.merge(this_ID_2);
+            	        
+            	     
+            	        newLeafNode(this_ID_2, grammarAccess.getQUALIFIEDIDAccess().getIDTerminalRuleCall_1_1()); 
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleQUALIFIEDID"
+
+
+    // $ANTLR start "entryRuleProductUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:306:1: entryRuleProductUnit returns [EObject current=null] : iv_ruleProductUnit= ruleProductUnit EOF ;
+    public final EObject entryRuleProductUnit() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleProductUnit = null;
+
+
+        try {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:307:2: (iv_ruleProductUnit= ruleProductUnit EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:308:2: iv_ruleProductUnit= ruleProductUnit EOF
+            {
+             newCompositeNode(grammarAccess.getProductUnitRule()); 
+            pushFollow(FOLLOW_ruleProductUnit_in_entryRuleProductUnit643);
+            iv_ruleProductUnit=ruleProductUnit();
+
+            state._fsp--;
+
+             current =iv_ruleProductUnit; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleProductUnit653); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleProductUnit"
+
+
+    // $ANTLR start "ruleProductUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:315:1: ruleProductUnit returns [EObject current=null] : (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )* ) ( (lv_operationUnit_4_0= ruleOperationUnit ) ) ) ;
+    public final EObject ruleProductUnit() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -521,35 +746,35 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         EObject lv_parameters_3_0 = null;
 
-        EObject lv_operation_4_0 = null;
+        EObject lv_operationUnit_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:236:28: ( (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) ) )? ( (lv_operation_4_0= ruleOperationElement ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:237:1: (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) ) )? ( (lv_operation_4_0= ruleOperationElement ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:318:28: ( (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )* ) ( (lv_operationUnit_4_0= ruleOperationUnit ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:319:1: (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )* ) ( (lv_operationUnit_4_0= ruleOperationUnit ) ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:237:1: (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) ) )? ( (lv_operation_4_0= ruleOperationElement ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:237:3: otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) ) )? ( (lv_operation_4_0= ruleOperationElement ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:319:1: (otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )* ) ( (lv_operationUnit_4_0= ruleOperationUnit ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:319:3: otherlv_0= 'product' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )* ) ( (lv_operationUnit_4_0= ruleOperationUnit ) )
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleProductElement451); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleProductUnit690); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getProductElementAccess().getProductKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getProductUnitAccess().getProductKeyword_0());
                 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:241:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:242:1: (lv_name_1_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:323:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:324:1: (lv_name_1_0= RULE_ID )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:242:1: (lv_name_1_0= RULE_ID )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:243:3: lv_name_1_0= RULE_ID
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:324:1: (lv_name_1_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:325:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleProductElement468); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleProductUnit707); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getProductElementAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getProductUnitAccess().getNameIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getProductElementRule());
+            	            current = createModelElement(grammarAccess.getProductUnitRule());
             	        }
                    		setWithLastConsumed(
                    			current, 
@@ -563,160 +788,14 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:259:2: (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) ) )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==13) ) {
-                alt2=1;
-            }
-            switch (alt2) {
-                case 1 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:259:4: otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleMultiParameterElement ) )
-                    {
-                    otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleProductElement486); 
-
-                        	newLeafNode(otherlv_2, grammarAccess.getProductElementAccess().getParametersKeyword_2_0());
-                        
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:263:1: ( (lv_parameters_3_0= ruleMultiParameterElement ) )
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:264:1: (lv_parameters_3_0= ruleMultiParameterElement )
-                    {
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:264:1: (lv_parameters_3_0= ruleMultiParameterElement )
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:265:3: lv_parameters_3_0= ruleMultiParameterElement
-                    {
-                     
-                    	        newCompositeNode(grammarAccess.getProductElementAccess().getParametersMultiParameterElementParserRuleCall_2_1_0()); 
-                    	    
-                    pushFollow(FOLLOW_ruleMultiParameterElement_in_ruleProductElement507);
-                    lv_parameters_3_0=ruleMultiParameterElement();
-
-                    state._fsp--;
-
-
-                    	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getProductElementRule());
-                    	        }
-                           		set(
-                           			current, 
-                           			"parameters",
-                            		lv_parameters_3_0, 
-                            		"MultiParameterElement");
-                    	        afterParserOrEnumRuleCall();
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:281:4: ( (lv_operation_4_0= ruleOperationElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:282:1: (lv_operation_4_0= ruleOperationElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:341:2: (otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )* )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:341:4: otherlv_2= 'parameters' ( (lv_parameters_3_0= ruleParameterElement ) )*
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:282:1: (lv_operation_4_0= ruleOperationElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:283:3: lv_operation_4_0= ruleOperationElement
-            {
-             
-            	        newCompositeNode(grammarAccess.getProductElementAccess().getOperationOperationElementParserRuleCall_3_0()); 
-            	    
-            pushFollow(FOLLOW_ruleOperationElement_in_ruleProductElement530);
-            lv_operation_4_0=ruleOperationElement();
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleProductUnit725); 
 
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getProductElementRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"operation",
-                    		lv_operation_4_0, 
-                    		"OperationElement");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleProductElement"
-
-
-    // $ANTLR start "entryRuleMultiParameterElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:307:1: entryRuleMultiParameterElement returns [EObject current=null] : iv_ruleMultiParameterElement= ruleMultiParameterElement EOF ;
-    public final EObject entryRuleMultiParameterElement() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleMultiParameterElement = null;
-
-
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:308:2: (iv_ruleMultiParameterElement= ruleMultiParameterElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:309:2: iv_ruleMultiParameterElement= ruleMultiParameterElement EOF
-            {
-             newCompositeNode(grammarAccess.getMultiParameterElementRule()); 
-            pushFollow(FOLLOW_ruleMultiParameterElement_in_entryRuleMultiParameterElement566);
-            iv_ruleMultiParameterElement=ruleMultiParameterElement();
-
-            state._fsp--;
-
-             current =iv_ruleMultiParameterElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMultiParameterElement576); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMultiParameterElement"
-
-
-    // $ANTLR start "ruleMultiParameterElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:316:1: ruleMultiParameterElement returns [EObject current=null] : ( (lv_params_0_0= ruleParameterElement ) )* ;
-    public final EObject ruleMultiParameterElement() throws RecognitionException {
-        EObject current = null;
-
-        EObject lv_params_0_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:319:28: ( ( (lv_params_0_0= ruleParameterElement ) )* )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:320:1: ( (lv_params_0_0= ruleParameterElement ) )*
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:320:1: ( (lv_params_0_0= ruleParameterElement ) )*
+                	newLeafNode(otherlv_2, grammarAccess.getProductUnitAccess().getParametersKeyword_2_0());
+                
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:345:1: ( (lv_parameters_3_0= ruleParameterElement ) )*
             loop3:
             do {
                 int alt3=2;
@@ -729,27 +808,27 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:321:1: (lv_params_0_0= ruleParameterElement )
+            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:346:1: (lv_parameters_3_0= ruleParameterElement )
             	    {
-            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:321:1: (lv_params_0_0= ruleParameterElement )
-            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:322:3: lv_params_0_0= ruleParameterElement
+            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:346:1: (lv_parameters_3_0= ruleParameterElement )
+            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:347:3: lv_parameters_3_0= ruleParameterElement
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMultiParameterElementAccess().getParamsParameterElementParserRuleCall_0()); 
+            	    	        newCompositeNode(grammarAccess.getProductUnitAccess().getParametersParameterElementParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleParameterElement_in_ruleMultiParameterElement621);
-            	    lv_params_0_0=ruleParameterElement();
+            	    pushFollow(FOLLOW_ruleParameterElement_in_ruleProductUnit746);
+            	    lv_parameters_3_0=ruleParameterElement();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMultiParameterElementRule());
+            	    	            current = createModelElementForParent(grammarAccess.getProductUnitRule());
             	    	        }
             	           		add(
             	           			current, 
-            	           			"params",
-            	            		lv_params_0_0, 
+            	           			"parameters",
+            	            		lv_parameters_3_0, 
             	            		"ParameterElement");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -768,6 +847,43 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:363:4: ( (lv_operationUnit_4_0= ruleOperationUnit ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:364:1: (lv_operationUnit_4_0= ruleOperationUnit )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:364:1: (lv_operationUnit_4_0= ruleOperationUnit )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:365:3: lv_operationUnit_4_0= ruleOperationUnit
+            {
+             
+            	        newCompositeNode(grammarAccess.getProductUnitAccess().getOperationUnitOperationUnitParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleOperationUnit_in_ruleProductUnit769);
+            lv_operationUnit_4_0=ruleOperationUnit();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getProductUnitRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"operationUnit",
+                    		lv_operationUnit_4_0, 
+                    		"OperationUnit");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
              leaveRule(); 
         }
          
@@ -779,11 +895,11 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleMultiParameterElement"
+    // $ANTLR end "ruleProductUnit"
 
 
     // $ANTLR start "entryRuleParameterElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:346:1: entryRuleParameterElement returns [EObject current=null] : iv_ruleParameterElement= ruleParameterElement EOF ;
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:389:1: entryRuleParameterElement returns [EObject current=null] : iv_ruleParameterElement= ruleParameterElement EOF ;
     public final EObject entryRuleParameterElement() throws RecognitionException {
         EObject current = null;
 
@@ -791,17 +907,17 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:347:2: (iv_ruleParameterElement= ruleParameterElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:348:2: iv_ruleParameterElement= ruleParameterElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:390:2: (iv_ruleParameterElement= ruleParameterElement EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:391:2: iv_ruleParameterElement= ruleParameterElement EOF
             {
              newCompositeNode(grammarAccess.getParameterElementRule()); 
-            pushFollow(FOLLOW_ruleParameterElement_in_entryRuleParameterElement657);
+            pushFollow(FOLLOW_ruleParameterElement_in_entryRuleParameterElement805);
             iv_ruleParameterElement=ruleParameterElement();
 
             state._fsp--;
 
              current =iv_ruleParameterElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterElement667); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleParameterElement815); 
 
             }
 
@@ -819,33 +935,31 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParameterElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:355:1: ruleParameterElement returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) ) )? ) ;
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:398:1: ruleParameterElement returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) ) )? ) ;
     public final EObject ruleParameterElement() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
-        Token lv_type_2_1=null;
-        Token lv_type_2_2=null;
-        Token lv_type_2_3=null;
-        Token lv_type_2_4=null;
+        Enumerator lv_type_2_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:358:28: ( ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) ) )? ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:359:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) ) )? )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:401:28: ( ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) ) )? ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:402:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) ) )? )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:359:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) ) )? )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:359:2: ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) ) )?
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:402:1: ( ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) ) )? )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:402:2: ( (lv_name_0_0= RULE_ID ) ) (otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) ) )?
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:359:2: ( (lv_name_0_0= RULE_ID ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:360:1: (lv_name_0_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:402:2: ( (lv_name_0_0= RULE_ID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:403:1: (lv_name_0_0= RULE_ID )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:360:1: (lv_name_0_0= RULE_ID )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:361:3: lv_name_0_0= RULE_ID
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:403:1: (lv_name_0_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:404:3: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameterElement709); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameterElement857); 
 
             			newLeafNode(lv_name_0_0, grammarAccess.getParameterElementAccess().getNameIDTerminalRuleCall_0_0()); 
             		
@@ -865,129 +979,46 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:377:2: (otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) ) )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:420:2: (otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) ) )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA5_0==14) ) {
-                alt5=1;
+            if ( (LA4_0==16) ) {
+                alt4=1;
             }
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:377:4: otherlv_1= ':' ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:420:4: otherlv_1= ':' ( (lv_type_2_0= ruleUMAPDataTypes ) )
                     {
-                    otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleParameterElement727); 
+                    otherlv_1=(Token)match(input,16,FOLLOW_16_in_ruleParameterElement875); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getParameterElementAccess().getColonKeyword_1_0());
                         
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:381:1: ( ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) ) )
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:382:1: ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:424:1: ( (lv_type_2_0= ruleUMAPDataTypes ) )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:425:1: (lv_type_2_0= ruleUMAPDataTypes )
                     {
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:382:1: ( (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID ) )
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:383:1: (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:425:1: (lv_type_2_0= ruleUMAPDataTypes )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:426:3: lv_type_2_0= ruleUMAPDataTypes
                     {
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:383:1: (lv_type_2_1= 'BRANCH' | lv_type_2_2= 'CLIENT' | lv_type_2_3= 'CURRENCY' | lv_type_2_4= RULE_ID )
-                    int alt4=4;
-                    switch ( input.LA(1) ) {
-                    case 15:
-                        {
-                        alt4=1;
-                        }
-                        break;
-                    case 16:
-                        {
-                        alt4=2;
-                        }
-                        break;
-                    case 17:
-                        {
-                        alt4=3;
-                        }
-                        break;
-                    case RULE_ID:
-                        {
-                        alt4=4;
-                        }
-                        break;
-                    default:
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 4, 0, input);
+                     
+                    	        newCompositeNode(grammarAccess.getParameterElementAccess().getTypeUMAPDataTypesEnumRuleCall_1_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleUMAPDataTypes_in_ruleParameterElement896);
+                    lv_type_2_0=ruleUMAPDataTypes();
 
-                        throw nvae;
-                    }
+                    state._fsp--;
 
-                    switch (alt4) {
-                        case 1 :
-                            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:384:3: lv_type_2_1= 'BRANCH'
-                            {
-                            lv_type_2_1=(Token)match(input,15,FOLLOW_15_in_ruleParameterElement747); 
 
-                                    newLeafNode(lv_type_2_1, grammarAccess.getParameterElementAccess().getTypeBRANCHKeyword_1_1_0_0());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getParameterElementRule());
-                            	        }
-                                   		setWithLastConsumed(current, "type", lv_type_2_1, null);
-                            	    
-
-                            }
-                            break;
-                        case 2 :
-                            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:396:8: lv_type_2_2= 'CLIENT'
-                            {
-                            lv_type_2_2=(Token)match(input,16,FOLLOW_16_in_ruleParameterElement776); 
-
-                                    newLeafNode(lv_type_2_2, grammarAccess.getParameterElementAccess().getTypeCLIENTKeyword_1_1_0_1());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getParameterElementRule());
-                            	        }
-                                   		setWithLastConsumed(current, "type", lv_type_2_2, null);
-                            	    
-
-                            }
-                            break;
-                        case 3 :
-                            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:408:8: lv_type_2_3= 'CURRENCY'
-                            {
-                            lv_type_2_3=(Token)match(input,17,FOLLOW_17_in_ruleParameterElement805); 
-
-                                    newLeafNode(lv_type_2_3, grammarAccess.getParameterElementAccess().getTypeCURRENCYKeyword_1_1_0_2());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getParameterElementRule());
-                            	        }
-                                   		setWithLastConsumed(current, "type", lv_type_2_3, null);
-                            	    
-
-                            }
-                            break;
-                        case 4 :
-                            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:420:8: lv_type_2_4= RULE_ID
-                            {
-                            lv_type_2_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParameterElement833); 
-
-                            			newLeafNode(lv_type_2_4, grammarAccess.getParameterElementAccess().getTypeIDTerminalRuleCall_1_1_0_3()); 
-                            		
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getParameterElementRule());
-                            	        }
-                                   		setWithLastConsumed(
-                                   			current, 
-                                   			"type",
-                                    		lv_type_2_4, 
-                                    		"ID");
-                            	    
-
-                            }
-                            break;
-
-                    }
-
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getParameterElementRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"type",
+                            		lv_type_2_0, 
+                            		"UMAPDataTypes");
+                    	        afterParserOrEnumRuleCall();
+                    	    
 
                     }
 
@@ -1020,26 +1051,26 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleParameterElement"
 
 
-    // $ANTLR start "entryRuleOperationElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:446:1: entryRuleOperationElement returns [EObject current=null] : iv_ruleOperationElement= ruleOperationElement EOF ;
-    public final EObject entryRuleOperationElement() throws RecognitionException {
+    // $ANTLR start "entryRuleOperationUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:450:1: entryRuleOperationUnit returns [EObject current=null] : iv_ruleOperationUnit= ruleOperationUnit EOF ;
+    public final EObject entryRuleOperationUnit() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleOperationElement = null;
+        EObject iv_ruleOperationUnit = null;
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:447:2: (iv_ruleOperationElement= ruleOperationElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:448:2: iv_ruleOperationElement= ruleOperationElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:451:2: (iv_ruleOperationUnit= ruleOperationUnit EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:452:2: iv_ruleOperationUnit= ruleOperationUnit EOF
             {
-             newCompositeNode(grammarAccess.getOperationElementRule()); 
-            pushFollow(FOLLOW_ruleOperationElement_in_entryRuleOperationElement879);
-            iv_ruleOperationElement=ruleOperationElement();
+             newCompositeNode(grammarAccess.getOperationUnitRule()); 
+            pushFollow(FOLLOW_ruleOperationUnit_in_entryRuleOperationUnit934);
+            iv_ruleOperationUnit=ruleOperationUnit();
 
             state._fsp--;
 
-             current =iv_ruleOperationElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOperationElement889); 
+             current =iv_ruleOperationUnit; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOperationUnit944); 
 
             }
 
@@ -1053,46 +1084,47 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleOperationElement"
+    // $ANTLR end "entryRuleOperationUnit"
 
 
-    // $ANTLR start "ruleOperationElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:455:1: ruleOperationElement returns [EObject current=null] : (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' ( (lv_controls_3_0= ruleControlBlockElement ) )? ) ;
-    public final EObject ruleOperationElement() throws RecognitionException {
+    // $ANTLR start "ruleOperationUnit"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:459:1: ruleOperationUnit returns [EObject current=null] : (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' (otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) ) )? ) ;
+    public final EObject ruleOperationUnit() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
-        EObject lv_controls_3_0 = null;
+        Token otherlv_3=null;
+        EObject lv_controls_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:458:28: ( (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' ( (lv_controls_3_0= ruleControlBlockElement ) )? ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:459:1: (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' ( (lv_controls_3_0= ruleControlBlockElement ) )? )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:462:28: ( (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' (otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) ) )? ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:463:1: (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' (otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) ) )? )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:459:1: (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' ( (lv_controls_3_0= ruleControlBlockElement ) )? )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:459:3: otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' ( (lv_controls_3_0= ruleControlBlockElement ) )?
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:463:1: (otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' (otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) ) )? )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:463:3: otherlv_0= 'operation' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'is' (otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) ) )?
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleOperationElement926); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleOperationUnit981); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getOperationElementAccess().getOperationKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getOperationUnitAccess().getOperationKeyword_0());
                 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:463:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:464:1: (lv_name_1_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:467:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:468:1: (lv_name_1_0= RULE_ID )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:464:1: (lv_name_1_0= RULE_ID )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:465:3: lv_name_1_0= RULE_ID
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:468:1: (lv_name_1_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:469:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOperationElement943); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOperationUnit998); 
 
-            			newLeafNode(lv_name_1_0, grammarAccess.getOperationElementAccess().getNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getOperationUnitAccess().getNameIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getOperationElementRule());
+            	            current = createModelElement(grammarAccess.getOperationUnitRule());
             	        }
                    		setWithLastConsumed(
                    			current, 
@@ -1106,43 +1138,53 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleOperationElement960); 
+            otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleOperationUnit1015); 
 
-                	newLeafNode(otherlv_2, grammarAccess.getOperationElementAccess().getIsKeyword_2());
+                	newLeafNode(otherlv_2, grammarAccess.getOperationUnitAccess().getIsKeyword_2());
                 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:485:1: ( (lv_controls_3_0= ruleControlBlockElement ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:489:1: (otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) ) )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==20) ) {
-                alt6=1;
+            if ( (LA5_0==19) ) {
+                alt5=1;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:486:1: (lv_controls_3_0= ruleControlBlockElement )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:489:3: otherlv_3= 'controls' ( (lv_controls_4_0= ruleControlElement ) )
                     {
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:486:1: (lv_controls_3_0= ruleControlBlockElement )
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:487:3: lv_controls_3_0= ruleControlBlockElement
+                    otherlv_3=(Token)match(input,19,FOLLOW_19_in_ruleOperationUnit1028); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getOperationUnitAccess().getControlsKeyword_3_0());
+                        
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:493:1: ( (lv_controls_4_0= ruleControlElement ) )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:494:1: (lv_controls_4_0= ruleControlElement )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:494:1: (lv_controls_4_0= ruleControlElement )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:495:3: lv_controls_4_0= ruleControlElement
                     {
                      
-                    	        newCompositeNode(grammarAccess.getOperationElementAccess().getControlsControlBlockElementParserRuleCall_3_0()); 
+                    	        newCompositeNode(grammarAccess.getOperationUnitAccess().getControlsControlElementParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleControlBlockElement_in_ruleOperationElement981);
-                    lv_controls_3_0=ruleControlBlockElement();
+                    pushFollow(FOLLOW_ruleControlElement_in_ruleOperationUnit1049);
+                    lv_controls_4_0=ruleControlElement();
 
                     state._fsp--;
 
 
                     	        if (current==null) {
-                    	            current = createModelElementForParent(grammarAccess.getOperationElementRule());
+                    	            current = createModelElementForParent(grammarAccess.getOperationUnitRule());
                     	        }
-                           		set(
+                           		add(
                            			current, 
                            			"controls",
-                            		lv_controls_3_0, 
-                            		"ControlBlockElement");
+                            		lv_controls_4_0, 
+                            		"ControlElement");
                     	        afterParserOrEnumRuleCall();
                     	    
+
+                    }
+
 
                     }
 
@@ -1169,29 +1211,29 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleOperationElement"
+    // $ANTLR end "ruleOperationUnit"
 
 
-    // $ANTLR start "entryRuleControlBlockElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:511:1: entryRuleControlBlockElement returns [EObject current=null] : iv_ruleControlBlockElement= ruleControlBlockElement EOF ;
-    public final EObject entryRuleControlBlockElement() throws RecognitionException {
+    // $ANTLR start "entryRuleControlElement"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:519:1: entryRuleControlElement returns [EObject current=null] : iv_ruleControlElement= ruleControlElement EOF ;
+    public final EObject entryRuleControlElement() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleControlBlockElement = null;
+        EObject iv_ruleControlElement = null;
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:512:2: (iv_ruleControlBlockElement= ruleControlBlockElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:513:2: iv_ruleControlBlockElement= ruleControlBlockElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:520:2: (iv_ruleControlElement= ruleControlElement EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:521:2: iv_ruleControlElement= ruleControlElement EOF
             {
-             newCompositeNode(grammarAccess.getControlBlockElementRule()); 
-            pushFollow(FOLLOW_ruleControlBlockElement_in_entryRuleControlBlockElement1018);
-            iv_ruleControlBlockElement=ruleControlBlockElement();
+             newCompositeNode(grammarAccess.getControlElementRule()); 
+            pushFollow(FOLLOW_ruleControlElement_in_entryRuleControlElement1087);
+            iv_ruleControlElement=ruleControlElement();
 
             state._fsp--;
 
-             current =iv_ruleControlBlockElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleControlBlockElement1028); 
+             current =iv_ruleControlElement; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleControlElement1097); 
 
             }
 
@@ -1205,53 +1247,86 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleControlBlockElement"
+    // $ANTLR end "entryRuleControlElement"
 
 
-    // $ANTLR start "ruleControlBlockElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:520:1: ruleControlBlockElement returns [EObject current=null] : (otherlv_0= 'controls' ( (lv_controls_1_0= ruleControlStatementElement ) ) ) ;
-    public final EObject ruleControlBlockElement() throws RecognitionException {
+    // $ANTLR start "ruleControlElement"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:528:1: ruleControlElement returns [EObject current=null] : ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_controlStatement_2_0= ruleControlStatementElement ) ) ) ;
+    public final EObject ruleControlElement() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        EObject lv_controls_1_0 = null;
+        Token otherlv_1=null;
+        EObject lv_expression_0_0 = null;
+
+        EObject lv_controlStatement_2_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:523:28: ( (otherlv_0= 'controls' ( (lv_controls_1_0= ruleControlStatementElement ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:524:1: (otherlv_0= 'controls' ( (lv_controls_1_0= ruleControlStatementElement ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:531:28: ( ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_controlStatement_2_0= ruleControlStatementElement ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:532:1: ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_controlStatement_2_0= ruleControlStatementElement ) ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:524:1: (otherlv_0= 'controls' ( (lv_controls_1_0= ruleControlStatementElement ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:524:3: otherlv_0= 'controls' ( (lv_controls_1_0= ruleControlStatementElement ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:532:1: ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_controlStatement_2_0= ruleControlStatementElement ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:532:2: ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_controlStatement_2_0= ruleControlStatementElement ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleControlBlockElement1065); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getControlBlockElementAccess().getControlsKeyword_0());
-                
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:528:1: ( (lv_controls_1_0= ruleControlStatementElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:529:1: (lv_controls_1_0= ruleControlStatementElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:532:2: ( (lv_expression_0_0= ruleExpressionElement ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:533:1: (lv_expression_0_0= ruleExpressionElement )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:529:1: (lv_controls_1_0= ruleControlStatementElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:530:3: lv_controls_1_0= ruleControlStatementElement
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:533:1: (lv_expression_0_0= ruleExpressionElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:534:3: lv_expression_0_0= ruleExpressionElement
             {
              
-            	        newCompositeNode(grammarAccess.getControlBlockElementAccess().getControlsControlStatementElementParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getControlElementAccess().getExpressionExpressionElementParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleControlStatementElement_in_ruleControlBlockElement1086);
-            lv_controls_1_0=ruleControlStatementElement();
+            pushFollow(FOLLOW_ruleExpressionElement_in_ruleControlElement1143);
+            lv_expression_0_0=ruleExpressionElement();
 
             state._fsp--;
 
 
             	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getControlBlockElementRule());
+            	            current = createModelElementForParent(grammarAccess.getControlElementRule());
             	        }
-                   		add(
+                   		set(
                    			current, 
-                   			"controls",
-                    		lv_controls_1_0, 
+                   			"expression",
+                    		lv_expression_0_0, 
+                    		"ExpressionElement");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleControlElement1155); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getControlElementAccess().getEqualsSignGreaterThanSignKeyword_1());
+                
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:554:1: ( (lv_controlStatement_2_0= ruleControlStatementElement ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:555:1: (lv_controlStatement_2_0= ruleControlStatementElement )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:555:1: (lv_controlStatement_2_0= ruleControlStatementElement )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:556:3: lv_controlStatement_2_0= ruleControlStatementElement
+            {
+             
+            	        newCompositeNode(grammarAccess.getControlElementAccess().getControlStatementControlStatementElementParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleControlStatementElement_in_ruleControlElement1176);
+            lv_controlStatement_2_0=ruleControlStatementElement();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getControlElementRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"controlStatement",
+                    		lv_controlStatement_2_0, 
                     		"ControlStatementElement");
             	        afterParserOrEnumRuleCall();
             	    
@@ -1278,153 +1353,11 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleControlBlockElement"
-
-
-    // $ANTLR start "entryRuleControlStatementElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:554:1: entryRuleControlStatementElement returns [EObject current=null] : iv_ruleControlStatementElement= ruleControlStatementElement EOF ;
-    public final EObject entryRuleControlStatementElement() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleControlStatementElement = null;
-
-
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:555:2: (iv_ruleControlStatementElement= ruleControlStatementElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:556:2: iv_ruleControlStatementElement= ruleControlStatementElement EOF
-            {
-             newCompositeNode(grammarAccess.getControlStatementElementRule()); 
-            pushFollow(FOLLOW_ruleControlStatementElement_in_entryRuleControlStatementElement1122);
-            iv_ruleControlStatementElement=ruleControlStatementElement();
-
-            state._fsp--;
-
-             current =iv_ruleControlStatementElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleControlStatementElement1132); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleControlStatementElement"
-
-
-    // $ANTLR start "ruleControlStatementElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:563:1: ruleControlStatementElement returns [EObject current=null] : ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_statement_2_0= ruleStatementElement ) ) ) ;
-    public final EObject ruleControlStatementElement() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        EObject lv_expression_0_0 = null;
-
-        AntlrDatatypeRuleToken lv_statement_2_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:566:28: ( ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_statement_2_0= ruleStatementElement ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:567:1: ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_statement_2_0= ruleStatementElement ) ) )
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:567:1: ( ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_statement_2_0= ruleStatementElement ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:567:2: ( (lv_expression_0_0= ruleExpressionElement ) ) otherlv_1= '=>' ( (lv_statement_2_0= ruleStatementElement ) )
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:567:2: ( (lv_expression_0_0= ruleExpressionElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:568:1: (lv_expression_0_0= ruleExpressionElement )
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:568:1: (lv_expression_0_0= ruleExpressionElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:569:3: lv_expression_0_0= ruleExpressionElement
-            {
-             
-            	        newCompositeNode(grammarAccess.getControlStatementElementAccess().getExpressionExpressionElementParserRuleCall_0_0()); 
-            	    
-            pushFollow(FOLLOW_ruleExpressionElement_in_ruleControlStatementElement1178);
-            lv_expression_0_0=ruleExpressionElement();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getControlStatementElementRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"expression",
-                    		lv_expression_0_0, 
-                    		"ExpressionElement");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleControlStatementElement1190); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getControlStatementElementAccess().getEqualsSignGreaterThanSignKeyword_1());
-                
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:589:1: ( (lv_statement_2_0= ruleStatementElement ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:590:1: (lv_statement_2_0= ruleStatementElement )
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:590:1: (lv_statement_2_0= ruleStatementElement )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:591:3: lv_statement_2_0= ruleStatementElement
-            {
-             
-            	        newCompositeNode(grammarAccess.getControlStatementElementAccess().getStatementStatementElementParserRuleCall_2_0()); 
-            	    
-            pushFollow(FOLLOW_ruleStatementElement_in_ruleControlStatementElement1211);
-            lv_statement_2_0=ruleStatementElement();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getControlStatementElementRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"statement",
-                    		lv_statement_2_0, 
-                    		"StatementElement");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleControlStatementElement"
+    // $ANTLR end "ruleControlElement"
 
 
     // $ANTLR start "entryRuleExpressionElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:615:1: entryRuleExpressionElement returns [EObject current=null] : iv_ruleExpressionElement= ruleExpressionElement EOF ;
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:580:1: entryRuleExpressionElement returns [EObject current=null] : iv_ruleExpressionElement= ruleExpressionElement EOF ;
     public final EObject entryRuleExpressionElement() throws RecognitionException {
         EObject current = null;
 
@@ -1432,17 +1365,17 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:616:2: (iv_ruleExpressionElement= ruleExpressionElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:617:2: iv_ruleExpressionElement= ruleExpressionElement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:581:2: (iv_ruleExpressionElement= ruleExpressionElement EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:582:2: iv_ruleExpressionElement= ruleExpressionElement EOF
             {
              newCompositeNode(grammarAccess.getExpressionElementRule()); 
-            pushFollow(FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement1247);
+            pushFollow(FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement1212);
             iv_ruleExpressionElement=ruleExpressionElement();
 
             state._fsp--;
 
              current =iv_ruleExpressionElement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionElement1257); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressionElement1222); 
 
             }
 
@@ -1460,40 +1393,38 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpressionElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:624:1: ruleExpressionElement returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) ) ) ( ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) ) ) ) ;
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:589:1: ruleExpressionElement returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_operator_1_0= ruleOPERATORS ) ) ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleExpressionElement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_operator_1_1=null;
-        Token lv_operator_1_2=null;
-        Token lv_operator_1_3=null;
-        Token lv_right_2_1=null;
-        Token lv_right_2_2=null;
+        Token otherlv_2=null;
+        Enumerator lv_operator_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:627:28: ( ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) ) ) ( ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:628:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) ) ) ( ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:592:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_operator_1_0= ruleOPERATORS ) ) ( (otherlv_2= RULE_ID ) ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:593:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_operator_1_0= ruleOPERATORS ) ) ( (otherlv_2= RULE_ID ) ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:628:1: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) ) ) ( ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:628:2: ( (otherlv_0= RULE_ID ) ) ( ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) ) ) ( ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:593:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_operator_1_0= ruleOPERATORS ) ) ( (otherlv_2= RULE_ID ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:593:2: ( (otherlv_0= RULE_ID ) ) ( (lv_operator_1_0= ruleOPERATORS ) ) ( (otherlv_2= RULE_ID ) )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:628:2: ( (otherlv_0= RULE_ID ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:629:1: (otherlv_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:593:2: ( (otherlv_0= RULE_ID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:594:1: (otherlv_0= RULE_ID )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:629:1: (otherlv_0= RULE_ID )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:630:3: otherlv_0= RULE_ID
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:594:1: (otherlv_0= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:595:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getExpressionElementRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExpressionElement1302); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExpressionElement1267); 
 
-            		newLeafNode(otherlv_0, grammarAccess.getExpressionElementAccess().getParameterParameterElementCrossReference_0_0()); 
+            		newLeafNode(otherlv_0, grammarAccess.getExpressionElementAccess().getParameterEParameterElementCrossReference_0_0()); 
             	
 
             }
@@ -1501,153 +1432,52 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:641:2: ( ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:642:1: ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:606:2: ( (lv_operator_1_0= ruleOPERATORS ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:607:1: (lv_operator_1_0= ruleOPERATORS )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:642:1: ( (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:643:1: (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:607:1: (lv_operator_1_0= ruleOPERATORS )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:608:3: lv_operator_1_0= ruleOPERATORS
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:643:1: (lv_operator_1_1= '=>' | lv_operator_1_2= 'is' | lv_operator_1_3= 'is not' )
-            int alt7=3;
-            switch ( input.LA(1) ) {
-            case 21:
-                {
-                alt7=1;
-                }
-                break;
-            case 19:
-                {
-                alt7=2;
-                }
-                break;
-            case 22:
-                {
-                alt7=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+             
+            	        newCompositeNode(grammarAccess.getExpressionElementAccess().getOperatorOPERATORSEnumRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleOPERATORS_in_ruleExpressionElement1288);
+            lv_operator_1_0=ruleOPERATORS();
 
-                throw nvae;
-            }
+            state._fsp--;
 
-            switch (alt7) {
-                case 1 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:644:3: lv_operator_1_1= '=>'
-                    {
-                    lv_operator_1_1=(Token)match(input,21,FOLLOW_21_in_ruleExpressionElement1322); 
 
-                            newLeafNode(lv_operator_1_1, grammarAccess.getExpressionElementAccess().getOperatorEqualsSignGreaterThanSignKeyword_1_0_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getExpressionElementRule());
-                    	        }
-                           		setWithLastConsumed(current, "operator", lv_operator_1_1, null);
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:656:8: lv_operator_1_2= 'is'
-                    {
-                    lv_operator_1_2=(Token)match(input,19,FOLLOW_19_in_ruleExpressionElement1351); 
-
-                            newLeafNode(lv_operator_1_2, grammarAccess.getExpressionElementAccess().getOperatorIsKeyword_1_0_1());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getExpressionElementRule());
-                    	        }
-                           		setWithLastConsumed(current, "operator", lv_operator_1_2, null);
-                    	    
-
-                    }
-                    break;
-                case 3 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:668:8: lv_operator_1_3= 'is not'
-                    {
-                    lv_operator_1_3=(Token)match(input,22,FOLLOW_22_in_ruleExpressionElement1380); 
-
-                            newLeafNode(lv_operator_1_3, grammarAccess.getExpressionElementAccess().getOperatorIsNotKeyword_1_0_2());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getExpressionElementRule());
-                    	        }
-                           		setWithLastConsumed(current, "operator", lv_operator_1_3, null);
-                    	    
-
-                    }
-                    break;
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getExpressionElementRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"operator",
+                    		lv_operator_1_0, 
+                    		"OPERATORS");
+            	        afterParserOrEnumRuleCall();
+            	    
 
             }
 
 
             }
 
-
-            }
-
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:683:2: ( ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:684:1: ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:624:2: ( (otherlv_2= RULE_ID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:625:1: (otherlv_2= RULE_ID )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:684:1: ( (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:685:1: (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:625:1: (otherlv_2= RULE_ID )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:626:3: otherlv_2= RULE_ID
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:685:1: (lv_right_2_1= 'valid' | lv_right_2_2= 'empty' )
-            int alt8=2;
-            int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==23) ) {
-                alt8=1;
-            }
-            else if ( (LA8_0==24) ) {
-                alt8=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getExpressionElementRule());
+            	        }
+                    
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExpressionElement1308); 
 
-                throw nvae;
-            }
-            switch (alt8) {
-                case 1 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:686:3: lv_right_2_1= 'valid'
-                    {
-                    lv_right_2_1=(Token)match(input,23,FOLLOW_23_in_ruleExpressionElement1416); 
-
-                            newLeafNode(lv_right_2_1, grammarAccess.getExpressionElementAccess().getRightValidKeyword_2_0_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getExpressionElementRule());
-                    	        }
-                           		setWithLastConsumed(current, "right", lv_right_2_1, null);
-                    	    
-
-                    }
-                    break;
-                case 2 :
-                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:698:8: lv_right_2_2= 'empty'
-                    {
-                    lv_right_2_2=(Token)match(input,24,FOLLOW_24_in_ruleExpressionElement1445); 
-
-                            newLeafNode(lv_right_2_2, grammarAccess.getExpressionElementAccess().getRightEmptyKeyword_2_0_1());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getExpressionElementRule());
-                    	        }
-                           		setWithLastConsumed(current, "right", lv_right_2_2, null);
-                    	    
-
-                    }
-                    break;
-
-            }
-
+            		newLeafNode(otherlv_2, grammarAccess.getExpressionElementAccess().getRightEOperationUnitCrossReference_2_0()); 
+            	
 
             }
 
@@ -1674,214 +1504,26 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleExpressionElement"
 
 
-    // $ANTLR start "entryRuleStatementElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:723:1: entryRuleStatementElement returns [String current=null] : iv_ruleStatementElement= ruleStatementElement EOF ;
-    public final String entryRuleStatementElement() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleStatementElement = null;
-
-
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:724:2: (iv_ruleStatementElement= ruleStatementElement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:725:2: iv_ruleStatementElement= ruleStatementElement EOF
-            {
-             newCompositeNode(grammarAccess.getStatementElementRule()); 
-            pushFollow(FOLLOW_ruleStatementElement_in_entryRuleStatementElement1500);
-            iv_ruleStatementElement=ruleStatementElement();
-
-            state._fsp--;
-
-             current =iv_ruleStatementElement.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStatementElement1511); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleStatementElement"
-
-
-    // $ANTLR start "ruleStatementElement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:732:1: ruleStatementElement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'sss' ;
-    public final AntlrDatatypeRuleToken ruleStatementElement() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-         enterRule(); 
-            
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:735:28: (kw= 'sss' )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:737:2: kw= 'sss'
-            {
-            kw=(Token)match(input,25,FOLLOW_25_in_ruleStatementElement1548); 
-
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getStatementElementAccess().getSssKeyword()); 
-                
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleStatementElement"
-
-
-    // $ANTLR start "entryRuleQualifiedID"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:752:1: entryRuleQualifiedID returns [String current=null] : iv_ruleQualifiedID= ruleQualifiedID EOF ;
-    public final String entryRuleQualifiedID() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleQualifiedID = null;
-
-
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:753:2: (iv_ruleQualifiedID= ruleQualifiedID EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:754:2: iv_ruleQualifiedID= ruleQualifiedID EOF
-            {
-             newCompositeNode(grammarAccess.getQualifiedIDRule()); 
-            pushFollow(FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1590);
-            iv_ruleQualifiedID=ruleQualifiedID();
-
-            state._fsp--;
-
-             current =iv_ruleQualifiedID.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedID1601); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleQualifiedID"
-
-
-    // $ANTLR start "ruleQualifiedID"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:761:1: ruleQualifiedID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
-    public final AntlrDatatypeRuleToken ruleQualifiedID() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token this_ID_0=null;
-        Token kw=null;
-        Token this_ID_2=null;
-
-         enterRule(); 
-            
-        try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:764:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:765:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:765:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:765:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
-            {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedID1641); 
-
-            		current.merge(this_ID_0);
-                
-             
-                newLeafNode(this_ID_0, grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_0()); 
-                
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:772:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
-
-                if ( (LA9_0==26) ) {
-                    alt9=1;
-                }
-
-
-                switch (alt9) {
-            	case 1 :
-            	    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:773:2: kw= '.' this_ID_2= RULE_ID
-            	    {
-            	    kw=(Token)match(input,26,FOLLOW_26_in_ruleQualifiedID1660); 
-
-            	            current.merge(kw);
-            	            newLeafNode(kw, grammarAccess.getQualifiedIDAccess().getFullStopKeyword_1_0()); 
-            	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedID1675); 
-
-            	    		current.merge(this_ID_2);
-            	        
-            	     
-            	        newLeafNode(this_ID_2, grammarAccess.getQualifiedIDAccess().getIDTerminalRuleCall_1_1()); 
-            	        
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleQualifiedID"
-
-
-    // $ANTLR start "entryRuleUseStatement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:793:1: entryRuleUseStatement returns [EObject current=null] : iv_ruleUseStatement= ruleUseStatement EOF ;
-    public final EObject entryRuleUseStatement() throws RecognitionException {
+    // $ANTLR start "entryRuleControlStatementElement"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:645:1: entryRuleControlStatementElement returns [EObject current=null] : iv_ruleControlStatementElement= ruleControlStatementElement EOF ;
+    public final EObject entryRuleControlStatementElement() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleUseStatement = null;
+        EObject iv_ruleControlStatementElement = null;
 
 
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:794:2: (iv_ruleUseStatement= ruleUseStatement EOF )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:795:2: iv_ruleUseStatement= ruleUseStatement EOF
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:646:2: (iv_ruleControlStatementElement= ruleControlStatementElement EOF )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:647:2: iv_ruleControlStatementElement= ruleControlStatementElement EOF
             {
-             newCompositeNode(grammarAccess.getUseStatementRule()); 
-            pushFollow(FOLLOW_ruleUseStatement_in_entryRuleUseStatement1722);
-            iv_ruleUseStatement=ruleUseStatement();
+             newCompositeNode(grammarAccess.getControlStatementElementRule()); 
+            pushFollow(FOLLOW_ruleControlStatementElement_in_entryRuleControlStatementElement1344);
+            iv_ruleControlStatementElement=ruleControlStatementElement();
 
             state._fsp--;
 
-             current =iv_ruleUseStatement; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUseStatement1732); 
+             current =iv_ruleControlStatementElement; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleControlStatementElement1354); 
 
             }
 
@@ -1895,51 +1537,76 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleUseStatement"
+    // $ANTLR end "entryRuleControlStatementElement"
 
 
-    // $ANTLR start "ruleUseStatement"
-    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:802:1: ruleUseStatement returns [EObject current=null] : (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) ) ;
-    public final EObject ruleUseStatement() throws RecognitionException {
+    // $ANTLR start "ruleControlStatementElement"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:654:1: ruleControlStatementElement returns [EObject current=null] : (otherlv_0= 'Error' otherlv_1= '(' otherlv_2= '\"' ( (lv_message_3_0= RULE_ANY_OTHER ) ) otherlv_4= '\"' otherlv_5= ')' ) ;
+    public final EObject ruleControlStatementElement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token lv_message_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
 
          enterRule(); 
             
         try {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:805:28: ( (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:806:1: (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:657:28: ( (otherlv_0= 'Error' otherlv_1= '(' otherlv_2= '\"' ( (lv_message_3_0= RULE_ANY_OTHER ) ) otherlv_4= '\"' otherlv_5= ')' ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:658:1: (otherlv_0= 'Error' otherlv_1= '(' otherlv_2= '\"' ( (lv_message_3_0= RULE_ANY_OTHER ) ) otherlv_4= '\"' otherlv_5= ')' )
             {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:806:1: (otherlv_0= 'use' ( (otherlv_1= RULE_ID ) ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:806:3: otherlv_0= 'use' ( (otherlv_1= RULE_ID ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:658:1: (otherlv_0= 'Error' otherlv_1= '(' otherlv_2= '\"' ( (lv_message_3_0= RULE_ANY_OTHER ) ) otherlv_4= '\"' otherlv_5= ')' )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:658:3: otherlv_0= 'Error' otherlv_1= '(' otherlv_2= '\"' ( (lv_message_3_0= RULE_ANY_OTHER ) ) otherlv_4= '\"' otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleUseStatement1769); 
+            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleControlStatementElement1391); 
 
-                	newLeafNode(otherlv_0, grammarAccess.getUseStatementAccess().getUseKeyword_0());
+                	newLeafNode(otherlv_0, grammarAccess.getControlStatementElementAccess().getErrorKeyword_0());
                 
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:810:1: ( (otherlv_1= RULE_ID ) )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:811:1: (otherlv_1= RULE_ID )
-            {
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:811:1: (otherlv_1= RULE_ID )
-            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:812:3: otherlv_1= RULE_ID
-            {
+            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleControlStatementElement1403); 
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getUseStatementRule());
+                	newLeafNode(otherlv_1, grammarAccess.getControlStatementElementAccess().getLeftParenthesisKeyword_1());
+                
+            otherlv_2=(Token)match(input,23,FOLLOW_23_in_ruleControlStatementElement1415); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getControlStatementElementAccess().getQuotationMarkKeyword_2());
+                
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:670:1: ( (lv_message_3_0= RULE_ANY_OTHER ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:671:1: (lv_message_3_0= RULE_ANY_OTHER )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:671:1: (lv_message_3_0= RULE_ANY_OTHER )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:672:3: lv_message_3_0= RULE_ANY_OTHER
+            {
+            lv_message_3_0=(Token)match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_ruleControlStatementElement1432); 
+
+            			newLeafNode(lv_message_3_0, grammarAccess.getControlStatementElementAccess().getMessageANY_OTHERTerminalRuleCall_3_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getControlStatementElementRule());
             	        }
-                    
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleUseStatement1789); 
-
-            		newLeafNode(otherlv_1, grammarAccess.getUseStatementAccess().getProductProductElementCrossReference_1_0()); 
-            	
-
-            }
-
+                   		setWithLastConsumed(
+                   			current, 
+                   			"message",
+                    		lv_message_3_0, 
+                    		"ANY_OTHER");
+            	    
 
             }
 
+
+            }
+
+            otherlv_4=(Token)match(input,23,FOLLOW_23_in_ruleControlStatementElement1449); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getControlStatementElementAccess().getQuotationMarkKeyword_4());
+                
+            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleControlStatementElement1461); 
+
+                	newLeafNode(otherlv_5, grammarAccess.getControlStatementElementAccess().getRightParenthesisKeyword_5());
+                
 
             }
 
@@ -1957,7 +1624,248 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleUseStatement"
+    // $ANTLR end "ruleControlStatementElement"
+
+
+    // $ANTLR start "ruleUMAPDataTypes"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:704:1: ruleUMAPDataTypes returns [Enumerator current=null] : ( (enumLiteral_0= 'BRANCH' ) | (enumLiteral_1= 'CLIENT' ) | (enumLiteral_2= 'CURRENCY' ) | (enumLiteral_3= 'NUMBER' ) | (enumLiteral_4= 'STRING' ) ) ;
+    public final Enumerator ruleUMAPDataTypes() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
+        Token enumLiteral_4=null;
+
+         enterRule(); 
+        try {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:706:28: ( ( (enumLiteral_0= 'BRANCH' ) | (enumLiteral_1= 'CLIENT' ) | (enumLiteral_2= 'CURRENCY' ) | (enumLiteral_3= 'NUMBER' ) | (enumLiteral_4= 'STRING' ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:707:1: ( (enumLiteral_0= 'BRANCH' ) | (enumLiteral_1= 'CLIENT' ) | (enumLiteral_2= 'CURRENCY' ) | (enumLiteral_3= 'NUMBER' ) | (enumLiteral_4= 'STRING' ) )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:707:1: ( (enumLiteral_0= 'BRANCH' ) | (enumLiteral_1= 'CLIENT' ) | (enumLiteral_2= 'CURRENCY' ) | (enumLiteral_3= 'NUMBER' ) | (enumLiteral_4= 'STRING' ) )
+            int alt6=5;
+            switch ( input.LA(1) ) {
+            case 25:
+                {
+                alt6=1;
+                }
+                break;
+            case 26:
+                {
+                alt6=2;
+                }
+                break;
+            case 27:
+                {
+                alt6=3;
+                }
+                break;
+            case 28:
+                {
+                alt6=4;
+                }
+                break;
+            case 29:
+                {
+                alt6=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt6) {
+                case 1 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:707:2: (enumLiteral_0= 'BRANCH' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:707:2: (enumLiteral_0= 'BRANCH' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:707:4: enumLiteral_0= 'BRANCH'
+                    {
+                    enumLiteral_0=(Token)match(input,25,FOLLOW_25_in_ruleUMAPDataTypes1511); 
+
+                            current = grammarAccess.getUMAPDataTypesAccess().getBRANCHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_0, grammarAccess.getUMAPDataTypesAccess().getBRANCHEnumLiteralDeclaration_0()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:713:6: (enumLiteral_1= 'CLIENT' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:713:6: (enumLiteral_1= 'CLIENT' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:713:8: enumLiteral_1= 'CLIENT'
+                    {
+                    enumLiteral_1=(Token)match(input,26,FOLLOW_26_in_ruleUMAPDataTypes1528); 
+
+                            current = grammarAccess.getUMAPDataTypesAccess().getCLIENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_1, grammarAccess.getUMAPDataTypesAccess().getCLIENTEnumLiteralDeclaration_1()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:719:6: (enumLiteral_2= 'CURRENCY' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:719:6: (enumLiteral_2= 'CURRENCY' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:719:8: enumLiteral_2= 'CURRENCY'
+                    {
+                    enumLiteral_2=(Token)match(input,27,FOLLOW_27_in_ruleUMAPDataTypes1545); 
+
+                            current = grammarAccess.getUMAPDataTypesAccess().getCURRENCYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_2, grammarAccess.getUMAPDataTypesAccess().getCURRENCYEnumLiteralDeclaration_2()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:725:6: (enumLiteral_3= 'NUMBER' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:725:6: (enumLiteral_3= 'NUMBER' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:725:8: enumLiteral_3= 'NUMBER'
+                    {
+                    enumLiteral_3=(Token)match(input,28,FOLLOW_28_in_ruleUMAPDataTypes1562); 
+
+                            current = grammarAccess.getUMAPDataTypesAccess().getNUMBEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_3, grammarAccess.getUMAPDataTypesAccess().getNUMBEREnumLiteralDeclaration_3()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:731:6: (enumLiteral_4= 'STRING' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:731:6: (enumLiteral_4= 'STRING' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:731:8: enumLiteral_4= 'STRING'
+                    {
+                    enumLiteral_4=(Token)match(input,29,FOLLOW_29_in_ruleUMAPDataTypes1579); 
+
+                            current = grammarAccess.getUMAPDataTypesAccess().getSTRINGEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_4, grammarAccess.getUMAPDataTypesAccess().getSTRINGEnumLiteralDeclaration_4()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleUMAPDataTypes"
+
+
+    // $ANTLR start "ruleOPERATORS"
+    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:741:1: ruleOPERATORS returns [Enumerator current=null] : ( (enumLiteral_0= 'is' ) | (enumLiteral_1= 'is not' ) ) ;
+    public final Enumerator ruleOPERATORS() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+         enterRule(); 
+        try {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:743:28: ( ( (enumLiteral_0= 'is' ) | (enumLiteral_1= 'is not' ) ) )
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:744:1: ( (enumLiteral_0= 'is' ) | (enumLiteral_1= 'is not' ) )
+            {
+            // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:744:1: ( (enumLiteral_0= 'is' ) | (enumLiteral_1= 'is not' ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==18) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==30) ) {
+                alt7=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:744:2: (enumLiteral_0= 'is' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:744:2: (enumLiteral_0= 'is' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:744:4: enumLiteral_0= 'is'
+                    {
+                    enumLiteral_0=(Token)match(input,18,FOLLOW_18_in_ruleOPERATORS1624); 
+
+                            current = grammarAccess.getOPERATORSAccess().getISEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_0, grammarAccess.getOPERATORSAccess().getISEnumLiteralDeclaration_0()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:750:6: (enumLiteral_1= 'is not' )
+                    {
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:750:6: (enumLiteral_1= 'is not' )
+                    // ../com.ykb.umap.dsl/src-gen/com/ykb/umap/dsl/parser/antlr/internal/InternalProduct.g:750:8: enumLiteral_1= 'is not'
+                    {
+                    enumLiteral_1=(Token)match(input,30,FOLLOW_30_in_ruleOPERATORS1641); 
+
+                            current = grammarAccess.getOPERATORSAccess().getNOTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_1, grammarAccess.getOPERATORSAccess().getNOTEnumLiteralDeclaration_1()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleOPERATORS"
 
     // Delegated rules
 
@@ -1966,68 +1874,68 @@ public class InternalProductParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleProduct_in_entryRuleProduct75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProduct85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_ruleProduct130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_entryRuleAbstractElement165 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractElement175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamespaceElement_in_ruleAbstractElement221 = new BitSet(new long[]{0x0000000008001000L});
-    public static final BitSet FOLLOW_ruleUseStatement_in_ruleAbstractElement242 = new BitSet(new long[]{0x0000000008001000L});
-    public static final BitSet FOLLOW_ruleProductElement_in_ruleAbstractElement264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamespaceElement_in_entryRuleNamespaceElement300 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNamespaceElement310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleNamespaceElement347 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleQualifiedID_in_ruleNamespaceElement368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProductElement_in_entryRuleProductElement404 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleProductElement414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleProductElement451 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleProductElement468 = new BitSet(new long[]{0x0000000000042000L});
-    public static final BitSet FOLLOW_13_in_ruleProductElement486 = new BitSet(new long[]{0x0000000000042010L});
-    public static final BitSet FOLLOW_ruleMultiParameterElement_in_ruleProductElement507 = new BitSet(new long[]{0x0000000000042000L});
-    public static final BitSet FOLLOW_ruleOperationElement_in_ruleProductElement530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMultiParameterElement_in_entryRuleMultiParameterElement566 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMultiParameterElement576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParameterElement_in_ruleMultiParameterElement621 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleParameterElement_in_entryRuleParameterElement657 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleParameterElement667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParameterElement709 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleParameterElement727 = new BitSet(new long[]{0x0000000000038010L});
-    public static final BitSet FOLLOW_15_in_ruleParameterElement747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleParameterElement776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleParameterElement805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParameterElement833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOperationElement_in_entryRuleOperationElement879 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOperationElement889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleOperationElement926 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleOperationElement943 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleOperationElement960 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_ruleControlBlockElement_in_ruleOperationElement981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleControlBlockElement_in_entryRuleControlBlockElement1018 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleControlBlockElement1028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleControlBlockElement1065 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleControlStatementElement_in_ruleControlBlockElement1086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleControlStatementElement_in_entryRuleControlStatementElement1122 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleControlStatementElement1132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressionElement_in_ruleControlStatementElement1178 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleControlStatementElement1190 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_ruleStatementElement_in_ruleControlStatementElement1211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement1247 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionElement1257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleExpressionElement1302 = new BitSet(new long[]{0x0000000000680000L});
-    public static final BitSet FOLLOW_21_in_ruleExpressionElement1322 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_19_in_ruleExpressionElement1351 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_22_in_ruleExpressionElement1380 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_23_in_ruleExpressionElement1416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleExpressionElement1445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatementElement_in_entryRuleStatementElement1500 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStatementElement1511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleStatementElement1548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedID_in_entryRuleQualifiedID1590 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedID1601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1641 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_26_in_ruleQualifiedID1660 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedID1675 = new BitSet(new long[]{0x0000000004000002L});
-    public static final BitSet FOLLOW_ruleUseStatement_in_entryRuleUseStatement1722 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUseStatement1732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleUseStatement1769 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleUseStatement1789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompilationUnit_in_ruleProduct130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompilationUnit_in_entryRuleCompilationUnit165 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCompilationUnit175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamespaceUnit_in_ruleCompilationUnit221 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_ruleUseUnit_in_ruleCompilationUnit242 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_ruleProductUnit_in_ruleCompilationUnit264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUseUnit_in_entryRuleUseUnit300 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUseUnit310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleUseUnit347 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQUALIFIEDID_in_ruleUseUnit370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamespaceUnit_in_entryRuleNamespaceUnit406 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNamespaceUnit416 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleNamespaceUnit453 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleQUALIFIEDID_in_ruleNamespaceUnit474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQUALIFIEDID_in_entryRuleQUALIFIEDID511 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQUALIFIEDID522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQUALIFIEDID562 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleQUALIFIEDID581 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQUALIFIEDID596 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_ruleProductUnit_in_entryRuleProductUnit643 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleProductUnit653 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleProductUnit690 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleProductUnit707 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleProductUnit725 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_ruleParameterElement_in_ruleProductUnit746 = new BitSet(new long[]{0x0000000000020010L});
+    public static final BitSet FOLLOW_ruleOperationUnit_in_ruleProductUnit769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParameterElement_in_entryRuleParameterElement805 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleParameterElement815 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleParameterElement857 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_16_in_ruleParameterElement875 = new BitSet(new long[]{0x000000003E000000L});
+    public static final BitSet FOLLOW_ruleUMAPDataTypes_in_ruleParameterElement896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOperationUnit_in_entryRuleOperationUnit934 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOperationUnit944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleOperationUnit981 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleOperationUnit998 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18_in_ruleOperationUnit1015 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_19_in_ruleOperationUnit1028 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleControlElement_in_ruleOperationUnit1049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleControlElement_in_entryRuleControlElement1087 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleControlElement1097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressionElement_in_ruleControlElement1143 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleControlElement1155 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_ruleControlStatementElement_in_ruleControlElement1176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressionElement_in_entryRuleExpressionElement1212 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpressionElement1222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleExpressionElement1267 = new BitSet(new long[]{0x0000000040040000L});
+    public static final BitSet FOLLOW_ruleOPERATORS_in_ruleExpressionElement1288 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleExpressionElement1308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleControlStatementElement_in_entryRuleControlStatementElement1344 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleControlStatementElement1354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleControlStatementElement1391 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleControlStatementElement1403 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleControlStatementElement1415 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleControlStatementElement1432 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleControlStatementElement1449 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleControlStatementElement1461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleUMAPDataTypes1511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleUMAPDataTypes1528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleUMAPDataTypes1545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleUMAPDataTypes1562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleUMAPDataTypes1579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleOPERATORS1624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleOPERATORS1641 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -2,8 +2,10 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.ExpressionElement;
-import com.ykb.umap.dsl.product.ParameterElement;
+import com.ykb.umap.dsl.product.EExpressionElement;
+import com.ykb.umap.dsl.product.EOperationUnit;
+import com.ykb.umap.dsl.product.EParameterElement;
+import com.ykb.umap.dsl.product.OPERATORS;
 import com.ykb.umap.dsl.product.ProductPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,20 +18,20 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expression Element</b></em>'.
+ * An implementation of the model object '<em><b>EExpression Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.ExpressionElementImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link com.ykb.umap.dsl.product.impl.ExpressionElementImpl#getOperator <em>Operator</em>}</li>
- *   <li>{@link com.ykb.umap.dsl.product.impl.ExpressionElementImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EExpressionElementImpl#getParameter <em>Parameter</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EExpressionElementImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EExpressionElementImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExpressionElementImpl extends MinimalEObjectImpl.Container implements ExpressionElement
+public class EExpressionElementImpl extends MinimalEObjectImpl.Container implements EExpressionElement
 {
   /**
    * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
@@ -39,7 +41,7 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected ParameterElement parameter;
+  protected EParameterElement parameter;
 
   /**
    * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -49,7 +51,7 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected static final String OPERATOR_EDEFAULT = null;
+  protected static final OPERATORS OPERATOR_EDEFAULT = OPERATORS.IS;
 
   /**
    * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
@@ -59,34 +61,24 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    * @ordered
    */
-  protected String operator = OPERATOR_EDEFAULT;
+  protected OPERATORS operator = OPERATOR_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRight() <em>Right</em>}' attribute.
+   * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRight()
    * @generated
    * @ordered
    */
-  protected static final String RIGHT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRight() <em>Right</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRight()
-   * @generated
-   * @ordered
-   */
-  protected String right = RIGHT_EDEFAULT;
+  protected EOperationUnit right;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExpressionElementImpl()
+  protected EExpressionElementImpl()
   {
     super();
   }
@@ -99,7 +91,7 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.EXPRESSION_ELEMENT;
+    return ProductPackage.Literals.EEXPRESSION_ELEMENT;
   }
 
   /**
@@ -107,16 +99,16 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterElement getParameter()
+  public EParameterElement getParameter()
   {
     if (parameter != null && parameter.eIsProxy())
     {
       InternalEObject oldParameter = (InternalEObject)parameter;
-      parameter = (ParameterElement)eResolveProxy(oldParameter);
+      parameter = (EParameterElement)eResolveProxy(oldParameter);
       if (parameter != oldParameter)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.EXPRESSION_ELEMENT__PARAMETER, oldParameter, parameter));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.EEXPRESSION_ELEMENT__PARAMETER, oldParameter, parameter));
       }
     }
     return parameter;
@@ -127,7 +119,7 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterElement basicGetParameter()
+  public EParameterElement basicGetParameter()
   {
     return parameter;
   }
@@ -137,12 +129,12 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParameter(ParameterElement newParameter)
+  public void setParameter(EParameterElement newParameter)
   {
-    ParameterElement oldParameter = parameter;
+    EParameterElement oldParameter = parameter;
     parameter = newParameter;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EXPRESSION_ELEMENT__PARAMETER, oldParameter, parameter));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EEXPRESSION_ELEMENT__PARAMETER, oldParameter, parameter));
   }
 
   /**
@@ -150,7 +142,7 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOperator()
+  public OPERATORS getOperator()
   {
     return operator;
   }
@@ -160,12 +152,12 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOperator(String newOperator)
+  public void setOperator(OPERATORS newOperator)
   {
-    String oldOperator = operator;
-    operator = newOperator;
+    OPERATORS oldOperator = operator;
+    operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EXPRESSION_ELEMENT__OPERATOR, oldOperator, operator));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EEXPRESSION_ELEMENT__OPERATOR, oldOperator, operator));
   }
 
   /**
@@ -173,7 +165,27 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getRight()
+  public EOperationUnit getRight()
+  {
+    if (right != null && right.eIsProxy())
+    {
+      InternalEObject oldRight = (InternalEObject)right;
+      right = (EOperationUnit)eResolveProxy(oldRight);
+      if (right != oldRight)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.EEXPRESSION_ELEMENT__RIGHT, oldRight, right));
+      }
+    }
+    return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EOperationUnit basicGetRight()
   {
     return right;
   }
@@ -183,12 +195,12 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRight(String newRight)
+  public void setRight(EOperationUnit newRight)
   {
-    String oldRight = right;
+    EOperationUnit oldRight = right;
     right = newRight;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EXPRESSION_ELEMENT__RIGHT, oldRight, right));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EEXPRESSION_ELEMENT__RIGHT, oldRight, right));
   }
 
   /**
@@ -201,13 +213,14 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case ProductPackage.EXPRESSION_ELEMENT__PARAMETER:
+      case ProductPackage.EEXPRESSION_ELEMENT__PARAMETER:
         if (resolve) return getParameter();
         return basicGetParameter();
-      case ProductPackage.EXPRESSION_ELEMENT__OPERATOR:
+      case ProductPackage.EEXPRESSION_ELEMENT__OPERATOR:
         return getOperator();
-      case ProductPackage.EXPRESSION_ELEMENT__RIGHT:
-        return getRight();
+      case ProductPackage.EEXPRESSION_ELEMENT__RIGHT:
+        if (resolve) return getRight();
+        return basicGetRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -222,14 +235,14 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case ProductPackage.EXPRESSION_ELEMENT__PARAMETER:
-        setParameter((ParameterElement)newValue);
+      case ProductPackage.EEXPRESSION_ELEMENT__PARAMETER:
+        setParameter((EParameterElement)newValue);
         return;
-      case ProductPackage.EXPRESSION_ELEMENT__OPERATOR:
-        setOperator((String)newValue);
+      case ProductPackage.EEXPRESSION_ELEMENT__OPERATOR:
+        setOperator((OPERATORS)newValue);
         return;
-      case ProductPackage.EXPRESSION_ELEMENT__RIGHT:
-        setRight((String)newValue);
+      case ProductPackage.EEXPRESSION_ELEMENT__RIGHT:
+        setRight((EOperationUnit)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -245,14 +258,14 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case ProductPackage.EXPRESSION_ELEMENT__PARAMETER:
-        setParameter((ParameterElement)null);
+      case ProductPackage.EEXPRESSION_ELEMENT__PARAMETER:
+        setParameter((EParameterElement)null);
         return;
-      case ProductPackage.EXPRESSION_ELEMENT__OPERATOR:
+      case ProductPackage.EEXPRESSION_ELEMENT__OPERATOR:
         setOperator(OPERATOR_EDEFAULT);
         return;
-      case ProductPackage.EXPRESSION_ELEMENT__RIGHT:
-        setRight(RIGHT_EDEFAULT);
+      case ProductPackage.EEXPRESSION_ELEMENT__RIGHT:
+        setRight((EOperationUnit)null);
         return;
     }
     super.eUnset(featureID);
@@ -268,12 +281,12 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case ProductPackage.EXPRESSION_ELEMENT__PARAMETER:
+      case ProductPackage.EEXPRESSION_ELEMENT__PARAMETER:
         return parameter != null;
-      case ProductPackage.EXPRESSION_ELEMENT__OPERATOR:
-        return OPERATOR_EDEFAULT == null ? operator != null : !OPERATOR_EDEFAULT.equals(operator);
-      case ProductPackage.EXPRESSION_ELEMENT__RIGHT:
-        return RIGHT_EDEFAULT == null ? right != null : !RIGHT_EDEFAULT.equals(right);
+      case ProductPackage.EEXPRESSION_ELEMENT__OPERATOR:
+        return operator != OPERATOR_EDEFAULT;
+      case ProductPackage.EEXPRESSION_ELEMENT__RIGHT:
+        return right != null;
     }
     return super.eIsSet(featureID);
   }
@@ -291,10 +304,8 @@ public class ExpressionElementImpl extends MinimalEObjectImpl.Container implemen
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (operator: ");
     result.append(operator);
-    result.append(", right: ");
-    result.append(right);
     result.append(')');
     return result.toString();
   }
 
-} //ExpressionElementImpl
+} //EExpressionElementImpl

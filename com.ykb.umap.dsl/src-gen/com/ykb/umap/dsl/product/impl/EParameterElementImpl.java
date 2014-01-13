@@ -2,8 +2,9 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.ParameterElement;
+import com.ykb.umap.dsl.product.EParameterElement;
 import com.ykb.umap.dsl.product.ProductPackage;
+import com.ykb.umap.dsl.product.UMAPDataTypes;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +15,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Parameter Element</b></em>'.
+ * An implementation of the model object '<em><b>EParameter Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.ParameterElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.ykb.umap.dsl.product.impl.ParameterElementImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EParameterElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EParameterElementImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ParameterElementImpl extends MinimalEObjectImpl.Container implements ParameterElement
+public class EParameterElementImpl extends MinimalEObjectImpl.Container implements EParameterElement
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -56,7 +57,7 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected static final String TYPE_EDEFAULT = null;
+  protected static final UMAPDataTypes TYPE_EDEFAULT = UMAPDataTypes.BRANCH;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -66,14 +67,14 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected String type = TYPE_EDEFAULT;
+  protected UMAPDataTypes type = TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParameterElementImpl()
+  protected EParameterElementImpl()
   {
     super();
   }
@@ -86,7 +87,7 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.PARAMETER_ELEMENT;
+    return ProductPackage.Literals.EPARAMETER_ELEMENT;
   }
 
   /**
@@ -109,7 +110,7 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PARAMETER_ELEMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EPARAMETER_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -117,7 +118,7 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getType()
+  public UMAPDataTypes getType()
   {
     return type;
   }
@@ -127,12 +128,12 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(String newType)
+  public void setType(UMAPDataTypes newType)
   {
-    String oldType = type;
-    type = newType;
+    UMAPDataTypes oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.PARAMETER_ELEMENT__TYPE, oldType, type));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EPARAMETER_ELEMENT__TYPE, oldType, type));
   }
 
   /**
@@ -145,9 +146,9 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.PARAMETER_ELEMENT__NAME:
+      case ProductPackage.EPARAMETER_ELEMENT__NAME:
         return getName();
-      case ProductPackage.PARAMETER_ELEMENT__TYPE:
+      case ProductPackage.EPARAMETER_ELEMENT__TYPE:
         return getType();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -163,11 +164,11 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.PARAMETER_ELEMENT__NAME:
+      case ProductPackage.EPARAMETER_ELEMENT__NAME:
         setName((String)newValue);
         return;
-      case ProductPackage.PARAMETER_ELEMENT__TYPE:
-        setType((String)newValue);
+      case ProductPackage.EPARAMETER_ELEMENT__TYPE:
+        setType((UMAPDataTypes)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,10 +184,10 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.PARAMETER_ELEMENT__NAME:
+      case ProductPackage.EPARAMETER_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ProductPackage.PARAMETER_ELEMENT__TYPE:
+      case ProductPackage.EPARAMETER_ELEMENT__TYPE:
         setType(TYPE_EDEFAULT);
         return;
     }
@@ -203,10 +204,10 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.PARAMETER_ELEMENT__NAME:
+      case ProductPackage.EPARAMETER_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ProductPackage.PARAMETER_ELEMENT__TYPE:
-        return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+      case ProductPackage.EPARAMETER_ELEMENT__TYPE:
+        return type != TYPE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -230,4 +231,4 @@ public class ParameterElementImpl extends MinimalEObjectImpl.Container implement
     return result.toString();
   }
 
-} //ParameterElementImpl
+} //EParameterElementImpl

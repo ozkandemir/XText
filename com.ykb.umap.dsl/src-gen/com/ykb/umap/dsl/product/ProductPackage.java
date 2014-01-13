@@ -4,6 +4,7 @@ package com.ykb.umap.dsl.product;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -57,14 +58,14 @@ public interface ProductPackage extends EPackage
   ProductPackage eINSTANCE = com.ykb.umap.dsl.product.impl.ProductPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ProductImpl <em>Product</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EProductImpl <em>EProduct</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.ProductImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getProduct()
+   * @see com.ykb.umap.dsl.product.impl.EProductImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEProduct()
    * @generated
    */
-  int PRODUCT = 0;
+  int EPRODUCT = 0;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -73,72 +74,100 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRODUCT__ELEMENTS = 0;
+  int EPRODUCT__ELEMENTS = 0;
 
   /**
-   * The number of structural features of the '<em>Product</em>' class.
+   * The number of structural features of the '<em>EProduct</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRODUCT_FEATURE_COUNT = 1;
+  int EPRODUCT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ECompilationUnitImpl <em>ECompilation Unit</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.AbstractElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getAbstractElement()
+   * @see com.ykb.umap.dsl.product.impl.ECompilationUnitImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getECompilationUnit()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 1;
+  int ECOMPILATION_UNIT = 1;
 
   /**
-   * The feature id for the '<em><b>Namespace</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_ELEMENT__NAMESPACE = 0;
-
-  /**
-   * The feature id for the '<em><b>Use</b></em>' containment reference.
+   * The feature id for the '<em><b>Namespace Unit</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT__USE = 1;
+  int ECOMPILATION_UNIT__NAMESPACE_UNIT = 0;
 
   /**
-   * The feature id for the '<em><b>Product</b></em>' containment reference.
+   * The feature id for the '<em><b>Use Unit</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT__PRODUCT = 2;
+  int ECOMPILATION_UNIT__USE_UNIT = 1;
 
   /**
-   * The number of structural features of the '<em>Abstract Element</em>' class.
+   * The feature id for the '<em><b>Product Unit</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT_FEATURE_COUNT = 3;
+  int ECOMPILATION_UNIT__PRODUCT_UNIT = 2;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.NamespaceElementImpl <em>Namespace Element</em>}' class.
+   * The number of structural features of the '<em>ECompilation Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.NamespaceElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getNamespaceElement()
+   * @generated
+   * @ordered
+   */
+  int ECOMPILATION_UNIT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EUseUnitImpl <em>EUse Unit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ykb.umap.dsl.product.impl.EUseUnitImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEUseUnit()
    * @generated
    */
-  int NAMESPACE_ELEMENT = 2;
+  int EUSE_UNIT = 2;
+
+  /**
+   * The feature id for the '<em><b>Product Unit</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUSE_UNIT__PRODUCT_UNIT = 0;
+
+  /**
+   * The number of structural features of the '<em>EUse Unit</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EUSE_UNIT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ENamespaceUnitImpl <em>ENamespace Unit</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ykb.umap.dsl.product.impl.ENamespaceUnitImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getENamespaceUnit()
+   * @generated
+   */
+  int ENAMESPACE_UNIT = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,26 +176,26 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMESPACE_ELEMENT__NAME = 0;
+  int ENAMESPACE_UNIT__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Namespace Element</em>' class.
+   * The number of structural features of the '<em>ENamespace Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMESPACE_ELEMENT_FEATURE_COUNT = 1;
+  int ENAMESPACE_UNIT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ProductElementImpl <em>Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EProductUnitImpl <em>EProduct Unit</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.ProductElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getProductElement()
+   * @see com.ykb.umap.dsl.product.impl.EProductUnitImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEProductUnit()
    * @generated
    */
-  int PRODUCT_ELEMENT = 3;
+  int EPRODUCT_UNIT = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,72 +204,44 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRODUCT_ELEMENT__NAME = 0;
+  int EPRODUCT_UNIT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Parameters</b></em>' containment reference.
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRODUCT_ELEMENT__PARAMETERS = 1;
+  int EPRODUCT_UNIT__PARAMETERS = 1;
 
   /**
-   * The feature id for the '<em><b>Operation</b></em>' containment reference.
+   * The feature id for the '<em><b>Operation Unit</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRODUCT_ELEMENT__OPERATION = 2;
+  int EPRODUCT_UNIT__OPERATION_UNIT = 2;
 
   /**
-   * The number of structural features of the '<em>Element</em>' class.
+   * The number of structural features of the '<em>EProduct Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRODUCT_ELEMENT_FEATURE_COUNT = 3;
+  int EPRODUCT_UNIT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.MultiParameterElementImpl <em>Multi Parameter Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EParameterElementImpl <em>EParameter Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.MultiParameterElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getMultiParameterElement()
+   * @see com.ykb.umap.dsl.product.impl.EParameterElementImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEParameterElement()
    * @generated
    */
-  int MULTI_PARAMETER_ELEMENT = 4;
-
-  /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_PARAMETER_ELEMENT__PARAMS = 0;
-
-  /**
-   * The number of structural features of the '<em>Multi Parameter Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MULTI_PARAMETER_ELEMENT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ParameterElementImpl <em>Parameter Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.ParameterElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getParameterElement()
-   * @generated
-   */
-  int PARAMETER_ELEMENT = 5;
+  int EPARAMETER_ELEMENT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -249,7 +250,7 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETER_ELEMENT__NAME = 0;
+  int EPARAMETER_ELEMENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -258,26 +259,26 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETER_ELEMENT__TYPE = 1;
+  int EPARAMETER_ELEMENT__TYPE = 1;
 
   /**
-   * The number of structural features of the '<em>Parameter Element</em>' class.
+   * The number of structural features of the '<em>EParameter Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAMETER_ELEMENT_FEATURE_COUNT = 2;
+  int EPARAMETER_ELEMENT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.OperationElementImpl <em>Operation Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl <em>EOperation Unit</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.OperationElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getOperationElement()
+   * @see com.ykb.umap.dsl.product.impl.EOperationUnitImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEOperationUnit()
    * @generated
    */
-  int OPERATION_ELEMENT = 6;
+  int EOPERATION_UNIT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -286,35 +287,7 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION_ELEMENT__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Controls</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION_ELEMENT__CONTROLS = 1;
-
-  /**
-   * The number of structural features of the '<em>Operation Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION_ELEMENT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ControlBlockElementImpl <em>Control Block Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.ControlBlockElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getControlBlockElement()
-   * @generated
-   */
-  int CONTROL_BLOCK_ELEMENT = 7;
+  int EOPERATION_UNIT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Controls</b></em>' containment reference list.
@@ -323,26 +296,26 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROL_BLOCK_ELEMENT__CONTROLS = 0;
+  int EOPERATION_UNIT__CONTROLS = 1;
 
   /**
-   * The number of structural features of the '<em>Control Block Element</em>' class.
+   * The number of structural features of the '<em>EOperation Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROL_BLOCK_ELEMENT_FEATURE_COUNT = 1;
+  int EOPERATION_UNIT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ControlStatementElementImpl <em>Control Statement Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EControlElementImpl <em>EControl Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.ControlStatementElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getControlStatementElement()
+   * @see com.ykb.umap.dsl.product.impl.EControlElementImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEControlElement()
    * @generated
    */
-  int CONTROL_STATEMENT_ELEMENT = 8;
+  int ECONTROL_ELEMENT = 7;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -351,35 +324,35 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROL_STATEMENT_ELEMENT__EXPRESSION = 0;
+  int ECONTROL_ELEMENT__EXPRESSION = 0;
 
   /**
-   * The feature id for the '<em><b>Statement</b></em>' attribute.
+   * The feature id for the '<em><b>Control Statement</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROL_STATEMENT_ELEMENT__STATEMENT = 1;
+  int ECONTROL_ELEMENT__CONTROL_STATEMENT = 1;
 
   /**
-   * The number of structural features of the '<em>Control Statement Element</em>' class.
+   * The number of structural features of the '<em>EControl Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROL_STATEMENT_ELEMENT_FEATURE_COUNT = 2;
+  int ECONTROL_ELEMENT_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.ExpressionElementImpl <em>Expression Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EExpressionElementImpl <em>EExpression Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.ExpressionElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getExpressionElement()
+   * @see com.ykb.umap.dsl.product.impl.EExpressionElementImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEExpressionElement()
    * @generated
    */
-  int EXPRESSION_ELEMENT = 9;
+  int EEXPRESSION_ELEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -388,7 +361,7 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_ELEMENT__PARAMETER = 0;
+  int EEXPRESSION_ELEMENT__PARAMETER = 0;
 
   /**
    * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -397,433 +370,403 @@ public interface ProductPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_ELEMENT__OPERATOR = 1;
+  int EEXPRESSION_ELEMENT__OPERATOR = 1;
 
   /**
-   * The feature id for the '<em><b>Right</b></em>' attribute.
+   * The feature id for the '<em><b>Right</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_ELEMENT__RIGHT = 2;
+  int EEXPRESSION_ELEMENT__RIGHT = 2;
 
   /**
-   * The number of structural features of the '<em>Expression Element</em>' class.
+   * The number of structural features of the '<em>EExpression Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_ELEMENT_FEATURE_COUNT = 3;
+  int EEXPRESSION_ELEMENT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.StaticOperationElementImpl <em>Static Operation Element</em>}' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EControlStatementElementImpl <em>EControl Statement Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.StaticOperationElementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getStaticOperationElement()
+   * @see com.ykb.umap.dsl.product.impl.EControlStatementElementImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEControlStatementElement()
    * @generated
    */
-  int STATIC_OPERATION_ELEMENT = 10;
+  int ECONTROL_STATEMENT_ELEMENT = 9;
 
   /**
-   * The feature id for the '<em><b>Op Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATIC_OPERATION_ELEMENT__OP_NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Static Operation Element</em>' class.
+   * The feature id for the '<em><b>Message</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATIC_OPERATION_ELEMENT_FEATURE_COUNT = 1;
+  int ECONTROL_STATEMENT_ELEMENT__MESSAGE = 0;
 
   /**
-   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.UseStatementImpl <em>Use Statement</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.ykb.umap.dsl.product.impl.UseStatementImpl
-   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getUseStatement()
-   * @generated
-   */
-  int USE_STATEMENT = 11;
-
-  /**
-   * The feature id for the '<em><b>Product</b></em>' reference.
+   * The number of structural features of the '<em>EControl Statement Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USE_STATEMENT__PRODUCT = 0;
+  int ECONTROL_STATEMENT_ELEMENT_FEATURE_COUNT = 1;
 
   /**
-   * The number of structural features of the '<em>Use Statement</em>' class.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.UMAPDataTypes <em>UMAP Data Types</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see com.ykb.umap.dsl.product.UMAPDataTypes
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getUMAPDataTypes()
    * @generated
-   * @ordered
    */
-  int USE_STATEMENT_FEATURE_COUNT = 1;
-
+  int UMAP_DATA_TYPES = 10;
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.Product <em>Product</em>}'.
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.OPERATORS <em>OPERATORS</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Product</em>'.
-   * @see com.ykb.umap.dsl.product.Product
+   * @see com.ykb.umap.dsl.product.OPERATORS
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getOPERATORS()
    * @generated
    */
-  EClass getProduct();
+  int OPERATORS = 11;
+
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.Product#getElements <em>Elements</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EProduct <em>EProduct</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>EProduct</em>'.
+   * @see com.ykb.umap.dsl.product.EProduct
+   * @generated
+   */
+  EClass getEProduct();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.EProduct#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see com.ykb.umap.dsl.product.Product#getElements()
-   * @see #getProduct()
+   * @see com.ykb.umap.dsl.product.EProduct#getElements()
+   * @see #getEProduct()
    * @generated
    */
-  EReference getProduct_Elements();
+  EReference getEProduct_Elements();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.AbstractElement <em>Abstract Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ECompilationUnit <em>ECompilation Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Element</em>'.
-   * @see com.ykb.umap.dsl.product.AbstractElement
+   * @return the meta object for class '<em>ECompilation Unit</em>'.
+   * @see com.ykb.umap.dsl.product.ECompilationUnit
    * @generated
    */
-  EClass getAbstractElement();
+  EClass getECompilationUnit();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.AbstractElement#getNamespace <em>Namespace</em>}'.
+   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.ECompilationUnit#getNamespaceUnit <em>Namespace Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Namespace</em>'.
-   * @see com.ykb.umap.dsl.product.AbstractElement#getNamespace()
-   * @see #getAbstractElement()
+   * @return the meta object for the containment reference '<em>Namespace Unit</em>'.
+   * @see com.ykb.umap.dsl.product.ECompilationUnit#getNamespaceUnit()
+   * @see #getECompilationUnit()
    * @generated
    */
-  EReference getAbstractElement_Namespace();
+  EReference getECompilationUnit_NamespaceUnit();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.AbstractElement#getUse <em>Use</em>}'.
+   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.ECompilationUnit#getUseUnit <em>Use Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Use</em>'.
-   * @see com.ykb.umap.dsl.product.AbstractElement#getUse()
-   * @see #getAbstractElement()
+   * @return the meta object for the containment reference '<em>Use Unit</em>'.
+   * @see com.ykb.umap.dsl.product.ECompilationUnit#getUseUnit()
+   * @see #getECompilationUnit()
    * @generated
    */
-  EReference getAbstractElement_Use();
+  EReference getECompilationUnit_UseUnit();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.AbstractElement#getProduct <em>Product</em>}'.
+   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.ECompilationUnit#getProductUnit <em>Product Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Product</em>'.
-   * @see com.ykb.umap.dsl.product.AbstractElement#getProduct()
-   * @see #getAbstractElement()
+   * @return the meta object for the containment reference '<em>Product Unit</em>'.
+   * @see com.ykb.umap.dsl.product.ECompilationUnit#getProductUnit()
+   * @see #getECompilationUnit()
    * @generated
    */
-  EReference getAbstractElement_Product();
+  EReference getECompilationUnit_ProductUnit();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.NamespaceElement <em>Namespace Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EUseUnit <em>EUse Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Namespace Element</em>'.
-   * @see com.ykb.umap.dsl.product.NamespaceElement
+   * @return the meta object for class '<em>EUse Unit</em>'.
+   * @see com.ykb.umap.dsl.product.EUseUnit
    * @generated
    */
-  EClass getNamespaceElement();
+  EClass getEUseUnit();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.NamespaceElement#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link com.ykb.umap.dsl.product.EUseUnit#getProductUnit <em>Product Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ykb.umap.dsl.product.NamespaceElement#getName()
-   * @see #getNamespaceElement()
+   * @return the meta object for the reference '<em>Product Unit</em>'.
+   * @see com.ykb.umap.dsl.product.EUseUnit#getProductUnit()
+   * @see #getEUseUnit()
    * @generated
    */
-  EAttribute getNamespaceElement_Name();
+  EReference getEUseUnit_ProductUnit();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ProductElement <em>Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ENamespaceUnit <em>ENamespace Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element</em>'.
-   * @see com.ykb.umap.dsl.product.ProductElement
+   * @return the meta object for class '<em>ENamespace Unit</em>'.
+   * @see com.ykb.umap.dsl.product.ENamespaceUnit
    * @generated
    */
-  EClass getProductElement();
+  EClass getENamespaceUnit();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ProductElement#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ykb.umap.dsl.product.ProductElement#getName()
-   * @see #getProductElement()
-   * @generated
-   */
-  EAttribute getProductElement_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.ProductElement#getParameters <em>Parameters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Parameters</em>'.
-   * @see com.ykb.umap.dsl.product.ProductElement#getParameters()
-   * @see #getProductElement()
-   * @generated
-   */
-  EReference getProductElement_Parameters();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.ProductElement#getOperation <em>Operation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operation</em>'.
-   * @see com.ykb.umap.dsl.product.ProductElement#getOperation()
-   * @see #getProductElement()
-   * @generated
-   */
-  EReference getProductElement_Operation();
-
-  /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.MultiParameterElement <em>Multi Parameter Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Multi Parameter Element</em>'.
-   * @see com.ykb.umap.dsl.product.MultiParameterElement
-   * @generated
-   */
-  EClass getMultiParameterElement();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.MultiParameterElement#getParams <em>Params</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see com.ykb.umap.dsl.product.MultiParameterElement#getParams()
-   * @see #getMultiParameterElement()
-   * @generated
-   */
-  EReference getMultiParameterElement_Params();
-
-  /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ParameterElement <em>Parameter Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Parameter Element</em>'.
-   * @see com.ykb.umap.dsl.product.ParameterElement
-   * @generated
-   */
-  EClass getParameterElement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ParameterElement#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ENamespaceUnit#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ykb.umap.dsl.product.ParameterElement#getName()
-   * @see #getParameterElement()
+   * @see com.ykb.umap.dsl.product.ENamespaceUnit#getName()
+   * @see #getENamespaceUnit()
    * @generated
    */
-  EAttribute getParameterElement_Name();
+  EAttribute getENamespaceUnit_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ParameterElement#getType <em>Type</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EProductUnit <em>EProduct Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>EProduct Unit</em>'.
+   * @see com.ykb.umap.dsl.product.EProductUnit
+   * @generated
+   */
+  EClass getEProductUnit();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EProductUnit#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ykb.umap.dsl.product.EProductUnit#getName()
+   * @see #getEProductUnit()
+   * @generated
+   */
+  EAttribute getEProductUnit_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.EProductUnit#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see com.ykb.umap.dsl.product.EProductUnit#getParameters()
+   * @see #getEProductUnit()
+   * @generated
+   */
+  EReference getEProductUnit_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.EProductUnit#getOperationUnit <em>Operation Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operation Unit</em>'.
+   * @see com.ykb.umap.dsl.product.EProductUnit#getOperationUnit()
+   * @see #getEProductUnit()
+   * @generated
+   */
+  EReference getEProductUnit_OperationUnit();
+
+  /**
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EParameterElement <em>EParameter Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>EParameter Element</em>'.
+   * @see com.ykb.umap.dsl.product.EParameterElement
+   * @generated
+   */
+  EClass getEParameterElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EParameterElement#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ykb.umap.dsl.product.EParameterElement#getName()
+   * @see #getEParameterElement()
+   * @generated
+   */
+  EAttribute getEParameterElement_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EParameterElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Type</em>'.
-   * @see com.ykb.umap.dsl.product.ParameterElement#getType()
-   * @see #getParameterElement()
+   * @see com.ykb.umap.dsl.product.EParameterElement#getType()
+   * @see #getEParameterElement()
    * @generated
    */
-  EAttribute getParameterElement_Type();
+  EAttribute getEParameterElement_Type();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.OperationElement <em>Operation Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EOperationUnit <em>EOperation Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation Element</em>'.
-   * @see com.ykb.umap.dsl.product.OperationElement
+   * @return the meta object for class '<em>EOperation Unit</em>'.
+   * @see com.ykb.umap.dsl.product.EOperationUnit
    * @generated
    */
-  EClass getOperationElement();
+  EClass getEOperationUnit();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.OperationElement#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EOperationUnit#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ykb.umap.dsl.product.OperationElement#getName()
-   * @see #getOperationElement()
+   * @see com.ykb.umap.dsl.product.EOperationUnit#getName()
+   * @see #getEOperationUnit()
    * @generated
    */
-  EAttribute getOperationElement_Name();
+  EAttribute getEOperationUnit_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.OperationElement#getControls <em>Controls</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Controls</em>'.
-   * @see com.ykb.umap.dsl.product.OperationElement#getControls()
-   * @see #getOperationElement()
-   * @generated
-   */
-  EReference getOperationElement_Controls();
-
-  /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ControlBlockElement <em>Control Block Element</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Control Block Element</em>'.
-   * @see com.ykb.umap.dsl.product.ControlBlockElement
-   * @generated
-   */
-  EClass getControlBlockElement();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.ControlBlockElement#getControls <em>Controls</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.EOperationUnit#getControls <em>Controls</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Controls</em>'.
-   * @see com.ykb.umap.dsl.product.ControlBlockElement#getControls()
-   * @see #getControlBlockElement()
+   * @see com.ykb.umap.dsl.product.EOperationUnit#getControls()
+   * @see #getEOperationUnit()
    * @generated
    */
-  EReference getControlBlockElement_Controls();
+  EReference getEOperationUnit_Controls();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ControlStatementElement <em>Control Statement Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EControlElement <em>EControl Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Control Statement Element</em>'.
-   * @see com.ykb.umap.dsl.product.ControlStatementElement
+   * @return the meta object for class '<em>EControl Element</em>'.
+   * @see com.ykb.umap.dsl.product.EControlElement
    * @generated
    */
-  EClass getControlStatementElement();
+  EClass getEControlElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.ControlStatementElement#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.EControlElement#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see com.ykb.umap.dsl.product.ControlStatementElement#getExpression()
-   * @see #getControlStatementElement()
+   * @see com.ykb.umap.dsl.product.EControlElement#getExpression()
+   * @see #getEControlElement()
    * @generated
    */
-  EReference getControlStatementElement_Expression();
+  EReference getEControlElement_Expression();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ControlStatementElement#getStatement <em>Statement</em>}'.
+   * Returns the meta object for the containment reference '{@link com.ykb.umap.dsl.product.EControlElement#getControlStatement <em>Control Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Statement</em>'.
-   * @see com.ykb.umap.dsl.product.ControlStatementElement#getStatement()
-   * @see #getControlStatementElement()
+   * @return the meta object for the containment reference '<em>Control Statement</em>'.
+   * @see com.ykb.umap.dsl.product.EControlElement#getControlStatement()
+   * @see #getEControlElement()
    * @generated
    */
-  EAttribute getControlStatementElement_Statement();
+  EReference getEControlElement_ControlStatement();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.ExpressionElement <em>Expression Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EExpressionElement <em>EExpression Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression Element</em>'.
-   * @see com.ykb.umap.dsl.product.ExpressionElement
+   * @return the meta object for class '<em>EExpression Element</em>'.
+   * @see com.ykb.umap.dsl.product.EExpressionElement
    * @generated
    */
-  EClass getExpressionElement();
+  EClass getEExpressionElement();
 
   /**
-   * Returns the meta object for the reference '{@link com.ykb.umap.dsl.product.ExpressionElement#getParameter <em>Parameter</em>}'.
+   * Returns the meta object for the reference '{@link com.ykb.umap.dsl.product.EExpressionElement#getParameter <em>Parameter</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Parameter</em>'.
-   * @see com.ykb.umap.dsl.product.ExpressionElement#getParameter()
-   * @see #getExpressionElement()
+   * @see com.ykb.umap.dsl.product.EExpressionElement#getParameter()
+   * @see #getEExpressionElement()
    * @generated
    */
-  EReference getExpressionElement_Parameter();
+  EReference getEExpressionElement_Parameter();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ExpressionElement#getOperator <em>Operator</em>}'.
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EExpressionElement#getOperator <em>Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Operator</em>'.
-   * @see com.ykb.umap.dsl.product.ExpressionElement#getOperator()
-   * @see #getExpressionElement()
+   * @see com.ykb.umap.dsl.product.EExpressionElement#getOperator()
+   * @see #getEExpressionElement()
    * @generated
    */
-  EAttribute getExpressionElement_Operator();
+  EAttribute getEExpressionElement_Operator();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.ExpressionElement#getRight <em>Right</em>}'.
+   * Returns the meta object for the reference '{@link com.ykb.umap.dsl.product.EExpressionElement#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Right</em>'.
-   * @see com.ykb.umap.dsl.product.ExpressionElement#getRight()
-   * @see #getExpressionElement()
+   * @return the meta object for the reference '<em>Right</em>'.
+   * @see com.ykb.umap.dsl.product.EExpressionElement#getRight()
+   * @see #getEExpressionElement()
    * @generated
    */
-  EAttribute getExpressionElement_Right();
+  EReference getEExpressionElement_Right();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.StaticOperationElement <em>Static Operation Element</em>}'.
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EControlStatementElement <em>EControl Statement Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Static Operation Element</em>'.
-   * @see com.ykb.umap.dsl.product.StaticOperationElement
+   * @return the meta object for class '<em>EControl Statement Element</em>'.
+   * @see com.ykb.umap.dsl.product.EControlStatementElement
    * @generated
    */
-  EClass getStaticOperationElement();
+  EClass getEControlStatementElement();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.StaticOperationElement#getOpName <em>Op Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EControlStatementElement#getMessage <em>Message</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op Name</em>'.
-   * @see com.ykb.umap.dsl.product.StaticOperationElement#getOpName()
-   * @see #getStaticOperationElement()
+   * @return the meta object for the attribute '<em>Message</em>'.
+   * @see com.ykb.umap.dsl.product.EControlStatementElement#getMessage()
+   * @see #getEControlStatementElement()
    * @generated
    */
-  EAttribute getStaticOperationElement_OpName();
+  EAttribute getEControlStatementElement_Message();
 
   /**
-   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.UseStatement <em>Use Statement</em>}'.
+   * Returns the meta object for enum '{@link com.ykb.umap.dsl.product.UMAPDataTypes <em>UMAP Data Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Use Statement</em>'.
-   * @see com.ykb.umap.dsl.product.UseStatement
+   * @return the meta object for enum '<em>UMAP Data Types</em>'.
+   * @see com.ykb.umap.dsl.product.UMAPDataTypes
    * @generated
    */
-  EClass getUseStatement();
+  EEnum getUMAPDataTypes();
 
   /**
-   * Returns the meta object for the reference '{@link com.ykb.umap.dsl.product.UseStatement#getProduct <em>Product</em>}'.
+   * Returns the meta object for enum '{@link com.ykb.umap.dsl.product.OPERATORS <em>OPERATORS</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Product</em>'.
-   * @see com.ykb.umap.dsl.product.UseStatement#getProduct()
-   * @see #getUseStatement()
+   * @return the meta object for enum '<em>OPERATORS</em>'.
+   * @see com.ykb.umap.dsl.product.OPERATORS
    * @generated
    */
-  EReference getUseStatement_Product();
+  EEnum getOPERATORS();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -849,14 +792,14 @@ public interface ProductPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ProductImpl <em>Product</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EProductImpl <em>EProduct</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.ProductImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getProduct()
+     * @see com.ykb.umap.dsl.product.impl.EProductImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEProduct()
      * @generated
      */
-    EClass PRODUCT = eINSTANCE.getProduct();
+    EClass EPRODUCT = eINSTANCE.getEProduct();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -864,121 +807,69 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRODUCT__ELEMENTS = eINSTANCE.getProduct_Elements();
+    EReference EPRODUCT__ELEMENTS = eINSTANCE.getEProduct_Elements();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.AbstractElementImpl <em>Abstract Element</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ECompilationUnitImpl <em>ECompilation Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.AbstractElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getAbstractElement()
+     * @see com.ykb.umap.dsl.product.impl.ECompilationUnitImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getECompilationUnit()
      * @generated
      */
-    EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
+    EClass ECOMPILATION_UNIT = eINSTANCE.getECompilationUnit();
 
     /**
-     * The meta object literal for the '<em><b>Namespace</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ABSTRACT_ELEMENT__NAMESPACE = eINSTANCE.getAbstractElement_Namespace();
-
-    /**
-     * The meta object literal for the '<em><b>Use</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Namespace Unit</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ABSTRACT_ELEMENT__USE = eINSTANCE.getAbstractElement_Use();
+    EReference ECOMPILATION_UNIT__NAMESPACE_UNIT = eINSTANCE.getECompilationUnit_NamespaceUnit();
 
     /**
-     * The meta object literal for the '<em><b>Product</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Use Unit</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ABSTRACT_ELEMENT__PRODUCT = eINSTANCE.getAbstractElement_Product();
+    EReference ECOMPILATION_UNIT__USE_UNIT = eINSTANCE.getECompilationUnit_UseUnit();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.NamespaceElementImpl <em>Namespace Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.NamespaceElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getNamespaceElement()
-     * @generated
-     */
-    EClass NAMESPACE_ELEMENT = eINSTANCE.getNamespaceElement();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Product Unit</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMESPACE_ELEMENT__NAME = eINSTANCE.getNamespaceElement_Name();
+    EReference ECOMPILATION_UNIT__PRODUCT_UNIT = eINSTANCE.getECompilationUnit_ProductUnit();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ProductElementImpl <em>Element</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EUseUnitImpl <em>EUse Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.ProductElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getProductElement()
+     * @see com.ykb.umap.dsl.product.impl.EUseUnitImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEUseUnit()
      * @generated
      */
-    EClass PRODUCT_ELEMENT = eINSTANCE.getProductElement();
+    EClass EUSE_UNIT = eINSTANCE.getEUseUnit();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PRODUCT_ELEMENT__NAME = eINSTANCE.getProductElement_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Product Unit</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRODUCT_ELEMENT__PARAMETERS = eINSTANCE.getProductElement_Parameters();
+    EReference EUSE_UNIT__PRODUCT_UNIT = eINSTANCE.getEUseUnit_ProductUnit();
 
     /**
-     * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ENamespaceUnitImpl <em>ENamespace Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.ykb.umap.dsl.product.impl.ENamespaceUnitImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getENamespaceUnit()
      * @generated
      */
-    EReference PRODUCT_ELEMENT__OPERATION = eINSTANCE.getProductElement_Operation();
-
-    /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.MultiParameterElementImpl <em>Multi Parameter Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.MultiParameterElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getMultiParameterElement()
-     * @generated
-     */
-    EClass MULTI_PARAMETER_ELEMENT = eINSTANCE.getMultiParameterElement();
-
-    /**
-     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MULTI_PARAMETER_ELEMENT__PARAMS = eINSTANCE.getMultiParameterElement_Params();
-
-    /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ParameterElementImpl <em>Parameter Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.ParameterElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getParameterElement()
-     * @generated
-     */
-    EClass PARAMETER_ELEMENT = eINSTANCE.getParameterElement();
+    EClass ENAMESPACE_UNIT = eINSTANCE.getENamespaceUnit();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -986,7 +877,59 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAMETER_ELEMENT__NAME = eINSTANCE.getParameterElement_Name();
+    EAttribute ENAMESPACE_UNIT__NAME = eINSTANCE.getENamespaceUnit_Name();
+
+    /**
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EProductUnitImpl <em>EProduct Unit</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ykb.umap.dsl.product.impl.EProductUnitImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEProductUnit()
+     * @generated
+     */
+    EClass EPRODUCT_UNIT = eINSTANCE.getEProductUnit();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EPRODUCT_UNIT__NAME = eINSTANCE.getEProductUnit_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EPRODUCT_UNIT__PARAMETERS = eINSTANCE.getEProductUnit_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Operation Unit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EPRODUCT_UNIT__OPERATION_UNIT = eINSTANCE.getEProductUnit_OperationUnit();
+
+    /**
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EParameterElementImpl <em>EParameter Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ykb.umap.dsl.product.impl.EParameterElementImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEParameterElement()
+     * @generated
+     */
+    EClass EPARAMETER_ELEMENT = eINSTANCE.getEParameterElement();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EPARAMETER_ELEMENT__NAME = eINSTANCE.getEParameterElement_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -994,17 +937,17 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PARAMETER_ELEMENT__TYPE = eINSTANCE.getParameterElement_Type();
+    EAttribute EPARAMETER_ELEMENT__TYPE = eINSTANCE.getEParameterElement_Type();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.OperationElementImpl <em>Operation Element</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl <em>EOperation Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.OperationElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getOperationElement()
+     * @see com.ykb.umap.dsl.product.impl.EOperationUnitImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEOperationUnit()
      * @generated
      */
-    EClass OPERATION_ELEMENT = eINSTANCE.getOperationElement();
+    EClass EOPERATION_UNIT = eINSTANCE.getEOperationUnit();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1012,25 +955,7 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATION_ELEMENT__NAME = eINSTANCE.getOperationElement_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Controls</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OPERATION_ELEMENT__CONTROLS = eINSTANCE.getOperationElement_Controls();
-
-    /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ControlBlockElementImpl <em>Control Block Element</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.ControlBlockElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getControlBlockElement()
-     * @generated
-     */
-    EClass CONTROL_BLOCK_ELEMENT = eINSTANCE.getControlBlockElement();
+    EAttribute EOPERATION_UNIT__NAME = eINSTANCE.getEOperationUnit_Name();
 
     /**
      * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
@@ -1038,17 +963,17 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONTROL_BLOCK_ELEMENT__CONTROLS = eINSTANCE.getControlBlockElement_Controls();
+    EReference EOPERATION_UNIT__CONTROLS = eINSTANCE.getEOperationUnit_Controls();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ControlStatementElementImpl <em>Control Statement Element</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EControlElementImpl <em>EControl Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.ControlStatementElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getControlStatementElement()
+     * @see com.ykb.umap.dsl.product.impl.EControlElementImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEControlElement()
      * @generated
      */
-    EClass CONTROL_STATEMENT_ELEMENT = eINSTANCE.getControlStatementElement();
+    EClass ECONTROL_ELEMENT = eINSTANCE.getEControlElement();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -1056,25 +981,25 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONTROL_STATEMENT_ELEMENT__EXPRESSION = eINSTANCE.getControlStatementElement_Expression();
+    EReference ECONTROL_ELEMENT__EXPRESSION = eINSTANCE.getEControlElement_Expression();
 
     /**
-     * The meta object literal for the '<em><b>Statement</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Control Statement</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONTROL_STATEMENT_ELEMENT__STATEMENT = eINSTANCE.getControlStatementElement_Statement();
+    EReference ECONTROL_ELEMENT__CONTROL_STATEMENT = eINSTANCE.getEControlElement_ControlStatement();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.ExpressionElementImpl <em>Expression Element</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EExpressionElementImpl <em>EExpression Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.ExpressionElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getExpressionElement()
+     * @see com.ykb.umap.dsl.product.impl.EExpressionElementImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEExpressionElement()
      * @generated
      */
-    EClass EXPRESSION_ELEMENT = eINSTANCE.getExpressionElement();
+    EClass EEXPRESSION_ELEMENT = eINSTANCE.getEExpressionElement();
 
     /**
      * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
@@ -1082,7 +1007,7 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION_ELEMENT__PARAMETER = eINSTANCE.getExpressionElement_Parameter();
+    EReference EEXPRESSION_ELEMENT__PARAMETER = eINSTANCE.getEExpressionElement_Parameter();
 
     /**
      * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -1090,51 +1015,53 @@ public interface ProductPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION_ELEMENT__OPERATOR = eINSTANCE.getExpressionElement_Operator();
+    EAttribute EEXPRESSION_ELEMENT__OPERATOR = eINSTANCE.getEExpressionElement_Operator();
 
     /**
-     * The meta object literal for the '<em><b>Right</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Right</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION_ELEMENT__RIGHT = eINSTANCE.getExpressionElement_Right();
+    EReference EEXPRESSION_ELEMENT__RIGHT = eINSTANCE.getEExpressionElement_Right();
 
     /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.StaticOperationElementImpl <em>Static Operation Element</em>}' class.
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EControlStatementElementImpl <em>EControl Statement Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.StaticOperationElementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getStaticOperationElement()
+     * @see com.ykb.umap.dsl.product.impl.EControlStatementElementImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEControlStatementElement()
      * @generated
      */
-    EClass STATIC_OPERATION_ELEMENT = eINSTANCE.getStaticOperationElement();
+    EClass ECONTROL_STATEMENT_ELEMENT = eINSTANCE.getEControlStatementElement();
 
     /**
-     * The meta object literal for the '<em><b>Op Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STATIC_OPERATION_ELEMENT__OP_NAME = eINSTANCE.getStaticOperationElement_OpName();
-
-    /**
-     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.UseStatementImpl <em>Use Statement</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.ykb.umap.dsl.product.impl.UseStatementImpl
-     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getUseStatement()
-     * @generated
-     */
-    EClass USE_STATEMENT = eINSTANCE.getUseStatement();
-
-    /**
-     * The meta object literal for the '<em><b>Product</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference USE_STATEMENT__PRODUCT = eINSTANCE.getUseStatement_Product();
+    EAttribute ECONTROL_STATEMENT_ELEMENT__MESSAGE = eINSTANCE.getEControlStatementElement_Message();
+
+    /**
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.UMAPDataTypes <em>UMAP Data Types</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ykb.umap.dsl.product.UMAPDataTypes
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getUMAPDataTypes()
+     * @generated
+     */
+    EEnum UMAP_DATA_TYPES = eINSTANCE.getUMAPDataTypes();
+
+    /**
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.OPERATORS <em>OPERATORS</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ykb.umap.dsl.product.OPERATORS
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getOPERATORS()
+     * @generated
+     */
+    EEnum OPERATORS = eINSTANCE.getOPERATORS();
 
   }
 

@@ -6,21 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Namespace Element</b></em>'.
+ * A representation of the model object '<em><b>ENamespace Unit</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.NamespaceElement#getName <em>Name</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.ENamespaceUnit#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.ykb.umap.dsl.product.ProductPackage#getNamespaceElement()
+ * @see com.ykb.umap.dsl.product.ProductPackage#getENamespaceUnit()
  * @model
  * @generated
  */
-public interface NamespaceElement extends EObject
+public interface ENamespaceUnit extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface NamespaceElement extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.ykb.umap.dsl.product.ProductPackage#getNamespaceElement_Name()
+   * @see com.ykb.umap.dsl.product.ProductPackage#getENamespaceUnit_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.ykb.umap.dsl.product.NamespaceElement#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.ykb.umap.dsl.product.ENamespaceUnit#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface NamespaceElement extends EObject
    */
   void setName(String value);
 
-} // NamespaceElement
+} // ENamespaceUnit

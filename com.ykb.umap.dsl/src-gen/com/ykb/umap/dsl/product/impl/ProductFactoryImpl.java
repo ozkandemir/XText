@@ -5,6 +5,7 @@ package com.ykb.umap.dsl.product.impl;
 import com.ykb.umap.dsl.product.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -64,18 +65,16 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
   {
     switch (eClass.getClassifierID())
     {
-      case ProductPackage.PRODUCT: return createProduct();
-      case ProductPackage.ABSTRACT_ELEMENT: return createAbstractElement();
-      case ProductPackage.NAMESPACE_ELEMENT: return createNamespaceElement();
-      case ProductPackage.PRODUCT_ELEMENT: return createProductElement();
-      case ProductPackage.MULTI_PARAMETER_ELEMENT: return createMultiParameterElement();
-      case ProductPackage.PARAMETER_ELEMENT: return createParameterElement();
-      case ProductPackage.OPERATION_ELEMENT: return createOperationElement();
-      case ProductPackage.CONTROL_BLOCK_ELEMENT: return createControlBlockElement();
-      case ProductPackage.CONTROL_STATEMENT_ELEMENT: return createControlStatementElement();
-      case ProductPackage.EXPRESSION_ELEMENT: return createExpressionElement();
-      case ProductPackage.STATIC_OPERATION_ELEMENT: return createStaticOperationElement();
-      case ProductPackage.USE_STATEMENT: return createUseStatement();
+      case ProductPackage.EPRODUCT: return createEProduct();
+      case ProductPackage.ECOMPILATION_UNIT: return createECompilationUnit();
+      case ProductPackage.EUSE_UNIT: return createEUseUnit();
+      case ProductPackage.ENAMESPACE_UNIT: return createENamespaceUnit();
+      case ProductPackage.EPRODUCT_UNIT: return createEProductUnit();
+      case ProductPackage.EPARAMETER_ELEMENT: return createEParameterElement();
+      case ProductPackage.EOPERATION_UNIT: return createEOperationUnit();
+      case ProductPackage.ECONTROL_ELEMENT: return createEControlElement();
+      case ProductPackage.EEXPRESSION_ELEMENT: return createEExpressionElement();
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT: return createEControlStatementElement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -86,10 +85,18 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Product createProduct()
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
   {
-    ProductImpl product = new ProductImpl();
-    return product;
+    switch (eDataType.getClassifierID())
+    {
+      case ProductPackage.UMAP_DATA_TYPES:
+        return createUMAPDataTypesFromString(eDataType, initialValue);
+      case ProductPackage.OPERATORS:
+        return createOPERATORSFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
   }
 
   /**
@@ -97,10 +104,18 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractElement createAbstractElement()
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
   {
-    AbstractElementImpl abstractElement = new AbstractElementImpl();
-    return abstractElement;
+    switch (eDataType.getClassifierID())
+    {
+      case ProductPackage.UMAP_DATA_TYPES:
+        return convertUMAPDataTypesToString(eDataType, instanceValue);
+      case ProductPackage.OPERATORS:
+        return convertOPERATORSToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
   }
 
   /**
@@ -108,10 +123,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public NamespaceElement createNamespaceElement()
+  public EProduct createEProduct()
   {
-    NamespaceElementImpl namespaceElement = new NamespaceElementImpl();
-    return namespaceElement;
+    EProductImpl eProduct = new EProductImpl();
+    return eProduct;
   }
 
   /**
@@ -119,10 +134,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProductElement createProductElement()
+  public ECompilationUnit createECompilationUnit()
   {
-    ProductElementImpl productElement = new ProductElementImpl();
-    return productElement;
+    ECompilationUnitImpl eCompilationUnit = new ECompilationUnitImpl();
+    return eCompilationUnit;
   }
 
   /**
@@ -130,10 +145,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MultiParameterElement createMultiParameterElement()
+  public EUseUnit createEUseUnit()
   {
-    MultiParameterElementImpl multiParameterElement = new MultiParameterElementImpl();
-    return multiParameterElement;
+    EUseUnitImpl eUseUnit = new EUseUnitImpl();
+    return eUseUnit;
   }
 
   /**
@@ -141,10 +156,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ParameterElement createParameterElement()
+  public ENamespaceUnit createENamespaceUnit()
   {
-    ParameterElementImpl parameterElement = new ParameterElementImpl();
-    return parameterElement;
+    ENamespaceUnitImpl eNamespaceUnit = new ENamespaceUnitImpl();
+    return eNamespaceUnit;
   }
 
   /**
@@ -152,10 +167,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public OperationElement createOperationElement()
+  public EProductUnit createEProductUnit()
   {
-    OperationElementImpl operationElement = new OperationElementImpl();
-    return operationElement;
+    EProductUnitImpl eProductUnit = new EProductUnitImpl();
+    return eProductUnit;
   }
 
   /**
@@ -163,10 +178,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ControlBlockElement createControlBlockElement()
+  public EParameterElement createEParameterElement()
   {
-    ControlBlockElementImpl controlBlockElement = new ControlBlockElementImpl();
-    return controlBlockElement;
+    EParameterElementImpl eParameterElement = new EParameterElementImpl();
+    return eParameterElement;
   }
 
   /**
@@ -174,10 +189,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ControlStatementElement createControlStatementElement()
+  public EOperationUnit createEOperationUnit()
   {
-    ControlStatementElementImpl controlStatementElement = new ControlStatementElementImpl();
-    return controlStatementElement;
+    EOperationUnitImpl eOperationUnit = new EOperationUnitImpl();
+    return eOperationUnit;
   }
 
   /**
@@ -185,10 +200,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ExpressionElement createExpressionElement()
+  public EControlElement createEControlElement()
   {
-    ExpressionElementImpl expressionElement = new ExpressionElementImpl();
-    return expressionElement;
+    EControlElementImpl eControlElement = new EControlElementImpl();
+    return eControlElement;
   }
 
   /**
@@ -196,10 +211,10 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StaticOperationElement createStaticOperationElement()
+  public EExpressionElement createEExpressionElement()
   {
-    StaticOperationElementImpl staticOperationElement = new StaticOperationElementImpl();
-    return staticOperationElement;
+    EExpressionElementImpl eExpressionElement = new EExpressionElementImpl();
+    return eExpressionElement;
   }
 
   /**
@@ -207,10 +222,54 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public UseStatement createUseStatement()
+  public EControlStatementElement createEControlStatementElement()
   {
-    UseStatementImpl useStatement = new UseStatementImpl();
-    return useStatement;
+    EControlStatementElementImpl eControlStatementElement = new EControlStatementElementImpl();
+    return eControlStatementElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UMAPDataTypes createUMAPDataTypesFromString(EDataType eDataType, String initialValue)
+  {
+    UMAPDataTypes result = UMAPDataTypes.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertUMAPDataTypesToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OPERATORS createOPERATORSFromString(EDataType eDataType, String initialValue)
+  {
+    OPERATORS result = OPERATORS.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOPERATORSToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

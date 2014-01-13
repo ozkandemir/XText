@@ -23,112 +23,94 @@ public interface ProductFactory extends EFactory
   ProductFactory eINSTANCE = com.ykb.umap.dsl.product.impl.ProductFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Product</em>'.
+   * Returns a new object of class '<em>EProduct</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Product</em>'.
+   * @return a new object of class '<em>EProduct</em>'.
    * @generated
    */
-  Product createProduct();
+  EProduct createEProduct();
 
   /**
-   * Returns a new object of class '<em>Abstract Element</em>'.
+   * Returns a new object of class '<em>ECompilation Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Abstract Element</em>'.
+   * @return a new object of class '<em>ECompilation Unit</em>'.
    * @generated
    */
-  AbstractElement createAbstractElement();
+  ECompilationUnit createECompilationUnit();
 
   /**
-   * Returns a new object of class '<em>Namespace Element</em>'.
+   * Returns a new object of class '<em>EUse Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Namespace Element</em>'.
+   * @return a new object of class '<em>EUse Unit</em>'.
    * @generated
    */
-  NamespaceElement createNamespaceElement();
+  EUseUnit createEUseUnit();
 
   /**
-   * Returns a new object of class '<em>Element</em>'.
+   * Returns a new object of class '<em>ENamespace Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element</em>'.
+   * @return a new object of class '<em>ENamespace Unit</em>'.
    * @generated
    */
-  ProductElement createProductElement();
+  ENamespaceUnit createENamespaceUnit();
 
   /**
-   * Returns a new object of class '<em>Multi Parameter Element</em>'.
+   * Returns a new object of class '<em>EProduct Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multi Parameter Element</em>'.
+   * @return a new object of class '<em>EProduct Unit</em>'.
    * @generated
    */
-  MultiParameterElement createMultiParameterElement();
+  EProductUnit createEProductUnit();
 
   /**
-   * Returns a new object of class '<em>Parameter Element</em>'.
+   * Returns a new object of class '<em>EParameter Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Parameter Element</em>'.
+   * @return a new object of class '<em>EParameter Element</em>'.
    * @generated
    */
-  ParameterElement createParameterElement();
+  EParameterElement createEParameterElement();
 
   /**
-   * Returns a new object of class '<em>Operation Element</em>'.
+   * Returns a new object of class '<em>EOperation Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Element</em>'.
+   * @return a new object of class '<em>EOperation Unit</em>'.
    * @generated
    */
-  OperationElement createOperationElement();
+  EOperationUnit createEOperationUnit();
 
   /**
-   * Returns a new object of class '<em>Control Block Element</em>'.
+   * Returns a new object of class '<em>EControl Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Control Block Element</em>'.
+   * @return a new object of class '<em>EControl Element</em>'.
    * @generated
    */
-  ControlBlockElement createControlBlockElement();
+  EControlElement createEControlElement();
 
   /**
-   * Returns a new object of class '<em>Control Statement Element</em>'.
+   * Returns a new object of class '<em>EExpression Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Control Statement Element</em>'.
+   * @return a new object of class '<em>EExpression Element</em>'.
    * @generated
    */
-  ControlStatementElement createControlStatementElement();
+  EExpressionElement createEExpressionElement();
 
   /**
-   * Returns a new object of class '<em>Expression Element</em>'.
+   * Returns a new object of class '<em>EControl Statement Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression Element</em>'.
+   * @return a new object of class '<em>EControl Statement Element</em>'.
    * @generated
    */
-  ExpressionElement createExpressionElement();
-
-  /**
-   * Returns a new object of class '<em>Static Operation Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Static Operation Element</em>'.
-   * @generated
-   */
-  StaticOperationElement createStaticOperationElement();
-
-  /**
-   * Returns a new object of class '<em>Use Statement</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Use Statement</em>'.
-   * @generated
-   */
-  UseStatement createUseStatement();
+  EControlStatementElement createEControlStatementElement();
 
   /**
    * Returns the package supported by this factory.

@@ -2,9 +2,9 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.ProductElement;
+import com.ykb.umap.dsl.product.EProductUnit;
+import com.ykb.umap.dsl.product.EUseUnit;
 import com.ykb.umap.dsl.product.ProductPackage;
-import com.ykb.umap.dsl.product.UseStatement;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,35 +16,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Use Statement</b></em>'.
+ * An implementation of the model object '<em><b>EUse Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.UseStatementImpl#getProduct <em>Product</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EUseUnitImpl#getProductUnit <em>Product Unit</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class UseStatementImpl extends MinimalEObjectImpl.Container implements UseStatement
+public class EUseUnitImpl extends MinimalEObjectImpl.Container implements EUseUnit
 {
   /**
-   * The cached value of the '{@link #getProduct() <em>Product</em>}' reference.
+   * The cached value of the '{@link #getProductUnit() <em>Product Unit</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProduct()
+   * @see #getProductUnit()
    * @generated
    * @ordered
    */
-  protected ProductElement product;
+  protected EProductUnit productUnit;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UseStatementImpl()
+  protected EUseUnitImpl()
   {
     super();
   }
@@ -57,7 +57,7 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.USE_STATEMENT;
+    return ProductPackage.Literals.EUSE_UNIT;
   }
 
   /**
@@ -65,19 +65,19 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProductElement getProduct()
+  public EProductUnit getProductUnit()
   {
-    if (product != null && product.eIsProxy())
+    if (productUnit != null && productUnit.eIsProxy())
     {
-      InternalEObject oldProduct = (InternalEObject)product;
-      product = (ProductElement)eResolveProxy(oldProduct);
-      if (product != oldProduct)
+      InternalEObject oldProductUnit = (InternalEObject)productUnit;
+      productUnit = (EProductUnit)eResolveProxy(oldProductUnit);
+      if (productUnit != oldProductUnit)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.USE_STATEMENT__PRODUCT, oldProduct, product));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.EUSE_UNIT__PRODUCT_UNIT, oldProductUnit, productUnit));
       }
     }
-    return product;
+    return productUnit;
   }
 
   /**
@@ -85,9 +85,9 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProductElement basicGetProduct()
+  public EProductUnit basicGetProductUnit()
   {
-    return product;
+    return productUnit;
   }
 
   /**
@@ -95,12 +95,12 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProduct(ProductElement newProduct)
+  public void setProductUnit(EProductUnit newProductUnit)
   {
-    ProductElement oldProduct = product;
-    product = newProduct;
+    EProductUnit oldProductUnit = productUnit;
+    productUnit = newProductUnit;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.USE_STATEMENT__PRODUCT, oldProduct, product));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EUSE_UNIT__PRODUCT_UNIT, oldProductUnit, productUnit));
   }
 
   /**
@@ -113,9 +113,9 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
   {
     switch (featureID)
     {
-      case ProductPackage.USE_STATEMENT__PRODUCT:
-        if (resolve) return getProduct();
-        return basicGetProduct();
+      case ProductPackage.EUSE_UNIT__PRODUCT_UNIT:
+        if (resolve) return getProductUnit();
+        return basicGetProductUnit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -130,8 +130,8 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
   {
     switch (featureID)
     {
-      case ProductPackage.USE_STATEMENT__PRODUCT:
-        setProduct((ProductElement)newValue);
+      case ProductPackage.EUSE_UNIT__PRODUCT_UNIT:
+        setProductUnit((EProductUnit)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,8 +147,8 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
   {
     switch (featureID)
     {
-      case ProductPackage.USE_STATEMENT__PRODUCT:
-        setProduct((ProductElement)null);
+      case ProductPackage.EUSE_UNIT__PRODUCT_UNIT:
+        setProductUnit((EProductUnit)null);
         return;
     }
     super.eUnset(featureID);
@@ -164,10 +164,10 @@ public class UseStatementImpl extends MinimalEObjectImpl.Container implements Us
   {
     switch (featureID)
     {
-      case ProductPackage.USE_STATEMENT__PRODUCT:
-        return product != null;
+      case ProductPackage.EUSE_UNIT__PRODUCT_UNIT:
+        return productUnit != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //UseStatementImpl
+} //EUseUnitImpl

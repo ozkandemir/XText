@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="product" nsURI="http://www.ykb.com/umap/dsl/Product" nsPrefix="product">
-  <eClassifiers xsi:type="ecore:EClass" name="Product">
+  <eClassifiers xsi:type="ecore:EClass" name="EProduct">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//AbstractElement" containment="true"/>
+        eType="#//ECompilationUnit" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" eType="#//NamespaceElement"
+  <eClassifiers xsi:type="ecore:EClass" name="ECompilationUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namespaceUnit" eType="#//ENamespaceUnit"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="use" eType="#//UseStatement"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useUnit" eType="#//EUseUnit"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="product" eType="#//ProductElement"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productUnit" eType="#//EProductUnit"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NamespaceElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EUseUnit">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productUnit" eType="#//EProductUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ENamespaceUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProductElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EProductUnit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" eType="#//MultiParameterElement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//OperationElement"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MultiParameterElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//ParameterElement" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ParameterElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" eType="#//ControlBlockElement"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//EParameterElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationUnit" eType="#//EOperationUnit"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlBlockElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EParameterElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//UMAPDataTypes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UMAPDataTypes">
+    <eLiterals name="BRANCH" literal="BRANCH"/>
+    <eLiterals name="CLIENT" value="1" literal="CLIENT"/>
+    <eLiterals name="CURRENCY" value="2" literal="CURRENCY"/>
+    <eLiterals name="NUMBER" value="3" literal="NUMBER"/>
+    <eLiterals name="STRING" value="4" literal="STRING"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EOperationUnit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
-        eType="#//ControlStatementElement" containment="true"/>
+        eType="#//EControlElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControlStatementElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ExpressionElement"
+  <eClassifiers xsi:type="ecore:EClass" name="EControlElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//EExpressionElement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlStatement" eType="#//EControlStatementElement"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExpressionElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//ParameterElement"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="right" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EExpressionElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="#//EParameterElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//OPERATORS"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//EOperationUnit"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StaticOperationElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="opName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="OPERATORS">
+    <eLiterals name="IS" literal="is"/>
+    <eLiterals name="NOT" value="1" literal="is not"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UseStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="product" eType="#//ProductElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EControlStatementElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

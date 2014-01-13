@@ -2,19 +2,17 @@ package com.ykb.umap.dsl.serializer;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-import com.ykb.umap.dsl.product.AbstractElement;
-import com.ykb.umap.dsl.product.ControlBlockElement;
-import com.ykb.umap.dsl.product.ControlStatementElement;
-import com.ykb.umap.dsl.product.ExpressionElement;
-import com.ykb.umap.dsl.product.MultiParameterElement;
-import com.ykb.umap.dsl.product.NamespaceElement;
-import com.ykb.umap.dsl.product.OperationElement;
-import com.ykb.umap.dsl.product.ParameterElement;
-import com.ykb.umap.dsl.product.Product;
-import com.ykb.umap.dsl.product.ProductElement;
+import com.ykb.umap.dsl.product.ECompilationUnit;
+import com.ykb.umap.dsl.product.EControlElement;
+import com.ykb.umap.dsl.product.EControlStatementElement;
+import com.ykb.umap.dsl.product.EExpressionElement;
+import com.ykb.umap.dsl.product.ENamespaceUnit;
+import com.ykb.umap.dsl.product.EOperationUnit;
+import com.ykb.umap.dsl.product.EParameterElement;
+import com.ykb.umap.dsl.product.EProduct;
+import com.ykb.umap.dsl.product.EProductUnit;
+import com.ykb.umap.dsl.product.EUseUnit;
 import com.ykb.umap.dsl.product.ProductPackage;
-import com.ykb.umap.dsl.product.StaticOperationElement;
-import com.ykb.umap.dsl.product.UseStatement;
 import com.ykb.umap.dsl.services.ProductGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -36,75 +34,63 @@ public class ProductSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == ProductPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case ProductPackage.ABSTRACT_ELEMENT:
-				if(context == grammarAccess.getAbstractElementRule()) {
-					sequence_AbstractElement(context, (AbstractElement) semanticObject); 
+			case ProductPackage.ECOMPILATION_UNIT:
+				if(context == grammarAccess.getCompilationUnitRule()) {
+					sequence_CompilationUnit(context, (ECompilationUnit) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.CONTROL_BLOCK_ELEMENT:
-				if(context == grammarAccess.getControlBlockElementRule()) {
-					sequence_ControlBlockElement(context, (ControlBlockElement) semanticObject); 
+			case ProductPackage.ECONTROL_ELEMENT:
+				if(context == grammarAccess.getControlElementRule()) {
+					sequence_ControlElement(context, (EControlElement) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.CONTROL_STATEMENT_ELEMENT:
+			case ProductPackage.ECONTROL_STATEMENT_ELEMENT:
 				if(context == grammarAccess.getControlStatementElementRule()) {
-					sequence_ControlStatementElement(context, (ControlStatementElement) semanticObject); 
+					sequence_ControlStatementElement(context, (EControlStatementElement) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.EXPRESSION_ELEMENT:
+			case ProductPackage.EEXPRESSION_ELEMENT:
 				if(context == grammarAccess.getExpressionElementRule()) {
-					sequence_ExpressionElement(context, (ExpressionElement) semanticObject); 
+					sequence_ExpressionElement(context, (EExpressionElement) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.MULTI_PARAMETER_ELEMENT:
-				if(context == grammarAccess.getMultiParameterElementRule()) {
-					sequence_MultiParameterElement(context, (MultiParameterElement) semanticObject); 
+			case ProductPackage.ENAMESPACE_UNIT:
+				if(context == grammarAccess.getNamespaceUnitRule()) {
+					sequence_NamespaceUnit(context, (ENamespaceUnit) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.NAMESPACE_ELEMENT:
-				if(context == grammarAccess.getNamespaceElementRule()) {
-					sequence_NamespaceElement(context, (NamespaceElement) semanticObject); 
+			case ProductPackage.EOPERATION_UNIT:
+				if(context == grammarAccess.getOperationUnitRule()) {
+					sequence_OperationUnit(context, (EOperationUnit) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.OPERATION_ELEMENT:
-				if(context == grammarAccess.getOperationElementRule()) {
-					sequence_OperationElement(context, (OperationElement) semanticObject); 
-					return; 
-				}
-				else break;
-			case ProductPackage.PARAMETER_ELEMENT:
+			case ProductPackage.EPARAMETER_ELEMENT:
 				if(context == grammarAccess.getParameterElementRule()) {
-					sequence_ParameterElement(context, (ParameterElement) semanticObject); 
+					sequence_ParameterElement(context, (EParameterElement) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.PRODUCT:
+			case ProductPackage.EPRODUCT:
 				if(context == grammarAccess.getProductRule()) {
-					sequence_Product(context, (Product) semanticObject); 
+					sequence_Product(context, (EProduct) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.PRODUCT_ELEMENT:
-				if(context == grammarAccess.getProductElementRule()) {
-					sequence_ProductElement(context, (ProductElement) semanticObject); 
+			case ProductPackage.EPRODUCT_UNIT:
+				if(context == grammarAccess.getProductUnitRule()) {
+					sequence_ProductUnit(context, (EProductUnit) semanticObject); 
 					return; 
 				}
 				else break;
-			case ProductPackage.STATIC_OPERATION_ELEMENT:
-				if(context == grammarAccess.getStaticOperationElementRule()) {
-					sequence_StaticOperationElement(context, (StaticOperationElement) semanticObject); 
-					return; 
-				}
-				else break;
-			case ProductPackage.USE_STATEMENT:
-				if(context == grammarAccess.getUseStatementRule()) {
-					sequence_UseStatement(context, (UseStatement) semanticObject); 
+			case ProductPackage.EUSE_UNIT:
+				if(context == grammarAccess.getUseUnitRule()) {
+					sequence_UseUnit(context, (EUseUnit) semanticObject); 
 					return; 
 				}
 				else break;
@@ -114,132 +100,134 @@ public class ProductSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (namespace=NamespaceElement use=UseStatement? product=ProductElement)
+	 *     (namespaceUnit=NamespaceUnit useUnit=UseUnit? productUnit=ProductUnit)
 	 */
-	protected void sequence_AbstractElement(EObject context, AbstractElement semanticObject) {
+	protected void sequence_CompilationUnit(EObject context, ECompilationUnit semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     controls+=ControlStatementElement
+	 *     (expression=ExpressionElement controlStatement=ControlStatementElement)
 	 */
-	protected void sequence_ControlBlockElement(EObject context, ControlBlockElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (expression=ExpressionElement statement=StatementElement)
-	 */
-	protected void sequence_ControlStatementElement(EObject context, ControlStatementElement semanticObject) {
+	protected void sequence_ControlElement(EObject context, EControlElement semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.CONTROL_STATEMENT_ELEMENT__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.CONTROL_STATEMENT_ELEMENT__EXPRESSION));
-			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.CONTROL_STATEMENT_ELEMENT__STATEMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.CONTROL_STATEMENT_ELEMENT__STATEMENT));
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.ECONTROL_ELEMENT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.ECONTROL_ELEMENT__EXPRESSION));
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.ECONTROL_ELEMENT__CONTROL_STATEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.ECONTROL_ELEMENT__CONTROL_STATEMENT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getControlStatementElementAccess().getExpressionExpressionElementParserRuleCall_0_0(), semanticObject.getExpression());
-		feeder.accept(grammarAccess.getControlStatementElementAccess().getStatementStatementElementParserRuleCall_2_0(), semanticObject.getStatement());
+		feeder.accept(grammarAccess.getControlElementAccess().getExpressionExpressionElementParserRuleCall_0_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getControlElementAccess().getControlStatementControlStatementElementParserRuleCall_2_0(), semanticObject.getControlStatement());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (parameter=[ParameterElement|ID] (operator='=>' | operator='is' | operator='is not') (right='valid' | right='empty'))
+	 *     message=ANY_OTHER
 	 */
-	protected void sequence_ExpressionElement(EObject context, ExpressionElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     params+=ParameterElement*
-	 */
-	protected void sequence_MultiParameterElement(EObject context, MultiParameterElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=QualifiedID
-	 */
-	protected void sequence_NamespaceElement(EObject context, NamespaceElement semanticObject) {
+	protected void sequence_ControlStatementElement(EObject context, EControlStatementElement semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.NAMESPACE_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.NAMESPACE_ELEMENT__NAME));
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.ECONTROL_STATEMENT_ELEMENT__MESSAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.ECONTROL_STATEMENT_ELEMENT__MESSAGE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getNamespaceElementAccess().getNameQualifiedIDParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getControlStatementElementAccess().getMessageANY_OTHERTerminalRuleCall_3_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID controls=ControlBlockElement?)
+	 *     (parameter=[EParameterElement|ID] operator=OPERATORS right=[EOperationUnit|ID])
 	 */
-	protected void sequence_OperationElement(EObject context, OperationElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID (type='BRANCH' | type='CLIENT' | type='CURRENCY' | type=ID)?)
-	 */
-	protected void sequence_ParameterElement(EObject context, ParameterElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (name=ID parameters=MultiParameterElement? operation=OperationElement)
-	 */
-	protected void sequence_ProductElement(EObject context, ProductElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     elements+=AbstractElement
-	 */
-	protected void sequence_Product(EObject context, Product semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (opName='valid' | opName='empty')
-	 */
-	protected void sequence_StaticOperationElement(EObject context, StaticOperationElement semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     product=[ProductElement|ID]
-	 */
-	protected void sequence_UseStatement(EObject context, UseStatement semanticObject) {
+	protected void sequence_ExpressionElement(EObject context, EExpressionElement semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.USE_STATEMENT__PRODUCT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.USE_STATEMENT__PRODUCT));
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.EEXPRESSION_ELEMENT__PARAMETER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.EEXPRESSION_ELEMENT__PARAMETER));
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.EEXPRESSION_ELEMENT__OPERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.EEXPRESSION_ELEMENT__OPERATOR));
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.EEXPRESSION_ELEMENT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.EEXPRESSION_ELEMENT__RIGHT));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUseStatementAccess().getProductProductElementIDTerminalRuleCall_1_0_1(), semanticObject.getProduct());
+		feeder.accept(grammarAccess.getExpressionElementAccess().getParameterEParameterElementIDTerminalRuleCall_0_0_1(), semanticObject.getParameter());
+		feeder.accept(grammarAccess.getExpressionElementAccess().getOperatorOPERATORSEnumRuleCall_1_0(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getExpressionElementAccess().getRightEOperationUnitIDTerminalRuleCall_2_0_1(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=QUALIFIEDID
+	 */
+	protected void sequence_NamespaceUnit(EObject context, ENamespaceUnit semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.ENAMESPACE_UNIT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.ENAMESPACE_UNIT__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNamespaceUnitAccess().getNameQUALIFIEDIDParserRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID controls+=ControlElement?)
+	 */
+	protected void sequence_OperationUnit(EObject context, EOperationUnit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID type=UMAPDataTypes?)
+	 */
+	protected void sequence_ParameterElement(EObject context, EParameterElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID parameters+=ParameterElement* operationUnit=OperationUnit)
+	 */
+	protected void sequence_ProductUnit(EObject context, EProductUnit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     elements+=CompilationUnit
+	 */
+	protected void sequence_Product(EObject context, EProduct semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     productUnit=[EProductUnit|QUALIFIEDID]
+	 */
+	protected void sequence_UseUnit(EObject context, EUseUnit semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, ProductPackage.Literals.EUSE_UNIT__PRODUCT_UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ProductPackage.Literals.EUSE_UNIT__PRODUCT_UNIT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUseUnitAccess().getProductUnitEProductUnitQUALIFIEDIDParserRuleCall_1_0_1(), semanticObject.getProductUnit());
 		feeder.finish();
 	}
 }

@@ -75,64 +75,54 @@ public class ProductAdapterFactory extends AdapterFactoryImpl
     new ProductSwitch<Adapter>()
     {
       @Override
-      public Adapter caseProduct(Product object)
+      public Adapter caseEProduct(EProduct object)
       {
-        return createProductAdapter();
+        return createEProductAdapter();
       }
       @Override
-      public Adapter caseAbstractElement(AbstractElement object)
+      public Adapter caseECompilationUnit(ECompilationUnit object)
       {
-        return createAbstractElementAdapter();
+        return createECompilationUnitAdapter();
       }
       @Override
-      public Adapter caseNamespaceElement(NamespaceElement object)
+      public Adapter caseEUseUnit(EUseUnit object)
       {
-        return createNamespaceElementAdapter();
+        return createEUseUnitAdapter();
       }
       @Override
-      public Adapter caseProductElement(ProductElement object)
+      public Adapter caseENamespaceUnit(ENamespaceUnit object)
       {
-        return createProductElementAdapter();
+        return createENamespaceUnitAdapter();
       }
       @Override
-      public Adapter caseMultiParameterElement(MultiParameterElement object)
+      public Adapter caseEProductUnit(EProductUnit object)
       {
-        return createMultiParameterElementAdapter();
+        return createEProductUnitAdapter();
       }
       @Override
-      public Adapter caseParameterElement(ParameterElement object)
+      public Adapter caseEParameterElement(EParameterElement object)
       {
-        return createParameterElementAdapter();
+        return createEParameterElementAdapter();
       }
       @Override
-      public Adapter caseOperationElement(OperationElement object)
+      public Adapter caseEOperationUnit(EOperationUnit object)
       {
-        return createOperationElementAdapter();
+        return createEOperationUnitAdapter();
       }
       @Override
-      public Adapter caseControlBlockElement(ControlBlockElement object)
+      public Adapter caseEControlElement(EControlElement object)
       {
-        return createControlBlockElementAdapter();
+        return createEControlElementAdapter();
       }
       @Override
-      public Adapter caseControlStatementElement(ControlStatementElement object)
+      public Adapter caseEExpressionElement(EExpressionElement object)
       {
-        return createControlStatementElementAdapter();
+        return createEExpressionElementAdapter();
       }
       @Override
-      public Adapter caseExpressionElement(ExpressionElement object)
+      public Adapter caseEControlStatementElement(EControlStatementElement object)
       {
-        return createExpressionElementAdapter();
-      }
-      @Override
-      public Adapter caseStaticOperationElement(StaticOperationElement object)
-      {
-        return createStaticOperationElementAdapter();
-      }
-      @Override
-      public Adapter caseUseStatement(UseStatement object)
-      {
-        return createUseStatementAdapter();
+        return createEControlStatementElementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -157,181 +147,151 @@ public class ProductAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.Product <em>Product</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EProduct <em>EProduct</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.Product
+   * @see com.ykb.umap.dsl.product.EProduct
    * @generated
    */
-  public Adapter createProductAdapter()
+  public Adapter createEProductAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.AbstractElement <em>Abstract Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ECompilationUnit <em>ECompilation Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.AbstractElement
+   * @see com.ykb.umap.dsl.product.ECompilationUnit
    * @generated
    */
-  public Adapter createAbstractElementAdapter()
+  public Adapter createECompilationUnitAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.NamespaceElement <em>Namespace Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EUseUnit <em>EUse Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.NamespaceElement
+   * @see com.ykb.umap.dsl.product.EUseUnit
    * @generated
    */
-  public Adapter createNamespaceElementAdapter()
+  public Adapter createEUseUnitAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ProductElement <em>Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ENamespaceUnit <em>ENamespace Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.ProductElement
+   * @see com.ykb.umap.dsl.product.ENamespaceUnit
    * @generated
    */
-  public Adapter createProductElementAdapter()
+  public Adapter createENamespaceUnitAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.MultiParameterElement <em>Multi Parameter Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EProductUnit <em>EProduct Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.MultiParameterElement
+   * @see com.ykb.umap.dsl.product.EProductUnit
    * @generated
    */
-  public Adapter createMultiParameterElementAdapter()
+  public Adapter createEProductUnitAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ParameterElement <em>Parameter Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EParameterElement <em>EParameter Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.ParameterElement
+   * @see com.ykb.umap.dsl.product.EParameterElement
    * @generated
    */
-  public Adapter createParameterElementAdapter()
+  public Adapter createEParameterElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.OperationElement <em>Operation Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EOperationUnit <em>EOperation Unit</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.OperationElement
+   * @see com.ykb.umap.dsl.product.EOperationUnit
    * @generated
    */
-  public Adapter createOperationElementAdapter()
+  public Adapter createEOperationUnitAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ControlBlockElement <em>Control Block Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EControlElement <em>EControl Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.ControlBlockElement
+   * @see com.ykb.umap.dsl.product.EControlElement
    * @generated
    */
-  public Adapter createControlBlockElementAdapter()
+  public Adapter createEControlElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ControlStatementElement <em>Control Statement Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EExpressionElement <em>EExpression Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.ControlStatementElement
+   * @see com.ykb.umap.dsl.product.EExpressionElement
    * @generated
    */
-  public Adapter createControlStatementElementAdapter()
+  public Adapter createEExpressionElementAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.ExpressionElement <em>Expression Element</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EControlStatementElement <em>EControl Statement Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.ExpressionElement
+   * @see com.ykb.umap.dsl.product.EControlStatementElement
    * @generated
    */
-  public Adapter createExpressionElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.StaticOperationElement <em>Static Operation Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.StaticOperationElement
-   * @generated
-   */
-  public Adapter createStaticOperationElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.UseStatement <em>Use Statement</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.ykb.umap.dsl.product.UseStatement
-   * @generated
-   */
-  public Adapter createUseStatementAdapter()
+  public Adapter createEControlStatementElementAdapter()
   {
     return null;
   }

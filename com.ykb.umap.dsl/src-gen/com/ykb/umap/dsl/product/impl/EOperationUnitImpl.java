@@ -2,12 +2,16 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.ControlBlockElement;
-import com.ykb.umap.dsl.product.OperationElement;
+import com.ykb.umap.dsl.product.EControlElement;
+import com.ykb.umap.dsl.product.EOperationUnit;
 import com.ykb.umap.dsl.product.ProductPackage;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,21 +19,24 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Element</b></em>'.
+ * An implementation of the model object '<em><b>EOperation Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.OperationElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.ykb.umap.dsl.product.impl.OperationElementImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl#getControls <em>Controls</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class OperationElementImpl extends MinimalEObjectImpl.Container implements OperationElement
+public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements EOperationUnit
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -52,21 +59,21 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference.
+   * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getControls()
    * @generated
    * @ordered
    */
-  protected ControlBlockElement controls;
+  protected EList<EControlElement> controls;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected OperationElementImpl()
+  protected EOperationUnitImpl()
   {
     super();
   }
@@ -79,7 +86,7 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.OPERATION_ELEMENT;
+    return ProductPackage.Literals.EOPERATION_UNIT;
   }
 
   /**
@@ -102,7 +109,7 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.OPERATION_ELEMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EOPERATION_UNIT__NAME, oldName, name));
   }
 
   /**
@@ -110,47 +117,13 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public ControlBlockElement getControls()
+  public EList<EControlElement> getControls()
   {
+    if (controls == null)
+    {
+      controls = new EObjectContainmentEList<EControlElement>(EControlElement.class, this, ProductPackage.EOPERATION_UNIT__CONTROLS);
+    }
     return controls;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetControls(ControlBlockElement newControls, NotificationChain msgs)
-  {
-    ControlBlockElement oldControls = controls;
-    controls = newControls;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProductPackage.OPERATION_ELEMENT__CONTROLS, oldControls, newControls);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setControls(ControlBlockElement newControls)
-  {
-    if (newControls != controls)
-    {
-      NotificationChain msgs = null;
-      if (controls != null)
-        msgs = ((InternalEObject)controls).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProductPackage.OPERATION_ELEMENT__CONTROLS, null, msgs);
-      if (newControls != null)
-        msgs = ((InternalEObject)newControls).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProductPackage.OPERATION_ELEMENT__CONTROLS, null, msgs);
-      msgs = basicSetControls(newControls, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.OPERATION_ELEMENT__CONTROLS, newControls, newControls));
   }
 
   /**
@@ -163,8 +136,8 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.OPERATION_ELEMENT__CONTROLS:
-        return basicSetControls(null, msgs);
+      case ProductPackage.EOPERATION_UNIT__CONTROLS:
+        return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -179,9 +152,9 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.OPERATION_ELEMENT__NAME:
+      case ProductPackage.EOPERATION_UNIT__NAME:
         return getName();
-      case ProductPackage.OPERATION_ELEMENT__CONTROLS:
+      case ProductPackage.EOPERATION_UNIT__CONTROLS:
         return getControls();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -192,16 +165,18 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ProductPackage.OPERATION_ELEMENT__NAME:
+      case ProductPackage.EOPERATION_UNIT__NAME:
         setName((String)newValue);
         return;
-      case ProductPackage.OPERATION_ELEMENT__CONTROLS:
-        setControls((ControlBlockElement)newValue);
+      case ProductPackage.EOPERATION_UNIT__CONTROLS:
+        getControls().clear();
+        getControls().addAll((Collection<? extends EControlElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,11 +192,11 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.OPERATION_ELEMENT__NAME:
+      case ProductPackage.EOPERATION_UNIT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ProductPackage.OPERATION_ELEMENT__CONTROLS:
-        setControls((ControlBlockElement)null);
+      case ProductPackage.EOPERATION_UNIT__CONTROLS:
+        getControls().clear();
         return;
     }
     super.eUnset(featureID);
@@ -237,10 +212,10 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.OPERATION_ELEMENT__NAME:
+      case ProductPackage.EOPERATION_UNIT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ProductPackage.OPERATION_ELEMENT__CONTROLS:
-        return controls != null;
+      case ProductPackage.EOPERATION_UNIT__CONTROLS:
+        return controls != null && !controls.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -262,4 +237,4 @@ public class OperationElementImpl extends MinimalEObjectImpl.Container implement
     return result.toString();
   }
 
-} //OperationElementImpl
+} //EOperationUnitImpl

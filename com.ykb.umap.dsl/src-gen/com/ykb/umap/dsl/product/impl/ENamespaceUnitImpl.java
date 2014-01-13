@@ -2,7 +2,7 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.NamespaceElement;
+import com.ykb.umap.dsl.product.ENamespaceUnit;
 import com.ykb.umap.dsl.product.ProductPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Namespace Element</b></em>'.
+ * An implementation of the model object '<em><b>ENamespace Unit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.NamespaceElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.ENamespaceUnitImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NamespaceElementImpl extends MinimalEObjectImpl.Container implements NamespaceElement
+public class ENamespaceUnitImpl extends MinimalEObjectImpl.Container implements ENamespaceUnit
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -52,7 +52,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NamespaceElementImpl()
+  protected ENamespaceUnitImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.NAMESPACE_ELEMENT;
+    return ProductPackage.Literals.ENAMESPACE_UNIT;
   }
 
   /**
@@ -88,7 +88,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.NAMESPACE_ELEMENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.ENAMESPACE_UNIT__NAME, oldName, name));
   }
 
   /**
@@ -101,7 +101,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.NAMESPACE_ELEMENT__NAME:
+      case ProductPackage.ENAMESPACE_UNIT__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.NAMESPACE_ELEMENT__NAME:
+      case ProductPackage.ENAMESPACE_UNIT__NAME:
         setName((String)newValue);
         return;
     }
@@ -134,7 +134,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.NAMESPACE_ELEMENT__NAME:
+      case ProductPackage.ENAMESPACE_UNIT__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -151,7 +151,7 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case ProductPackage.NAMESPACE_ELEMENT__NAME:
+      case ProductPackage.ENAMESPACE_UNIT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -174,4 +174,4 @@ public class NamespaceElementImpl extends MinimalEObjectImpl.Container implement
     return result.toString();
   }
 
-} //NamespaceElementImpl
+} //ENamespaceUnitImpl

@@ -13,20 +13,23 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalProductLexer extends Lexer {
     public static final int RULE_ID=4;
+    public static final int T__29=29;
+    public static final int T__28=28;
     public static final int T__27=27;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ANY_OTHER=5;
     public static final int T__21=21;
     public static final int T__20=20;
     public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_ML_COMMENT=8;
+    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=7;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
@@ -35,8 +38,8 @@ public class InternalProductLexer extends Lexer {
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=5;
-    public static final int RULE_WS=9;
+    public static final int RULE_INT=6;
+    public static final int RULE_WS=10;
 
     // delegates
     // delegators
@@ -56,10 +59,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:11:7: ( 'sss' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:11:9: 'sss'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:11:7: ( 'BRANCH' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:11:9: 'BRANCH'
             {
-            match("sss"); 
+            match("BRANCH"); 
 
 
             }
@@ -77,10 +80,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:12:7: ( 'BRANCH' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:12:9: 'BRANCH'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:12:7: ( 'CLIENT' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:12:9: 'CLIENT'
             {
-            match("BRANCH"); 
+            match("CLIENT"); 
 
 
             }
@@ -98,10 +101,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:13:7: ( 'CLIENT' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:13:9: 'CLIENT'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:13:7: ( 'CURRENCY' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:13:9: 'CURRENCY'
             {
-            match("CLIENT"); 
+            match("CURRENCY"); 
 
 
             }
@@ -119,10 +122,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:14:7: ( 'CURRENCY' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:14:9: 'CURRENCY'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:14:7: ( 'NUMBER' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:14:9: 'NUMBER'
             {
-            match("CURRENCY"); 
+            match("NUMBER"); 
 
 
             }
@@ -140,10 +143,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:15:7: ( '=>' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:15:9: '=>'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:15:7: ( 'STRING' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:15:9: 'STRING'
             {
-            match("=>"); 
+            match("STRING"); 
 
 
             }
@@ -203,10 +206,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:18:7: ( 'valid' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:18:9: 'valid'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:18:7: ( 'use' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:18:9: 'use'
             {
-            match("valid"); 
+            match("use"); 
 
 
             }
@@ -224,10 +227,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:19:7: ( 'empty' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:19:9: 'empty'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:19:7: ( 'namespace' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:19:9: 'namespace'
             {
-            match("empty"); 
+            match("namespace"); 
 
 
             }
@@ -245,11 +248,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:20:7: ( 'namespace' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:20:9: 'namespace'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:20:7: ( '.' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:20:9: '.'
             {
-            match("namespace"); 
-
+            match('.'); 
 
             }
 
@@ -370,10 +372,11 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:26:7: ( '.' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:26:9: '.'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:26:7: ( '=>' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:26:9: '=>'
             {
-            match('.'); 
+            match("=>"); 
+
 
             }
 
@@ -390,10 +393,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:27:7: ( 'use' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:27:9: 'use'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:27:7: ( 'Error' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:27:9: 'Error'
             {
-            match("use"); 
+            match("Error"); 
 
 
             }
@@ -406,15 +409,75 @@ public class InternalProductLexer extends Lexer {
     }
     // $ANTLR end "T__27"
 
+    // $ANTLR start "T__28"
+    public final void mT__28() throws RecognitionException {
+        try {
+            int _type = T__28;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:28:7: ( '(' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:28:9: '('
+            {
+            match('('); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__28"
+
+    // $ANTLR start "T__29"
+    public final void mT__29() throws RecognitionException {
+        try {
+            int _type = T__29;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:29:7: ( '\"' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:29:9: '\"'
+            {
+            match('\"'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__29"
+
+    // $ANTLR start "T__30"
+    public final void mT__30() throws RecognitionException {
+        try {
+            int _type = T__30;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:30:7: ( ')' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:30:9: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__30"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1878:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1878:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2001:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2001:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1878:11: ( '^' )?
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2001:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -423,7 +486,7 @@ public class InternalProductLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1878:11: '^'
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2001:11: '^'
                     {
                     match('^'); 
 
@@ -441,7 +504,7 @@ public class InternalProductLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1878:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2001:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -490,10 +553,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1880:10: ( ( '0' .. '9' )+ )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1880:12: ( '0' .. '9' )+
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2003:10: ( ( '0' .. '9' )+ )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2003:12: ( '0' .. '9' )+
             {
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1880:12: ( '0' .. '9' )+
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2003:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -507,7 +570,7 @@ public class InternalProductLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1880:13: '0' .. '9'
+            	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2003:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -539,10 +602,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -560,10 +623,10 @@ public class InternalProductLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -579,7 +642,7 @@ public class InternalProductLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -595,7 +658,7 @@ public class InternalProductLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -620,10 +683,10 @@ public class InternalProductLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -639,7 +702,7 @@ public class InternalProductLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -655,7 +718,7 @@ public class InternalProductLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1882:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2005:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -698,12 +761,12 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1884:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1884:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2007:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2007:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1884:24: ( options {greedy=false; } : . )*
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2007:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -728,7 +791,7 @@ public class InternalProductLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1884:52: .
+            	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2007:52: .
             	    {
             	    matchAny(); 
 
@@ -758,12 +821,12 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -776,7 +839,7 @@ public class InternalProductLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -796,7 +859,7 @@ public class InternalProductLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:40: ( ( '\\r' )? '\\n' )?
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -805,9 +868,9 @@ public class InternalProductLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:41: ( '\\r' )? '\\n'
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:41: ( '\\r' )?
+                    // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -816,7 +879,7 @@ public class InternalProductLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1886:41: '\\r'
+                            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2009:41: '\\r'
                             {
                             match('\r'); 
 
@@ -848,10 +911,10 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1888:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1888:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2011:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2011:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1888:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2011:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -905,8 +968,8 @@ public class InternalProductLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1890:16: ( . )
-            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1890:18: .
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2013:16: ( . )
+            // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:2013:18: .
             {
             matchAny(); 
 
@@ -921,8 +984,8 @@ public class InternalProductLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=24;
+        // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=27;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1045,49 +1108,70 @@ public class InternalProductLexer extends Lexer {
                 }
                 break;
             case 18 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:112: RULE_ID
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:112: T__28
+                {
+                mT__28(); 
+
+                }
+                break;
+            case 19 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:118: T__29
+                {
+                mT__29(); 
+
+                }
+                break;
+            case 20 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:124: T__30
+                {
+                mT__30(); 
+
+                }
+                break;
+            case 21 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:130: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 19 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:120: RULE_INT
+            case 22 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:138: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 20 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:129: RULE_STRING
+            case 23 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:147: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 21 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:141: RULE_ML_COMMENT
+            case 24 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:159: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 22 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:157: RULE_SL_COMMENT
+            case 25 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:175: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 23 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:173: RULE_WS
+            case 26 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:191: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 24 :
-                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:181: RULE_ANY_OTHER
+            case 27 :
+                // ../com.ykb.umap.dsl.ui/src-gen/com/ykb/umap/dsl/ui/contentassist/antlr/internal/InternalProduct.g:1:199: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1101,109 +1185,108 @@ public class InternalProductLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\3\30\1\26\5\30\1\uffff\2\30\1\uffff\1\30\1\26\2\uffff\3"+
-        "\26\2\uffff\1\30\1\uffff\3\30\1\uffff\1\62\5\30\1\uffff\2\30\1\uffff"+
-        "\1\30\5\uffff\1\73\3\30\2\uffff\7\30\1\106\1\uffff\12\30\1\uffff"+
-        "\3\30\1\124\1\125\5\30\1\133\1\134\1\30\2\uffff\5\30\2\uffff\2\30"+
-        "\1\145\3\30\1\151\1\30\1\uffff\2\30\1\155\1\uffff\1\156\1\30\1\160"+
-        "\2\uffff\1\161\2\uffff";
+        "\1\uffff\7\32\1\uffff\1\32\1\uffff\2\32\1\30\1\32\1\uffff\1\53\1"+
+        "\uffff\1\30\2\uffff\2\30\2\uffff\1\32\1\uffff\4\32\1\70\2\32\1\uffff"+
+        "\2\32\1\uffff\2\32\1\uffff\1\32\10\uffff\5\32\2\uffff\1\105\13\32"+
+        "\1\uffff\20\32\1\141\1\142\1\143\1\32\1\145\1\146\5\32\3\uffff\1"+
+        "\32\2\uffff\1\32\1\156\3\32\1\162\1\32\1\uffff\2\32\1\166\1\uffff"+
+        "\1\167\1\32\1\171\2\uffff\1\172\2\uffff";
     static final String DFA12_eofS =
-        "\162\uffff";
+        "\173\uffff";
     static final String DFA12_minS =
-        "\1\0\1\163\1\122\1\114\1\76\1\163\1\141\1\155\2\141\1\uffff\1\160"+
-        "\1\157\1\uffff\1\163\1\101\2\uffff\2\0\1\52\2\uffff\1\163\1\uffff"+
-        "\1\101\1\111\1\122\1\uffff\1\40\1\154\1\160\1\155\1\157\1\162\1"+
-        "\uffff\1\145\1\156\1\uffff\1\145\5\uffff\1\60\1\116\1\105\1\122"+
-        "\2\uffff\1\151\1\164\1\145\1\144\1\141\1\162\1\164\1\60\1\uffff"+
-        "\1\103\1\116\1\105\1\144\1\171\1\163\1\165\1\155\1\141\1\162\1\uffff"+
-        "\1\110\1\124\1\116\2\60\1\160\1\143\1\145\1\164\1\157\2\60\1\103"+
-        "\2\uffff\1\141\2\164\1\151\1\154\2\uffff\1\131\1\143\1\60\1\145"+
-        "\1\157\1\163\1\60\1\145\1\uffff\1\162\1\156\1\60\1\uffff\1\60\1"+
-        "\163\1\60\2\uffff\1\60\2\uffff";
+        "\1\0\1\122\1\114\1\125\1\124\2\163\1\141\1\uffff\1\141\1\uffff\1"+
+        "\160\1\157\1\76\1\162\1\uffff\1\0\1\uffff\1\101\2\uffff\1\0\1\52"+
+        "\2\uffff\1\101\1\uffff\1\111\1\122\1\115\1\122\1\40\1\145\1\155"+
+        "\1\uffff\1\157\1\162\1\uffff\1\145\1\156\1\uffff\1\162\10\uffff"+
+        "\1\116\1\105\1\122\1\102\1\111\2\uffff\1\60\1\145\1\144\1\141\1"+
+        "\162\1\164\1\157\1\103\1\116\2\105\1\116\1\uffff\1\163\1\165\1\155"+
+        "\1\141\2\162\1\110\1\124\1\116\1\122\1\107\1\160\1\143\1\145\1\164"+
+        "\1\157\3\60\1\103\2\60\1\141\2\164\1\151\1\154\3\uffff\1\131\2\uffff"+
+        "\1\143\1\60\1\145\1\157\1\163\1\60\1\145\1\uffff\1\162\1\156\1\60"+
+        "\1\uffff\1\60\1\163\1\60\2\uffff\1\60\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\163\1\122\1\125\1\76\1\163\1\141\1\155\1\141\1\162\1"+
-        "\uffff\1\160\1\157\1\uffff\1\163\1\172\2\uffff\2\uffff\1\57\2\uffff"+
-        "\1\163\1\uffff\1\101\1\111\1\122\1\uffff\1\172\1\154\1\160\1\155"+
-        "\1\157\1\162\1\uffff\1\145\1\156\1\uffff\1\145\5\uffff\1\172\1\116"+
-        "\1\105\1\122\2\uffff\1\151\1\164\1\145\1\144\1\141\1\162\1\164\1"+
-        "\172\1\uffff\1\103\1\116\1\105\1\144\1\171\1\163\1\165\1\155\1\141"+
-        "\1\162\1\uffff\1\110\1\124\1\116\2\172\1\160\1\143\1\145\1\164\1"+
-        "\157\2\172\1\103\2\uffff\1\141\2\164\1\151\1\154\2\uffff\1\131\1"+
-        "\143\1\172\1\145\1\157\1\163\1\172\1\145\1\uffff\1\162\1\156\1\172"+
-        "\1\uffff\1\172\1\163\1\172\2\uffff\1\172\2\uffff";
+        "\1\uffff\1\122\2\125\1\124\2\163\1\141\1\uffff\1\162\1\uffff\1\160"+
+        "\1\157\1\76\1\162\1\uffff\1\uffff\1\uffff\1\172\2\uffff\1\uffff"+
+        "\1\57\2\uffff\1\101\1\uffff\1\111\1\122\1\115\1\122\1\172\1\145"+
+        "\1\155\1\uffff\1\157\1\162\1\uffff\1\145\1\156\1\uffff\1\162\10"+
+        "\uffff\1\116\1\105\1\122\1\102\1\111\2\uffff\1\172\1\145\1\144\1"+
+        "\141\1\162\1\164\1\157\1\103\1\116\2\105\1\116\1\uffff\1\163\1\165"+
+        "\1\155\1\141\2\162\1\110\1\124\1\116\1\122\1\107\1\160\1\143\1\145"+
+        "\1\164\1\157\3\172\1\103\2\172\1\141\2\164\1\151\1\154\3\uffff\1"+
+        "\131\2\uffff\1\143\1\172\1\145\1\157\1\163\1\172\1\145\1\uffff\1"+
+        "\162\1\156\1\172\1\uffff\1\172\1\163\1\172\2\uffff\1\172\2\uffff";
     static final String DFA12_acceptS =
-        "\12\uffff\1\15\2\uffff\1\20\2\uffff\1\22\1\23\3\uffff\1\27\1\30"+
-        "\1\uffff\1\22\3\uffff\1\5\6\uffff\1\15\2\uffff\1\20\1\uffff\1\23"+
-        "\1\24\1\25\1\26\1\27\4\uffff\1\7\1\6\10\uffff\1\1\12\uffff\1\21"+
-        "\15\uffff\1\10\1\11\5\uffff\1\2\1\3\10\uffff\1\13\3\uffff\1\4\3"+
-        "\uffff\1\17\1\12\1\uffff\1\16\1\14";
+        "\10\uffff\1\12\1\uffff\1\15\4\uffff\1\22\1\uffff\1\24\1\uffff\1"+
+        "\25\1\26\2\uffff\1\32\1\33\1\uffff\1\25\7\uffff\1\12\2\uffff\1\15"+
+        "\2\uffff\1\20\1\uffff\1\22\1\23\1\27\1\24\1\26\1\30\1\31\1\32\5"+
+        "\uffff\1\7\1\6\14\uffff\1\10\33\uffff\1\21\1\1\1\2\1\uffff\1\4\1"+
+        "\5\7\uffff\1\13\3\uffff\1\3\3\uffff\1\17\1\11\1\uffff\1\16\1\14";
     static final String DFA12_specialS =
-        "\1\1\21\uffff\1\0\1\2\136\uffff}>";
+        "\1\0\17\uffff\1\2\4\uffff\1\1\145\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\26\2\25\2\26\1\25\22\26\1\25\1\26\1\22\4\26\1\23\6\26\1"+
-            "\15\1\24\12\21\1\12\2\26\1\4\3\26\1\20\1\2\1\3\27\20\3\26\1"+
-            "\17\1\20\1\26\2\20\1\14\1\20\1\7\3\20\1\5\4\20\1\10\1\13\1\11"+
-            "\2\20\1\1\1\20\1\16\1\6\4\20\uff85\26",
-            "\1\27",
+            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\20\4\30\1\25\1\17\1"+
+            "\21\4\30\1\10\1\26\12\24\1\12\2\30\1\15\3\30\1\23\1\1\1\2\1"+
+            "\23\1\16\10\23\1\3\4\23\1\4\7\23\3\30\1\22\1\23\1\30\2\23\1"+
+            "\14\5\23\1\5\4\23\1\7\1\13\1\11\4\23\1\6\5\23\uff85\30",
             "\1\31",
-            "\1\32\10\uffff\1\33",
-            "\1\34",
+            "\1\33\10\uffff\1\34",
             "\1\35",
             "\1\36",
             "\1\37",
             "\1\40",
-            "\1\42\20\uffff\1\41",
+            "\1\41",
             "",
-            "\1\44",
-            "\1\45",
+            "\1\44\20\uffff\1\43",
             "",
+            "\1\46",
             "\1\47",
-            "\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\50",
+            "\1\51",
+            "",
+            "\0\54",
+            "",
+            "\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             "",
-            "\0\51",
-            "\0\51",
-            "\1\52\4\uffff\1\53",
+            "\0\54",
+            "\1\57\4\uffff\1\60",
             "",
             "",
-            "\1\55",
+            "\1\62",
             "",
-            "\1\56",
-            "\1\57",
-            "\1\60",
-            "",
-            "\1\61\17\uffff\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32"+
-            "\30",
             "\1\63",
             "\1\64",
             "\1\65",
             "\1\66",
-            "\1\67",
-            "",
-            "\1\70",
+            "\1\67\17\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32"+
+            "\32",
             "\1\71",
-            "",
             "\1\72",
             "",
-            "",
-            "",
-            "",
-            "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\73",
             "\1\74",
+            "",
             "\1\75",
             "\1\76",
             "",
-            "",
             "\1\77",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\100",
             "\1\101",
             "\1\102",
             "\1\103",
             "\1\104",
-            "\1\105",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
+            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\106",
             "\1\107",
             "\1\110",
             "\1\111",
@@ -1218,44 +1301,54 @@ public class InternalProductLexer extends Lexer {
             "\1\121",
             "\1\122",
             "\1\123",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\124",
+            "\1\125",
             "\1\126",
             "\1\127",
             "\1\130",
             "\1\131",
             "\1\132",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\133",
+            "\1\134",
             "\1\135",
-            "",
-            "",
             "\1\136",
             "\1\137",
             "\1\140",
-            "\1\141",
-            "\1\142",
-            "",
-            "",
-            "\1\143",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\144",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\146",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\147",
             "\1\150",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\151",
             "\1\152",
-            "",
             "\1\153",
+            "",
+            "",
+            "",
             "\1\154",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "",
+            "\1\155",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\157",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\160",
+            "\1\161",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\163",
+            "",
+            "\1\164",
+            "\1\165",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\170",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             "",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             ""
     };
@@ -1290,41 +1383,31 @@ public class InternalProductLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_18 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_18>='\u0000' && LA12_18<='\uFFFF')) ) {s = 41;}
-
-                        else s = 22;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='s') ) {s = 1;}
+                        if ( (LA12_0=='B') ) {s = 1;}
 
-                        else if ( (LA12_0=='B') ) {s = 2;}
+                        else if ( (LA12_0=='C') ) {s = 2;}
 
-                        else if ( (LA12_0=='C') ) {s = 3;}
+                        else if ( (LA12_0=='N') ) {s = 3;}
 
-                        else if ( (LA12_0=='=') ) {s = 4;}
+                        else if ( (LA12_0=='S') ) {s = 4;}
 
                         else if ( (LA12_0=='i') ) {s = 5;}
 
-                        else if ( (LA12_0=='v') ) {s = 6;}
+                        else if ( (LA12_0=='u') ) {s = 6;}
 
-                        else if ( (LA12_0=='e') ) {s = 7;}
+                        else if ( (LA12_0=='n') ) {s = 7;}
 
-                        else if ( (LA12_0=='n') ) {s = 8;}
+                        else if ( (LA12_0=='.') ) {s = 8;}
 
                         else if ( (LA12_0=='p') ) {s = 9;}
 
@@ -1334,35 +1417,49 @@ public class InternalProductLexer extends Lexer {
 
                         else if ( (LA12_0=='c') ) {s = 12;}
 
-                        else if ( (LA12_0=='.') ) {s = 13;}
+                        else if ( (LA12_0=='=') ) {s = 13;}
 
-                        else if ( (LA12_0=='u') ) {s = 14;}
+                        else if ( (LA12_0=='E') ) {s = 14;}
 
-                        else if ( (LA12_0=='^') ) {s = 15;}
+                        else if ( (LA12_0=='(') ) {s = 15;}
 
-                        else if ( (LA12_0=='A'||(LA12_0>='D' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='b')||LA12_0=='d'||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='m')||(LA12_0>='q' && LA12_0<='r')||LA12_0=='t'||(LA12_0>='w' && LA12_0<='z')) ) {s = 16;}
+                        else if ( (LA12_0=='\"') ) {s = 16;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 17;}
+                        else if ( (LA12_0==')') ) {s = 17;}
 
-                        else if ( (LA12_0=='\"') ) {s = 18;}
+                        else if ( (LA12_0=='^') ) {s = 18;}
 
-                        else if ( (LA12_0=='\'') ) {s = 19;}
+                        else if ( (LA12_0=='A'||LA12_0=='D'||(LA12_0>='F' && LA12_0<='M')||(LA12_0>='O' && LA12_0<='R')||(LA12_0>='T' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='b')||(LA12_0>='d' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='m')||(LA12_0>='q' && LA12_0<='t')||(LA12_0>='v' && LA12_0<='z')) ) {s = 19;}
 
-                        else if ( (LA12_0=='/') ) {s = 20;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 20;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 21;}
+                        else if ( (LA12_0=='\'') ) {s = 21;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='-')||(LA12_0>=';' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 22;}
+                        else if ( (LA12_0=='/') ) {s = 22;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 23;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='-')||(LA12_0>=';' && LA12_0<='<')||(LA12_0>='>' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 24;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_21 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 44;}
+
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_19 = input.LA(1);
+                        int LA12_16 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_19>='\u0000' && LA12_19<='\uFFFF')) ) {s = 41;}
+                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 44;}
 
-                        else s = 22;
+                        else s = 43;
 
                         if ( s>=0 ) return s;
                         break;

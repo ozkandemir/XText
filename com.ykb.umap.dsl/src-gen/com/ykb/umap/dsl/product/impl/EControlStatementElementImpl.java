@@ -2,8 +2,8 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
+import com.ykb.umap.dsl.product.EControlStatementElement;
 import com.ykb.umap.dsl.product.ProductPackage;
-import com.ykb.umap.dsl.product.StaticOperationElement;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,45 +14,45 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Static Operation Element</b></em>'.
+ * An implementation of the model object '<em><b>EControl Statement Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.StaticOperationElementImpl#getOpName <em>Op Name</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EControlStatementElementImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StaticOperationElementImpl extends MinimalEObjectImpl.Container implements StaticOperationElement
+public class EControlStatementElementImpl extends MinimalEObjectImpl.Container implements EControlStatementElement
 {
   /**
-   * The default value of the '{@link #getOpName() <em>Op Name</em>}' attribute.
+   * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOpName()
+   * @see #getMessage()
    * @generated
    * @ordered
    */
-  protected static final String OP_NAME_EDEFAULT = null;
+  protected static final String MESSAGE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getOpName() <em>Op Name</em>}' attribute.
+   * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOpName()
+   * @see #getMessage()
    * @generated
    * @ordered
    */
-  protected String opName = OP_NAME_EDEFAULT;
+  protected String message = MESSAGE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StaticOperationElementImpl()
+  protected EControlStatementElementImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
   @Override
   protected EClass eStaticClass()
   {
-    return ProductPackage.Literals.STATIC_OPERATION_ELEMENT;
+    return ProductPackage.Literals.ECONTROL_STATEMENT_ELEMENT;
   }
 
   /**
@@ -73,9 +73,9 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOpName()
+  public String getMessage()
   {
-    return opName;
+    return message;
   }
 
   /**
@@ -83,12 +83,12 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOpName(String newOpName)
+  public void setMessage(String newMessage)
   {
-    String oldOpName = opName;
-    opName = newOpName;
+    String oldMessage = message;
+    message = newMessage;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.STATIC_OPERATION_ELEMENT__OP_NAME, oldOpName, opName));
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE, oldMessage, message));
   }
 
   /**
@@ -101,8 +101,8 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case ProductPackage.STATIC_OPERATION_ELEMENT__OP_NAME:
-        return getOpName();
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
+        return getMessage();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case ProductPackage.STATIC_OPERATION_ELEMENT__OP_NAME:
-        setOpName((String)newValue);
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
+        setMessage((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case ProductPackage.STATIC_OPERATION_ELEMENT__OP_NAME:
-        setOpName(OP_NAME_EDEFAULT);
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
+        setMessage(MESSAGE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
   {
     switch (featureID)
     {
-      case ProductPackage.STATIC_OPERATION_ELEMENT__OP_NAME:
-        return OP_NAME_EDEFAULT == null ? opName != null : !OP_NAME_EDEFAULT.equals(opName);
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
+        return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +168,10 @@ public class StaticOperationElementImpl extends MinimalEObjectImpl.Container imp
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (opName: ");
-    result.append(opName);
+    result.append(" (message: ");
+    result.append(message);
     result.append(')');
     return result.toString();
   }
 
-} //StaticOperationElementImpl
+} //EControlStatementElementImpl

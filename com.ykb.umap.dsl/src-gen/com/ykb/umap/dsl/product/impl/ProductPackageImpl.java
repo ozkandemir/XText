@@ -2,23 +2,23 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
-import com.ykb.umap.dsl.product.AbstractElement;
-import com.ykb.umap.dsl.product.ControlBlockElement;
-import com.ykb.umap.dsl.product.ControlStatementElement;
-import com.ykb.umap.dsl.product.ExpressionElement;
-import com.ykb.umap.dsl.product.MultiParameterElement;
-import com.ykb.umap.dsl.product.NamespaceElement;
-import com.ykb.umap.dsl.product.OperationElement;
-import com.ykb.umap.dsl.product.ParameterElement;
-import com.ykb.umap.dsl.product.Product;
-import com.ykb.umap.dsl.product.ProductElement;
+import com.ykb.umap.dsl.product.ECompilationUnit;
+import com.ykb.umap.dsl.product.EControlElement;
+import com.ykb.umap.dsl.product.EControlStatementElement;
+import com.ykb.umap.dsl.product.EExpressionElement;
+import com.ykb.umap.dsl.product.ENamespaceUnit;
+import com.ykb.umap.dsl.product.EOperationUnit;
+import com.ykb.umap.dsl.product.EParameterElement;
+import com.ykb.umap.dsl.product.EProduct;
+import com.ykb.umap.dsl.product.EProductUnit;
+import com.ykb.umap.dsl.product.EUseUnit;
 import com.ykb.umap.dsl.product.ProductFactory;
 import com.ykb.umap.dsl.product.ProductPackage;
-import com.ykb.umap.dsl.product.StaticOperationElement;
-import com.ykb.umap.dsl.product.UseStatement;
+import com.ykb.umap.dsl.product.UMAPDataTypes;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -37,84 +37,84 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass productEClass = null;
+  private EClass eProductEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass abstractElementEClass = null;
+  private EClass eCompilationUnitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass namespaceElementEClass = null;
+  private EClass eUseUnitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass productElementEClass = null;
+  private EClass eNamespaceUnitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass multiParameterElementEClass = null;
+  private EClass eProductUnitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass parameterElementEClass = null;
+  private EClass eParameterElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operationElementEClass = null;
+  private EClass eOperationUnitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass controlBlockElementEClass = null;
+  private EClass eControlElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass controlStatementElementEClass = null;
+  private EClass eExpressionElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass expressionElementEClass = null;
+  private EClass eControlStatementElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass staticOperationElementEClass = null;
+  private EEnum umapDataTypesEEnum = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass useStatementEClass = null;
+  private EEnum operatorsEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -184,9 +184,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProduct()
+  public EClass getEProduct()
   {
-    return productEClass;
+    return eProductEClass;
   }
 
   /**
@@ -194,9 +194,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProduct_Elements()
+  public EReference getEProduct_Elements()
   {
-    return (EReference)productEClass.getEStructuralFeatures().get(0);
+    return (EReference)eProductEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -204,9 +204,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAbstractElement()
+  public EClass getECompilationUnit()
   {
-    return abstractElementEClass;
+    return eCompilationUnitEClass;
   }
 
   /**
@@ -214,9 +214,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractElement_Namespace()
+  public EReference getECompilationUnit_NamespaceUnit()
   {
-    return (EReference)abstractElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)eCompilationUnitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -224,9 +224,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractElement_Use()
+  public EReference getECompilationUnit_UseUnit()
   {
-    return (EReference)abstractElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)eCompilationUnitEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -234,9 +234,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractElement_Product()
+  public EReference getECompilationUnit_ProductUnit()
   {
-    return (EReference)abstractElementEClass.getEStructuralFeatures().get(2);
+    return (EReference)eCompilationUnitEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -244,9 +244,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNamespaceElement()
+  public EClass getEUseUnit()
   {
-    return namespaceElementEClass;
+    return eUseUnitEClass;
   }
 
   /**
@@ -254,9 +254,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNamespaceElement_Name()
+  public EReference getEUseUnit_ProductUnit()
   {
-    return (EAttribute)namespaceElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)eUseUnitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -264,9 +264,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProductElement()
+  public EClass getENamespaceUnit()
   {
-    return productElementEClass;
+    return eNamespaceUnitEClass;
   }
 
   /**
@@ -274,9 +274,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProductElement_Name()
+  public EAttribute getENamespaceUnit_Name()
   {
-    return (EAttribute)productElementEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)eNamespaceUnitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -284,9 +284,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProductElement_Parameters()
+  public EClass getEProductUnit()
   {
-    return (EReference)productElementEClass.getEStructuralFeatures().get(1);
+    return eProductUnitEClass;
   }
 
   /**
@@ -294,9 +294,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProductElement_Operation()
+  public EAttribute getEProductUnit_Name()
   {
-    return (EReference)productElementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)eProductUnitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -304,9 +304,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMultiParameterElement()
+  public EReference getEProductUnit_Parameters()
   {
-    return multiParameterElementEClass;
+    return (EReference)eProductUnitEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -314,9 +314,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMultiParameterElement_Params()
+  public EReference getEProductUnit_OperationUnit()
   {
-    return (EReference)multiParameterElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)eProductUnitEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -324,9 +324,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getParameterElement()
+  public EClass getEParameterElement()
   {
-    return parameterElementEClass;
+    return eParameterElementEClass;
   }
 
   /**
@@ -334,9 +334,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameterElement_Name()
+  public EAttribute getEParameterElement_Name()
   {
-    return (EAttribute)parameterElementEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)eParameterElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -344,9 +344,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getParameterElement_Type()
+  public EAttribute getEParameterElement_Type()
   {
-    return (EAttribute)parameterElementEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)eParameterElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -354,9 +354,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOperationElement()
+  public EClass getEOperationUnit()
   {
-    return operationElementEClass;
+    return eOperationUnitEClass;
   }
 
   /**
@@ -364,9 +364,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOperationElement_Name()
+  public EAttribute getEOperationUnit_Name()
   {
-    return (EAttribute)operationElementEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)eOperationUnitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -374,9 +374,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperationElement_Controls()
+  public EReference getEOperationUnit_Controls()
   {
-    return (EReference)operationElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)eOperationUnitEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -384,9 +384,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getControlBlockElement()
+  public EClass getEControlElement()
   {
-    return controlBlockElementEClass;
+    return eControlElementEClass;
   }
 
   /**
@@ -394,9 +394,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getControlBlockElement_Controls()
+  public EReference getEControlElement_Expression()
   {
-    return (EReference)controlBlockElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)eControlElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -404,9 +404,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getControlStatementElement()
+  public EReference getEControlElement_ControlStatement()
   {
-    return controlStatementElementEClass;
+    return (EReference)eControlElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -414,9 +414,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getControlStatementElement_Expression()
+  public EClass getEExpressionElement()
   {
-    return (EReference)controlStatementElementEClass.getEStructuralFeatures().get(0);
+    return eExpressionElementEClass;
   }
 
   /**
@@ -424,9 +424,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getControlStatementElement_Statement()
+  public EReference getEExpressionElement_Parameter()
   {
-    return (EAttribute)controlStatementElementEClass.getEStructuralFeatures().get(1);
+    return (EReference)eExpressionElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -434,9 +434,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getExpressionElement()
+  public EAttribute getEExpressionElement_Operator()
   {
-    return expressionElementEClass;
+    return (EAttribute)eExpressionElementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -444,9 +444,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpressionElement_Parameter()
+  public EReference getEExpressionElement_Right()
   {
-    return (EReference)expressionElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)eExpressionElementEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -454,9 +454,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExpressionElement_Operator()
+  public EClass getEControlStatementElement()
   {
-    return (EAttribute)expressionElementEClass.getEStructuralFeatures().get(1);
+    return eControlStatementElementEClass;
   }
 
   /**
@@ -464,9 +464,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getExpressionElement_Right()
+  public EAttribute getEControlStatementElement_Message()
   {
-    return (EAttribute)expressionElementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)eControlStatementElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -474,9 +474,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStaticOperationElement()
+  public EEnum getUMAPDataTypes()
   {
-    return staticOperationElementEClass;
+    return umapDataTypesEEnum;
   }
 
   /**
@@ -484,29 +484,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStaticOperationElement_OpName()
+  public EEnum getOPERATORS()
   {
-    return (EAttribute)staticOperationElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUseStatement()
-  {
-    return useStatementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUseStatement_Product()
-  {
-    return (EReference)useStatementEClass.getEStructuralFeatures().get(0);
+    return operatorsEEnum;
   }
 
   /**
@@ -539,50 +519,48 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     isCreated = true;
 
     // Create classes and their features
-    productEClass = createEClass(PRODUCT);
-    createEReference(productEClass, PRODUCT__ELEMENTS);
+    eProductEClass = createEClass(EPRODUCT);
+    createEReference(eProductEClass, EPRODUCT__ELEMENTS);
 
-    abstractElementEClass = createEClass(ABSTRACT_ELEMENT);
-    createEReference(abstractElementEClass, ABSTRACT_ELEMENT__NAMESPACE);
-    createEReference(abstractElementEClass, ABSTRACT_ELEMENT__USE);
-    createEReference(abstractElementEClass, ABSTRACT_ELEMENT__PRODUCT);
+    eCompilationUnitEClass = createEClass(ECOMPILATION_UNIT);
+    createEReference(eCompilationUnitEClass, ECOMPILATION_UNIT__NAMESPACE_UNIT);
+    createEReference(eCompilationUnitEClass, ECOMPILATION_UNIT__USE_UNIT);
+    createEReference(eCompilationUnitEClass, ECOMPILATION_UNIT__PRODUCT_UNIT);
 
-    namespaceElementEClass = createEClass(NAMESPACE_ELEMENT);
-    createEAttribute(namespaceElementEClass, NAMESPACE_ELEMENT__NAME);
+    eUseUnitEClass = createEClass(EUSE_UNIT);
+    createEReference(eUseUnitEClass, EUSE_UNIT__PRODUCT_UNIT);
 
-    productElementEClass = createEClass(PRODUCT_ELEMENT);
-    createEAttribute(productElementEClass, PRODUCT_ELEMENT__NAME);
-    createEReference(productElementEClass, PRODUCT_ELEMENT__PARAMETERS);
-    createEReference(productElementEClass, PRODUCT_ELEMENT__OPERATION);
+    eNamespaceUnitEClass = createEClass(ENAMESPACE_UNIT);
+    createEAttribute(eNamespaceUnitEClass, ENAMESPACE_UNIT__NAME);
 
-    multiParameterElementEClass = createEClass(MULTI_PARAMETER_ELEMENT);
-    createEReference(multiParameterElementEClass, MULTI_PARAMETER_ELEMENT__PARAMS);
+    eProductUnitEClass = createEClass(EPRODUCT_UNIT);
+    createEAttribute(eProductUnitEClass, EPRODUCT_UNIT__NAME);
+    createEReference(eProductUnitEClass, EPRODUCT_UNIT__PARAMETERS);
+    createEReference(eProductUnitEClass, EPRODUCT_UNIT__OPERATION_UNIT);
 
-    parameterElementEClass = createEClass(PARAMETER_ELEMENT);
-    createEAttribute(parameterElementEClass, PARAMETER_ELEMENT__NAME);
-    createEAttribute(parameterElementEClass, PARAMETER_ELEMENT__TYPE);
+    eParameterElementEClass = createEClass(EPARAMETER_ELEMENT);
+    createEAttribute(eParameterElementEClass, EPARAMETER_ELEMENT__NAME);
+    createEAttribute(eParameterElementEClass, EPARAMETER_ELEMENT__TYPE);
 
-    operationElementEClass = createEClass(OPERATION_ELEMENT);
-    createEAttribute(operationElementEClass, OPERATION_ELEMENT__NAME);
-    createEReference(operationElementEClass, OPERATION_ELEMENT__CONTROLS);
+    eOperationUnitEClass = createEClass(EOPERATION_UNIT);
+    createEAttribute(eOperationUnitEClass, EOPERATION_UNIT__NAME);
+    createEReference(eOperationUnitEClass, EOPERATION_UNIT__CONTROLS);
 
-    controlBlockElementEClass = createEClass(CONTROL_BLOCK_ELEMENT);
-    createEReference(controlBlockElementEClass, CONTROL_BLOCK_ELEMENT__CONTROLS);
+    eControlElementEClass = createEClass(ECONTROL_ELEMENT);
+    createEReference(eControlElementEClass, ECONTROL_ELEMENT__EXPRESSION);
+    createEReference(eControlElementEClass, ECONTROL_ELEMENT__CONTROL_STATEMENT);
 
-    controlStatementElementEClass = createEClass(CONTROL_STATEMENT_ELEMENT);
-    createEReference(controlStatementElementEClass, CONTROL_STATEMENT_ELEMENT__EXPRESSION);
-    createEAttribute(controlStatementElementEClass, CONTROL_STATEMENT_ELEMENT__STATEMENT);
+    eExpressionElementEClass = createEClass(EEXPRESSION_ELEMENT);
+    createEReference(eExpressionElementEClass, EEXPRESSION_ELEMENT__PARAMETER);
+    createEAttribute(eExpressionElementEClass, EEXPRESSION_ELEMENT__OPERATOR);
+    createEReference(eExpressionElementEClass, EEXPRESSION_ELEMENT__RIGHT);
 
-    expressionElementEClass = createEClass(EXPRESSION_ELEMENT);
-    createEReference(expressionElementEClass, EXPRESSION_ELEMENT__PARAMETER);
-    createEAttribute(expressionElementEClass, EXPRESSION_ELEMENT__OPERATOR);
-    createEAttribute(expressionElementEClass, EXPRESSION_ELEMENT__RIGHT);
+    eControlStatementElementEClass = createEClass(ECONTROL_STATEMENT_ELEMENT);
+    createEAttribute(eControlStatementElementEClass, ECONTROL_STATEMENT_ELEMENT__MESSAGE);
 
-    staticOperationElementEClass = createEClass(STATIC_OPERATION_ELEMENT);
-    createEAttribute(staticOperationElementEClass, STATIC_OPERATION_ELEMENT__OP_NAME);
-
-    useStatementEClass = createEClass(USE_STATEMENT);
-    createEReference(useStatementEClass, USE_STATEMENT__PRODUCT);
+    // Create enums
+    umapDataTypesEEnum = createEEnum(UMAP_DATA_TYPES);
+    operatorsEEnum = createEEnum(OPERATORS);
   }
 
   /**
@@ -616,50 +594,56 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     // Add supertypes to classes
 
     // Initialize classes and features; add operations and parameters
-    initEClass(productEClass, Product.class, "Product", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProduct_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eProductEClass, EProduct.class, "EProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEProduct_Elements(), this.getECompilationUnit(), null, "elements", null, 0, -1, EProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(abstractElementEClass, AbstractElement.class, "AbstractElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAbstractElement_Namespace(), this.getNamespaceElement(), null, "namespace", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractElement_Use(), this.getUseStatement(), null, "use", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractElement_Product(), this.getProductElement(), null, "product", null, 0, 1, AbstractElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eCompilationUnitEClass, ECompilationUnit.class, "ECompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getECompilationUnit_NamespaceUnit(), this.getENamespaceUnit(), null, "namespaceUnit", null, 0, 1, ECompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getECompilationUnit_UseUnit(), this.getEUseUnit(), null, "useUnit", null, 0, 1, ECompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getECompilationUnit_ProductUnit(), this.getEProductUnit(), null, "productUnit", null, 0, 1, ECompilationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(namespaceElementEClass, NamespaceElement.class, "NamespaceElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamespaceElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamespaceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eUseUnitEClass, EUseUnit.class, "EUseUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEUseUnit_ProductUnit(), this.getEProductUnit(), null, "productUnit", null, 0, 1, EUseUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(productElementEClass, ProductElement.class, "ProductElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProductElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProductElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProductElement_Parameters(), this.getMultiParameterElement(), null, "parameters", null, 0, 1, ProductElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProductElement_Operation(), this.getOperationElement(), null, "operation", null, 0, 1, ProductElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eNamespaceUnitEClass, ENamespaceUnit.class, "ENamespaceUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getENamespaceUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, ENamespaceUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(multiParameterElementEClass, MultiParameterElement.class, "MultiParameterElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMultiParameterElement_Params(), this.getParameterElement(), null, "params", null, 0, -1, MultiParameterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eProductUnitEClass, EProductUnit.class, "EProductUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEProductUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEProductUnit_Parameters(), this.getEParameterElement(), null, "parameters", null, 0, -1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEProductUnit_OperationUnit(), this.getEOperationUnit(), null, "operationUnit", null, 0, 1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(parameterElementEClass, ParameterElement.class, "ParameterElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParameterElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ParameterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParameterElement_Type(), ecorePackage.getEString(), "type", null, 0, 1, ParameterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eParameterElementEClass, EParameterElement.class, "EParameterElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEParameterElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, EParameterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEParameterElement_Type(), this.getUMAPDataTypes(), "type", null, 0, 1, EParameterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(operationElementEClass, OperationElement.class, "OperationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperationElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, OperationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperationElement_Controls(), this.getControlBlockElement(), null, "controls", null, 0, 1, OperationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eOperationUnitEClass, EOperationUnit.class, "EOperationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEOperationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, EOperationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEOperationUnit_Controls(), this.getEControlElement(), null, "controls", null, 0, -1, EOperationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(controlBlockElementEClass, ControlBlockElement.class, "ControlBlockElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getControlBlockElement_Controls(), this.getControlStatementElement(), null, "controls", null, 0, -1, ControlBlockElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eControlElementEClass, EControlElement.class, "EControlElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEControlElement_Expression(), this.getEExpressionElement(), null, "expression", null, 0, 1, EControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEControlElement_ControlStatement(), this.getEControlStatementElement(), null, "controlStatement", null, 0, 1, EControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(controlStatementElementEClass, ControlStatementElement.class, "ControlStatementElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getControlStatementElement_Expression(), this.getExpressionElement(), null, "expression", null, 0, 1, ControlStatementElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getControlStatementElement_Statement(), ecorePackage.getEString(), "statement", null, 0, 1, ControlStatementElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eExpressionElementEClass, EExpressionElement.class, "EExpressionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEExpressionElement_Parameter(), this.getEParameterElement(), null, "parameter", null, 0, 1, EExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEExpressionElement_Operator(), this.getOPERATORS(), "operator", null, 0, 1, EExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEExpressionElement_Right(), this.getEOperationUnit(), null, "right", null, 0, 1, EExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(expressionElementEClass, ExpressionElement.class, "ExpressionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpressionElement_Parameter(), this.getParameterElement(), null, "parameter", null, 0, 1, ExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpressionElement_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, ExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpressionElement_Right(), ecorePackage.getEString(), "right", null, 0, 1, ExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eControlStatementElementEClass, EControlStatementElement.class, "EControlStatementElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEControlStatementElement_Message(), ecorePackage.getEString(), "message", null, 0, 1, EControlStatementElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(staticOperationElementEClass, StaticOperationElement.class, "StaticOperationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStaticOperationElement_OpName(), ecorePackage.getEString(), "opName", null, 0, 1, StaticOperationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    // Initialize enums and add enum literals
+    initEEnum(umapDataTypesEEnum, UMAPDataTypes.class, "UMAPDataTypes");
+    addEEnumLiteral(umapDataTypesEEnum, UMAPDataTypes.BRANCH);
+    addEEnumLiteral(umapDataTypesEEnum, UMAPDataTypes.CLIENT);
+    addEEnumLiteral(umapDataTypesEEnum, UMAPDataTypes.CURRENCY);
+    addEEnumLiteral(umapDataTypesEEnum, UMAPDataTypes.NUMBER);
+    addEEnumLiteral(umapDataTypesEEnum, UMAPDataTypes.STRING);
 
-    initEClass(useStatementEClass, UseStatement.class, "UseStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUseStatement_Product(), this.getProductElement(), null, "product", null, 0, 1, UseStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEEnum(operatorsEEnum, com.ykb.umap.dsl.product.OPERATORS.class, "OPERATORS");
+    addEEnumLiteral(operatorsEEnum, com.ykb.umap.dsl.product.OPERATORS.IS);
+    addEEnumLiteral(operatorsEEnum, com.ykb.umap.dsl.product.OPERATORS.NOT);
 
     // Create resource
     createResource(eNS_URI);

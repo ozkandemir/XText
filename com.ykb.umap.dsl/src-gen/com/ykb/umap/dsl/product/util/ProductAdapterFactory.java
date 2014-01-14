@@ -110,6 +110,11 @@ public class ProductAdapterFactory extends AdapterFactoryImpl
         return createEOperationUnitAdapter();
       }
       @Override
+      public Adapter caseEStatement(EStatement object)
+      {
+        return createEStatementAdapter();
+      }
+      @Override
       public Adapter caseEControlElement(EControlElement object)
       {
         return createEControlElementAdapter();
@@ -247,6 +252,21 @@ public class ProductAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEOperationUnitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EStatement <em>EStatement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ykb.umap.dsl.product.EStatement
+   * @generated
+   */
+  public Adapter createEStatementAdapter()
   {
     return null;
   }

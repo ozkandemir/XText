@@ -11,6 +11,7 @@ import com.ykb.umap.dsl.product.EOperationUnit;
 import com.ykb.umap.dsl.product.EParameterElement;
 import com.ykb.umap.dsl.product.EProduct;
 import com.ykb.umap.dsl.product.EProductUnit;
+import com.ykb.umap.dsl.product.EStatement;
 import com.ykb.umap.dsl.product.EUseUnit;
 import com.ykb.umap.dsl.product.ProductFactory;
 import com.ykb.umap.dsl.product.ProductPackage;
@@ -23,6 +24,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,6 +83,13 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * @generated
    */
   private EClass eOperationUnitEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,6 +173,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     ProductPackageImpl theProductPackage = (ProductPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ProductPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ProductPackageImpl());
 
     isInited = true;
+
+    // Initialize simple dependencies
+    XbasePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theProductPackage.createPackageContents();
@@ -314,7 +327,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEProductUnit_OperationUnit()
+  public EReference getEProductUnit_OperationUnits()
   {
     return (EReference)eProductUnitEClass.getEStructuralFeatures().get(2);
   }
@@ -377,6 +390,36 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
   public EReference getEOperationUnit_Controls()
   {
     return (EReference)eOperationUnitEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEOperationUnit_Statements()
+  {
+    return (EReference)eOperationUnitEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEStatement()
+  {
+    return eStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEStatement_Statement()
+  {
+    return (EAttribute)eStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -464,9 +507,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEControlStatementElement_Message()
+  public EReference getEControlStatementElement_Error()
   {
-    return (EAttribute)eControlStatementElementEClass.getEStructuralFeatures().get(0);
+    return (EReference)eControlStatementElementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -536,7 +579,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     eProductUnitEClass = createEClass(EPRODUCT_UNIT);
     createEAttribute(eProductUnitEClass, EPRODUCT_UNIT__NAME);
     createEReference(eProductUnitEClass, EPRODUCT_UNIT__PARAMETERS);
-    createEReference(eProductUnitEClass, EPRODUCT_UNIT__OPERATION_UNIT);
+    createEReference(eProductUnitEClass, EPRODUCT_UNIT__OPERATION_UNITS);
 
     eParameterElementEClass = createEClass(EPARAMETER_ELEMENT);
     createEAttribute(eParameterElementEClass, EPARAMETER_ELEMENT__NAME);
@@ -545,6 +588,10 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     eOperationUnitEClass = createEClass(EOPERATION_UNIT);
     createEAttribute(eOperationUnitEClass, EOPERATION_UNIT__NAME);
     createEReference(eOperationUnitEClass, EOPERATION_UNIT__CONTROLS);
+    createEReference(eOperationUnitEClass, EOPERATION_UNIT__STATEMENTS);
+
+    eStatementEClass = createEClass(ESTATEMENT);
+    createEAttribute(eStatementEClass, ESTATEMENT__STATEMENT);
 
     eControlElementEClass = createEClass(ECONTROL_ELEMENT);
     createEReference(eControlElementEClass, ECONTROL_ELEMENT__EXPRESSION);
@@ -556,7 +603,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     createEReference(eExpressionElementEClass, EEXPRESSION_ELEMENT__RIGHT);
 
     eControlStatementElementEClass = createEClass(ECONTROL_STATEMENT_ELEMENT);
-    createEAttribute(eControlStatementElementEClass, ECONTROL_STATEMENT_ELEMENT__MESSAGE);
+    createEReference(eControlStatementElementEClass, ECONTROL_STATEMENT_ELEMENT__ERROR);
 
     // Create enums
     umapDataTypesEEnum = createEEnum(UMAP_DATA_TYPES);
@@ -587,6 +634,9 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     setNsPrefix(eNS_PREFIX);
     setNsURI(eNS_URI);
 
+    // Obtain other dependent packages
+    XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
+
     // Create type parameters
 
     // Set bounds for type parameters
@@ -611,7 +661,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     initEClass(eProductUnitEClass, EProductUnit.class, "EProductUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEProductUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEProductUnit_Parameters(), this.getEParameterElement(), null, "parameters", null, 0, -1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEProductUnit_OperationUnit(), this.getEOperationUnit(), null, "operationUnit", null, 0, 1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEProductUnit_OperationUnits(), this.getEOperationUnit(), null, "operationUnits", null, 0, -1, EProductUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eParameterElementEClass, EParameterElement.class, "EParameterElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEParameterElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, EParameterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -620,6 +670,10 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     initEClass(eOperationUnitEClass, EOperationUnit.class, "EOperationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEOperationUnit_Name(), ecorePackage.getEString(), "name", null, 0, 1, EOperationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEOperationUnit_Controls(), this.getEControlElement(), null, "controls", null, 0, -1, EOperationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEOperationUnit_Statements(), this.getEStatement(), null, "statements", null, 0, -1, EOperationUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eStatementEClass, EStatement.class, "EStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEStatement_Statement(), ecorePackage.getEString(), "statement", null, 0, 1, EStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eControlElementEClass, EControlElement.class, "EControlElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEControlElement_Expression(), this.getEExpressionElement(), null, "expression", null, 0, 1, EControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -631,7 +685,7 @@ public class ProductPackageImpl extends EPackageImpl implements ProductPackage
     initEReference(getEExpressionElement_Right(), this.getEOperationUnit(), null, "right", null, 0, 1, EExpressionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eControlStatementElementEClass, EControlStatementElement.class, "EControlStatementElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEControlStatementElement_Message(), ecorePackage.getEString(), "message", null, 0, 1, EControlStatementElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEControlStatementElement_Error(), theXbasePackage.getXExpression(), null, "error", null, 0, 1, EControlStatementElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(umapDataTypesEEnum, UMAPDataTypes.class, "UMAPDataTypes");

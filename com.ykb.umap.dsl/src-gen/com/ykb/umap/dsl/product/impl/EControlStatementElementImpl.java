@@ -6,11 +6,15 @@ import com.ykb.umap.dsl.product.EControlStatementElement;
 import com.ykb.umap.dsl.product.ProductPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.impl.EControlStatementElementImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EControlStatementElementImpl#getError <em>Error</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +32,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class EControlStatementElementImpl extends MinimalEObjectImpl.Container implements EControlStatementElement
 {
   /**
-   * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
+   * The cached value of the '{@link #getError() <em>Error</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMessage()
+   * @see #getError()
    * @generated
    * @ordered
    */
-  protected static final String MESSAGE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMessage()
-   * @generated
-   * @ordered
-   */
-  protected String message = MESSAGE_EDEFAULT;
+  protected XExpression error;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +67,9 @@ public class EControlStatementElementImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMessage()
+  public XExpression getError()
   {
-    return message;
+    return error;
   }
 
   /**
@@ -83,12 +77,53 @@ public class EControlStatementElementImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMessage(String newMessage)
+  public NotificationChain basicSetError(XExpression newError, NotificationChain msgs)
   {
-    String oldMessage = message;
-    message = newMessage;
+    XExpression oldError = error;
+    error = newError;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE, oldMessage, message));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR, oldError, newError);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setError(XExpression newError)
+  {
+    if (newError != error)
+    {
+      NotificationChain msgs = null;
+      if (error != null)
+        msgs = ((InternalEObject)error).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR, null, msgs);
+      if (newError != null)
+        msgs = ((InternalEObject)newError).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR, null, msgs);
+      msgs = basicSetError(newError, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR, newError, newError));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR:
+        return basicSetError(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -101,8 +136,8 @@ public class EControlStatementElementImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
-        return getMessage();
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR:
+        return getError();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +152,8 @@ public class EControlStatementElementImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
-        setMessage((String)newValue);
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR:
+        setError((XExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +169,8 @@ public class EControlStatementElementImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
-        setMessage(MESSAGE_EDEFAULT);
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR:
+        setError((XExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,27 +186,10 @@ public class EControlStatementElementImpl extends MinimalEObjectImpl.Container i
   {
     switch (featureID)
     {
-      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__MESSAGE:
-        return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+      case ProductPackage.ECONTROL_STATEMENT_ELEMENT__ERROR:
+        return error != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (message: ");
-    result.append(message);
-    result.append(')');
-    return result.toString();
   }
 
 } //EControlStatementElementImpl

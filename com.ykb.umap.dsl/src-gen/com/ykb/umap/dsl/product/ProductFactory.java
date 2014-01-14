@@ -86,6 +86,15 @@ public interface ProductFactory extends EFactory
   EOperationUnit createEOperationUnit();
 
   /**
+   * Returns a new object of class '<em>EStatement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EStatement</em>'.
+   * @generated
+   */
+  EStatement createEStatement();
+
+  /**
    * Returns a new object of class '<em>EControl Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

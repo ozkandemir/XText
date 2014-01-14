@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  org.antlr.runtime,
- org.eclipse.xtext.common.types
+ org.eclipse.xtext.common.types,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
@@ -31,4 +32,5 @@ Export-Package: com.ykb.umap.dsl,
  com.ykb.umap.dsl.validation,
  com.ykb.umap.dsl.scoping,
  com.ykb.umap.dsl.generator,
- com.ykb.umap.dsl.formatting
+ com.ykb.umap.dsl.formatting,
+ com.ykb.umap.dsl.jvmmodel

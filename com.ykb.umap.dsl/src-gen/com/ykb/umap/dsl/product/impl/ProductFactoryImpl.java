@@ -72,6 +72,7 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
       case ProductPackage.EPRODUCT_UNIT: return createEProductUnit();
       case ProductPackage.EPARAMETER_ELEMENT: return createEParameterElement();
       case ProductPackage.EOPERATION_UNIT: return createEOperationUnit();
+      case ProductPackage.ESTATEMENT: return createEStatement();
       case ProductPackage.ECONTROL_ELEMENT: return createEControlElement();
       case ProductPackage.EEXPRESSION_ELEMENT: return createEExpressionElement();
       case ProductPackage.ECONTROL_STATEMENT_ELEMENT: return createEControlStatementElement();
@@ -193,6 +194,17 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
   {
     EOperationUnitImpl eOperationUnit = new EOperationUnitImpl();
     return eOperationUnit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EStatement createEStatement()
+  {
+    EStatementImpl eStatement = new EStatementImpl();
+    return eStatement;
   }
 
   /**

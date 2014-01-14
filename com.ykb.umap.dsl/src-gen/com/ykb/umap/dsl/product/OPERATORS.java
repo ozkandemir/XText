@@ -37,7 +37,7 @@ public enum OPERATORS implements Enumerator
    * @generated
    * @ordered
    */
-  NOT(1, "NOT", "is not");
+  NOT(1, "NOT", "not");
 
   /**
    * The '<em><b>IS</b></em>' literal value.
@@ -63,7 +63,7 @@ public enum OPERATORS implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #NOT
-   * @model literal="is not"
+   * @model literal="not"
    * @generated
    * @ordered
    */

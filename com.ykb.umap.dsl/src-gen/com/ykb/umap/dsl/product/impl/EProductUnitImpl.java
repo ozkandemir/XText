@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.ykb.umap.dsl.product.impl.EProductUnitImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.impl.EProductUnitImpl#getParameters <em>Parameters</em>}</li>
- *   <li>{@link com.ykb.umap.dsl.product.impl.EProductUnitImpl#getOperationUnit <em>Operation Unit</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EProductUnitImpl#getOperationUnits <em>Operation Units</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,14 +71,14 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
   protected EList<EParameterElement> parameters;
 
   /**
-   * The cached value of the '{@link #getOperationUnit() <em>Operation Unit</em>}' containment reference.
+   * The cached value of the '{@link #getOperationUnits() <em>Operation Units</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperationUnit()
+   * @see #getOperationUnits()
    * @generated
    * @ordered
    */
-  protected EOperationUnit operationUnit;
+  protected EList<EOperationUnit> operationUnits;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,47 +143,13 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EOperationUnit getOperationUnit()
+  public EList<EOperationUnit> getOperationUnits()
   {
-    return operationUnit;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOperationUnit(EOperationUnit newOperationUnit, NotificationChain msgs)
-  {
-    EOperationUnit oldOperationUnit = operationUnit;
-    operationUnit = newOperationUnit;
-    if (eNotificationRequired())
+    if (operationUnits == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT, oldOperationUnit, newOperationUnit);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      operationUnits = new EObjectContainmentEList<EOperationUnit>(EOperationUnit.class, this, ProductPackage.EPRODUCT_UNIT__OPERATION_UNITS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOperationUnit(EOperationUnit newOperationUnit)
-  {
-    if (newOperationUnit != operationUnit)
-    {
-      NotificationChain msgs = null;
-      if (operationUnit != null)
-        msgs = ((InternalEObject)operationUnit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT, null, msgs);
-      if (newOperationUnit != null)
-        msgs = ((InternalEObject)newOperationUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT, null, msgs);
-      msgs = basicSetOperationUnit(newOperationUnit, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT, newOperationUnit, newOperationUnit));
+    return operationUnits;
   }
 
   /**
@@ -198,8 +164,8 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
     {
       case ProductPackage.EPRODUCT_UNIT__PARAMETERS:
         return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
-      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT:
-        return basicSetOperationUnit(null, msgs);
+      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNITS:
+        return ((InternalEList<?>)getOperationUnits()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -218,8 +184,8 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
         return getName();
       case ProductPackage.EPRODUCT_UNIT__PARAMETERS:
         return getParameters();
-      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT:
-        return getOperationUnit();
+      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNITS:
+        return getOperationUnits();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -242,8 +208,9 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
         getParameters().clear();
         getParameters().addAll((Collection<? extends EParameterElement>)newValue);
         return;
-      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT:
-        setOperationUnit((EOperationUnit)newValue);
+      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNITS:
+        getOperationUnits().clear();
+        getOperationUnits().addAll((Collection<? extends EOperationUnit>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -265,8 +232,8 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
       case ProductPackage.EPRODUCT_UNIT__PARAMETERS:
         getParameters().clear();
         return;
-      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT:
-        setOperationUnit((EOperationUnit)null);
+      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNITS:
+        getOperationUnits().clear();
         return;
     }
     super.eUnset(featureID);
@@ -286,8 +253,8 @@ public class EProductUnitImpl extends MinimalEObjectImpl.Container implements EP
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ProductPackage.EPRODUCT_UNIT__PARAMETERS:
         return parameters != null && !parameters.isEmpty();
-      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNIT:
-        return operationUnit != null;
+      case ProductPackage.EPRODUCT_UNIT__OPERATION_UNITS:
+        return operationUnits != null && !operationUnits.isEmpty();
     }
     return super.eIsSet(featureID);
   }

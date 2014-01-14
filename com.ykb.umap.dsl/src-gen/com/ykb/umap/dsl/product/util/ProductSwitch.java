@@ -121,6 +121,13 @@ public class ProductSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ProductPackage.ESTATEMENT:
+      {
+        EStatement eStatement = (EStatement)theEObject;
+        T result = caseEStatement(eStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ProductPackage.ECONTROL_ELEMENT:
       {
         EControlElement eControlElement = (EControlElement)theEObject;
@@ -254,6 +261,22 @@ public class ProductSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEOperationUnit(EOperationUnit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EStatement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EStatement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEStatement(EStatement object)
   {
     return null;
   }

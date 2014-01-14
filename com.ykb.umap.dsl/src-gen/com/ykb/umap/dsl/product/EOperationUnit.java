@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.ykb.umap.dsl.product.EOperationUnit#getName <em>Name</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.EOperationUnit#getControls <em>Controls</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.EOperationUnit#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,5 +67,21 @@ public interface EOperationUnit extends EObject
    * @generated
    */
   EList<EControlElement> getControls();
+
+  /**
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link com.ykb.umap.dsl.product.EStatement}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see com.ykb.umap.dsl.product.ProductPackage#getEOperationUnit_Statements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<EStatement> getStatements();
 
 } // EOperationUnit

@@ -4,7 +4,7 @@
     editorDirectory="/com.ykb.umap.dsl.editor/src" modelPluginID="com.ykb.umap.dsl"
     forceOverwrite="true" modelName="Product" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.ykb.umap.dsl.edit"
-    editorPluginID="com.ykb.umap.dsl.editor" runtimeVersion="2.9">
+    editorPluginID="com.ykb.umap.dsl.editor" runtimeVersion="2.9" usedGenPackages="../../../org.eclipse.xtext.xbase/model/Xbase.genmodel#//xbase">
   <genPackages prefix="Product" basePackage="com.ykb.umap.dsl" disposableProviderFactory="true"
       fileExtensions="product" ecorePackage="Product.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Product.ecore#//UMAPDataTypes">
@@ -35,7 +35,7 @@
     <genClasses ecoreClass="Product.ecore#//EProductUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EProductUnit/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EProductUnit/parameters"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EProductUnit/operationUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EProductUnit/operationUnits"/>
     </genClasses>
     <genClasses ecoreClass="Product.ecore#//EParameterElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EParameterElement/name"/>
@@ -44,6 +44,10 @@
     <genClasses ecoreClass="Product.ecore#//EOperationUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EOperationUnit/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EOperationUnit/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EOperationUnit/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Product.ecore#//EStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EStatement/statement"/>
     </genClasses>
     <genClasses ecoreClass="Product.ecore#//EControlElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EControlElement/expression"/>
@@ -55,7 +59,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//EExpressionElement/right"/>
     </genClasses>
     <genClasses ecoreClass="Product.ecore#//EControlStatementElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EControlStatementElement/message"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EControlStatementElement/error"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

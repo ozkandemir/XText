@@ -4,6 +4,7 @@ package com.ykb.umap.dsl.product.impl;
 
 import com.ykb.umap.dsl.product.EControlElement;
 import com.ykb.umap.dsl.product.EOperationUnit;
+import com.ykb.umap.dsl.product.EStatement;
 import com.ykb.umap.dsl.product.ProductPackage;
 
 import java.util.Collection;
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl#getControls <em>Controls</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +69,16 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected EList<EControlElement> controls;
+
+  /**
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStatements()
+   * @generated
+   * @ordered
+   */
+  protected EList<EStatement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,6 +143,20 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<EStatement> getStatements()
+  {
+    if (statements == null)
+    {
+      statements = new EObjectContainmentEList<EStatement>(EStatement.class, this, ProductPackage.EOPERATION_UNIT__STATEMENTS);
+    }
+    return statements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -138,6 +164,8 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
     {
       case ProductPackage.EOPERATION_UNIT__CONTROLS:
         return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
+      case ProductPackage.EOPERATION_UNIT__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,6 +184,8 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
         return getName();
       case ProductPackage.EOPERATION_UNIT__CONTROLS:
         return getControls();
+      case ProductPackage.EOPERATION_UNIT__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,6 +208,10 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
         getControls().clear();
         getControls().addAll((Collection<? extends EControlElement>)newValue);
         return;
+      case ProductPackage.EOPERATION_UNIT__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends EStatement>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -198,6 +232,9 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
       case ProductPackage.EOPERATION_UNIT__CONTROLS:
         getControls().clear();
         return;
+      case ProductPackage.EOPERATION_UNIT__STATEMENTS:
+        getStatements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -216,6 +253,8 @@ public class EOperationUnitImpl extends MinimalEObjectImpl.Container implements 
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ProductPackage.EOPERATION_UNIT__CONTROLS:
         return controls != null && !controls.isEmpty();
+      case ProductPackage.EOPERATION_UNIT__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

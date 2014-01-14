@@ -4,6 +4,8 @@ package com.ykb.umap.dsl.product;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.xtext.xbase.XExpression;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>EControl Statement Element</b></em>'.
@@ -12,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.ykb.umap.dsl.product.EControlStatementElement#getMessage <em>Message</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.EControlStatementElement#getError <em>Error</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +25,29 @@ import org.eclipse.emf.ecore.EObject;
 public interface EControlStatementElement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Message</b></em>' attribute.
+   * Returns the value of the '<em><b>Error</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Message</em>' attribute isn't clear,
+   * If the meaning of the '<em>Error</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Message</em>' attribute.
-   * @see #setMessage(String)
-   * @see com.ykb.umap.dsl.product.ProductPackage#getEControlStatementElement_Message()
-   * @model
+   * @return the value of the '<em>Error</em>' containment reference.
+   * @see #setError(XExpression)
+   * @see com.ykb.umap.dsl.product.ProductPackage#getEControlStatementElement_Error()
+   * @model containment="true"
    * @generated
    */
-  String getMessage();
+  XExpression getError();
 
   /**
-   * Sets the value of the '{@link com.ykb.umap.dsl.product.EControlStatementElement#getMessage <em>Message</em>}' attribute.
+   * Sets the value of the '{@link com.ykb.umap.dsl.product.EControlStatementElement#getError <em>Error</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Message</em>' attribute.
-   * @see #getMessage()
+   * @param value the new value of the '<em>Error</em>' containment reference.
+   * @see #getError()
    * @generated
    */
-  void setMessage(String value);
+  void setError(XExpression value);
 
 } // EControlStatementElement

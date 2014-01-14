@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.ykb.umap.dsl.product.EProductUnit#getName <em>Name</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.EProductUnit#getParameters <em>Parameters</em>}</li>
- *   <li>{@link com.ykb.umap.dsl.product.EProductUnit#getOperationUnit <em>Operation Unit</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.EProductUnit#getOperationUnits <em>Operation Units</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,29 +69,19 @@ public interface EProductUnit extends EObject
   EList<EParameterElement> getParameters();
 
   /**
-   * Returns the value of the '<em><b>Operation Unit</b></em>' containment reference.
+   * Returns the value of the '<em><b>Operation Units</b></em>' containment reference list.
+   * The list contents are of type {@link com.ykb.umap.dsl.product.EOperationUnit}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Operation Unit</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Operation Units</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operation Unit</em>' containment reference.
-   * @see #setOperationUnit(EOperationUnit)
-   * @see com.ykb.umap.dsl.product.ProductPackage#getEProductUnit_OperationUnit()
+   * @return the value of the '<em>Operation Units</em>' containment reference list.
+   * @see com.ykb.umap.dsl.product.ProductPackage#getEProductUnit_OperationUnits()
    * @model containment="true"
    * @generated
    */
-  EOperationUnit getOperationUnit();
-
-  /**
-   * Sets the value of the '{@link com.ykb.umap.dsl.product.EProductUnit#getOperationUnit <em>Operation Unit</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operation Unit</em>' containment reference.
-   * @see #getOperationUnit()
-   * @generated
-   */
-  void setOperationUnit(EOperationUnit value);
+  EList<EOperationUnit> getOperationUnits();
 
 } // EProductUnit

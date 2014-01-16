@@ -37,6 +37,7 @@ public class ProductParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getCompilationUnitAccess().getAlternatives_2(), "rule__CompilationUnit__Alternatives_2");
 					put(grammarAccess.getXAssignmentAccess().getAlternatives(), "rule__XAssignment__Alternatives");
 					put(grammarAccess.getOpMultiAssignAccess().getAlternatives(), "rule__OpMultiAssign__Alternatives");
 					put(grammarAccess.getOpEqualityAccess().getAlternatives(), "rule__OpEquality__Alternatives");
@@ -76,6 +77,8 @@ public class ProductParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUMAPDataTypesAccess().getAlternatives(), "rule__UMAPDataTypes__Alternatives");
 					put(grammarAccess.getOPERATORSAccess().getAlternatives(), "rule__OPERATORS__Alternatives");
 					put(grammarAccess.getCompilationUnitAccess().getGroup(), "rule__CompilationUnit__Group__0");
+					put(grammarAccess.getDataTypeAccess().getGroup(), "rule__DataType__Group__0");
+					put(grammarAccess.getDataTypeAccess().getGroup_2(), "rule__DataType__Group_2__0");
 					put(grammarAccess.getUseUnitAccess().getGroup(), "rule__UseUnit__Group__0");
 					put(grammarAccess.getNamespaceUnitAccess().getGroup(), "rule__NamespaceUnit__Group__0");
 					put(grammarAccess.getQUALIFIEDIDAccess().getGroup(), "rule__QUALIFIEDID__Group__0");
@@ -242,10 +245,14 @@ public class ProductParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 					put(grammarAccess.getXImportDeclarationAccess().getGroup(), "rule__XImportDeclaration__Group__0");
 					put(grammarAccess.getXImportDeclarationAccess().getGroup_1_0(), "rule__XImportDeclaration__Group_1_0__0");
-					put(grammarAccess.getProductAccess().getElementsAssignment(), "rule__Product__ElementsAssignment");
+					put(grammarAccess.getUMAPDslAccess().getElementsAssignment(), "rule__UMAPDsl__ElementsAssignment");
 					put(grammarAccess.getCompilationUnitAccess().getNamespaceUnitAssignment_0(), "rule__CompilationUnit__NamespaceUnitAssignment_0");
 					put(grammarAccess.getCompilationUnitAccess().getUseUnitAssignment_1(), "rule__CompilationUnit__UseUnitAssignment_1");
-					put(grammarAccess.getCompilationUnitAccess().getProductUnitAssignment_2(), "rule__CompilationUnit__ProductUnitAssignment_2");
+					put(grammarAccess.getCompilationUnitAccess().getProductUnitAssignment_2_0(), "rule__CompilationUnit__ProductUnitAssignment_2_0");
+					put(grammarAccess.getCompilationUnitAccess().getDataTypesAssignment_2_1(), "rule__CompilationUnit__DataTypesAssignment_2_1");
+					put(grammarAccess.getDataTypeAccess().getNameAssignment_1(), "rule__DataType__NameAssignment_1");
+					put(grammarAccess.getDataTypeAccess().getParametersAssignment_2_1(), "rule__DataType__ParametersAssignment_2_1");
+					put(grammarAccess.getDataTypeAccess().getOperationUnitsAssignment_3(), "rule__DataType__OperationUnitsAssignment_3");
 					put(grammarAccess.getUseUnitAccess().getProductUnitAssignment_1(), "rule__UseUnit__ProductUnitAssignment_1");
 					put(grammarAccess.getNamespaceUnitAccess().getNameAssignment_1(), "rule__NamespaceUnit__NameAssignment_1");
 					put(grammarAccess.getProductUnitAccess().getNameAssignment_1(), "rule__ProductUnit__NameAssignment_1");
@@ -398,7 +405,7 @@ public class ProductParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			com.ykb.umap.dsl.ui.contentassist.antlr.internal.InternalProductParser typedParser = (com.ykb.umap.dsl.ui.contentassist.antlr.internal.InternalProductParser) parser;
-			typedParser.entryRuleProduct();
+			typedParser.entryRuleUMAPDsl();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

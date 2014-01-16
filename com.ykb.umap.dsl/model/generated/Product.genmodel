@@ -25,6 +25,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/namespaceUnit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/useUnit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/productUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//ECompilationUnit/dataTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="Product.ecore#//EDataType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EDataType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EDataType/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Product.ecore#//EDataType/operationUnits"/>
     </genClasses>
     <genClasses ecoreClass="Product.ecore#//EUseUnit">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//EUseUnit/productUnit"/>
@@ -39,7 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="Product.ecore#//EParameterElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EParameterElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EParameterElement/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Product.ecore#//EParameterElement/type"/>
     </genClasses>
     <genClasses ecoreClass="Product.ecore#//EOperationUnit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Product.ecore#//EOperationUnit/name"/>

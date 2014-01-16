@@ -86,6 +86,13 @@ public class ProductSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ProductPackage.EDATA_TYPE:
+      {
+        EDataType eDataType = (EDataType)theEObject;
+        T result = caseEDataType(eDataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ProductPackage.EUSE_UNIT:
       {
         EUseUnit eUseUnit = (EUseUnit)theEObject;
@@ -181,6 +188,22 @@ public class ProductSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseECompilationUnit(ECompilationUnit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EData Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EData Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEDataType(EDataType object)
   {
     return null;
   }

@@ -2,12 +2,18 @@ grammar com.ykb.umap.dsl.Product with org.eclipse.xtext.xbase.Xbase
 
 generate product "http://www.ykb.com/umap/dsl/Product"
 
-Product returns EProduct:
+UMAPDsl returns EProduct:
 	elements+=CompilationUnit
 ;
 
 CompilationUnit returns ECompilationUnit:
-	namespaceUnit=NamespaceUnit (useUnit=UseUnit)? productUnit=ProductUnit
+	namespaceUnit=NamespaceUnit (useUnit=UseUnit)? (productUnit=ProductUnit | dataTypes+=DataType*)
+;
+
+DataType returns EDataType:
+	'data' name=ID
+	('parameters' (parameters+=ParameterElement)*)? 
+	operationUnits+=OperationUnit*
 ;
 
 UseUnit returns EUseUnit:
@@ -29,7 +35,7 @@ ProductUnit returns EProductUnit:
 ;
 
 ParameterElement returns EParameterElement:
-	name=ID (':' type=UMAPDataTypes)?
+	name=ID (':' type=[EDataType | ID])?
 ;
 
 enum UMAPDataTypes:

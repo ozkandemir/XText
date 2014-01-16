@@ -45,7 +45,7 @@ import com.ykb.umap.dsl.services.ProductGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "Product";	
+    	return "UMAPDsl";	
    	}
    	
    	@Override
@@ -64,28 +64,28 @@ import com.ykb.umap.dsl.services.ProductGrammarAccess;
 
 
 
-// Entry rule entryRuleProduct
-entryRuleProduct returns [EObject current=null] 
+// Entry rule entryRuleUMAPDsl
+entryRuleUMAPDsl returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getProductRule()); }
-	 iv_ruleProduct=ruleProduct 
-	 { $current=$iv_ruleProduct.current; } 
+	{ newCompositeNode(grammarAccess.getUMAPDslRule()); }
+	 iv_ruleUMAPDsl=ruleUMAPDsl 
+	 { $current=$iv_ruleUMAPDsl.current; } 
 	 EOF 
 ;
 
-// Rule Product
-ruleProduct returns [EObject current=null] 
+// Rule UMAPDsl
+ruleUMAPDsl returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProductAccess().getElementsCompilationUnitParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getUMAPDslAccess().getElementsCompilationUnitParserRuleCall_0()); 
 	    }
 		lv_elements_0_0=ruleCompilationUnit		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProductRule());
+	            $current = createModelElementForParent(grammarAccess.getUMAPDslRule());
 	        }
        		add(
        			$current, 
@@ -153,10 +153,10 @@ ruleCompilationUnit returns [EObject current=null]
 	    }
 
 )
-)?(
+)?((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCompilationUnitAccess().getProductUnitProductUnitParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getCompilationUnitAccess().getProductUnitProductUnitParserRuleCall_2_0_0()); 
 	    }
 		lv_productUnit_2_0=ruleProductUnit		{
 	        if ($current==null) {
@@ -171,7 +171,109 @@ ruleCompilationUnit returns [EObject current=null]
 	    }
 
 )
-))
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCompilationUnitAccess().getDataTypesDataTypeParserRuleCall_2_1_0()); 
+	    }
+		lv_dataTypes_3_0=ruleDataType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCompilationUnitRule());
+	        }
+       		add(
+       			$current, 
+       			"dataTypes",
+        		lv_dataTypes_3_0, 
+        		"DataType");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*))
+;
+
+
+
+
+
+// Entry rule entryRuleDataType
+entryRuleDataType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDataTypeRule()); }
+	 iv_ruleDataType=ruleDataType 
+	 { $current=$iv_ruleDataType.current; } 
+	 EOF 
+;
+
+// Rule DataType
+ruleDataType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='data' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getDataTypeAccess().getDataKeyword_0());
+    }
+(
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getDataTypeAccess().getNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDataTypeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)(	otherlv_2='parameters' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDataTypeAccess().getParametersKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDataTypeAccess().getParametersParameterElementParserRuleCall_2_1_0()); 
+	    }
+		lv_parameters_3_0=ruleParameterElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDataTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"parameters",
+        		lv_parameters_3_0, 
+        		"ParameterElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDataTypeAccess().getOperationUnitsOperationUnitParserRuleCall_3_0()); 
+	    }
+		lv_operationUnits_4_0=ruleOperationUnit		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDataTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"operationUnits",
+        		lv_operationUnits_4_0, 
+        		"OperationUnit");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
 ;
 
 
@@ -423,20 +525,15 @@ ruleParameterElement returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getParameterElementAccess().getTypeUMAPDataTypesEnumRuleCall_1_1_0()); 
-	    }
-		lv_type_2_0=ruleUMAPDataTypes		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getParameterElementRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParameterElementRule());
 	        }
-       		set(
-       			$current, 
-       			"type",
-        		lv_type_2_0, 
-        		"UMAPDataTypes");
-	        afterParserOrEnumRuleCall();
-	    }
+        }
+	otherlv_2=RULE_ID
+	{
+		newLeafNode(otherlv_2, grammarAccess.getParameterElementAccess().getTypeEDataTypeCrossReference_1_1_0()); 
+	}
 
 )
 ))?)
@@ -5986,41 +6083,6 @@ ruleXImportDeclaration returns [EObject current=null]
 
 
 
-
-// Rule UMAPDataTypes
-ruleUMAPDataTypes returns [Enumerator current=null] 
-    @init { enterRule(); }
-    @after { leaveRule(); }:
-((	enumLiteral_0='BRANCH' 
-	{
-        $current = grammarAccess.getUMAPDataTypesAccess().getBRANCHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getUMAPDataTypesAccess().getBRANCHEnumLiteralDeclaration_0()); 
-    }
-)
-    |(	enumLiteral_1='CLIENT' 
-	{
-        $current = grammarAccess.getUMAPDataTypesAccess().getCLIENTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_1, grammarAccess.getUMAPDataTypesAccess().getCLIENTEnumLiteralDeclaration_1()); 
-    }
-)
-    |(	enumLiteral_2='CURRENCY' 
-	{
-        $current = grammarAccess.getUMAPDataTypesAccess().getCURRENCYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getUMAPDataTypesAccess().getCURRENCYEnumLiteralDeclaration_2()); 
-    }
-)
-    |(	enumLiteral_3='NUMBER' 
-	{
-        $current = grammarAccess.getUMAPDataTypesAccess().getNUMBEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_3, grammarAccess.getUMAPDataTypesAccess().getNUMBEREnumLiteralDeclaration_3()); 
-    }
-)
-    |(	enumLiteral_4='STRING' 
-	{
-        $current = grammarAccess.getUMAPDataTypesAccess().getSTRINGEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_4, grammarAccess.getUMAPDataTypesAccess().getSTRINGEnumLiteralDeclaration_4()); 
-    }
-));
 
 
 

@@ -41,6 +41,15 @@ public interface ProductFactory extends EFactory
   ECompilationUnit createECompilationUnit();
 
   /**
+   * Returns a new object of class '<em>EData Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EData Type</em>'.
+   * @generated
+   */
+  EDataType createEDataType();
+
+  /**
    * Returns a new object of class '<em>EUse Unit</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

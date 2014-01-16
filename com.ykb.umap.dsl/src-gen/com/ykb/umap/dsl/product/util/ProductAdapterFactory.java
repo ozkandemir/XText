@@ -85,6 +85,11 @@ public class ProductAdapterFactory extends AdapterFactoryImpl
         return createECompilationUnitAdapter();
       }
       @Override
+      public Adapter caseEDataType(EDataType object)
+      {
+        return createEDataTypeAdapter();
+      }
+      @Override
       public Adapter caseEUseUnit(EUseUnit object)
       {
         return createEUseUnitAdapter();
@@ -177,6 +182,21 @@ public class ProductAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createECompilationUnitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ykb.umap.dsl.product.EDataType <em>EData Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ykb.umap.dsl.product.EDataType
+   * @generated
+   */
+  public Adapter createEDataTypeAdapter()
   {
     return null;
   }

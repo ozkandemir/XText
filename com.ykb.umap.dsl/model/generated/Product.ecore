@@ -12,6 +12,15 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="productUnit" eType="#//EProductUnit"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
+        eType="#//EDataType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDataType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//EParameterElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationUnits" upperBound="-1"
+        eType="#//EOperationUnit" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EUseUnit">
     <eStructuralFeatures xsi:type="ecore:EReference" name="productUnit" eType="#//EProductUnit"/>
@@ -28,7 +37,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EParameterElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//UMAPDataTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//EDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="UMAPDataTypes">
     <eLiterals name="BRANCH" literal="BRANCH"/>

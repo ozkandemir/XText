@@ -25,7 +25,7 @@ public class ProductParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrP
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Product";
+		return "UMAPDsl";
 	}
 	
 	public ProductGrammarAccess getGrammarAccess() {

@@ -123,13 +123,68 @@ public interface ProductPackage extends EPackage
   int ECOMPILATION_UNIT__PRODUCT_UNIT = 2;
 
   /**
+   * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ECOMPILATION_UNIT__DATA_TYPES = 3;
+
+  /**
    * The number of structural features of the '<em>ECompilation Unit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ECOMPILATION_UNIT_FEATURE_COUNT = 3;
+  int ECOMPILATION_UNIT_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EDataTypeImpl <em>EData Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ykb.umap.dsl.product.impl.EDataTypeImpl
+   * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEDataType()
+   * @generated
+   */
+  int EDATA_TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDATA_TYPE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDATA_TYPE__PARAMETERS = 1;
+
+  /**
+   * The feature id for the '<em><b>Operation Units</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDATA_TYPE__OPERATION_UNITS = 2;
+
+  /**
+   * The number of structural features of the '<em>EData Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EDATA_TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.ykb.umap.dsl.product.impl.EUseUnitImpl <em>EUse Unit</em>}' class.
@@ -139,7 +194,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEUseUnit()
    * @generated
    */
-  int EUSE_UNIT = 2;
+  int EUSE_UNIT = 3;
 
   /**
    * The feature id for the '<em><b>Product Unit</b></em>' reference.
@@ -167,7 +222,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getENamespaceUnit()
    * @generated
    */
-  int ENAMESPACE_UNIT = 3;
+  int ENAMESPACE_UNIT = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -195,7 +250,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEProductUnit()
    * @generated
    */
-  int EPRODUCT_UNIT = 4;
+  int EPRODUCT_UNIT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -241,7 +296,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEParameterElement()
    * @generated
    */
-  int EPARAMETER_ELEMENT = 5;
+  int EPARAMETER_ELEMENT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -253,7 +308,7 @@ public interface ProductPackage extends EPackage
   int EPARAMETER_ELEMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -278,7 +333,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEOperationUnit()
    * @generated
    */
-  int EOPERATION_UNIT = 6;
+  int EOPERATION_UNIT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +379,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEStatement()
    * @generated
    */
-  int ESTATEMENT = 7;
+  int ESTATEMENT = 8;
 
   /**
    * The feature id for the '<em><b>Statement</b></em>' attribute.
@@ -352,7 +407,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEControlElement()
    * @generated
    */
-  int ECONTROL_ELEMENT = 8;
+  int ECONTROL_ELEMENT = 9;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -389,7 +444,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEExpressionElement()
    * @generated
    */
-  int EEXPRESSION_ELEMENT = 9;
+  int EEXPRESSION_ELEMENT = 10;
 
   /**
    * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -435,7 +490,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEControlStatementElement()
    * @generated
    */
-  int ECONTROL_STATEMENT_ELEMENT = 10;
+  int ECONTROL_STATEMENT_ELEMENT = 11;
 
   /**
    * The feature id for the '<em><b>Error</b></em>' containment reference.
@@ -463,7 +518,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getUMAPDataTypes()
    * @generated
    */
-  int UMAP_DATA_TYPES = 11;
+  int UMAP_DATA_TYPES = 12;
 
   /**
    * The meta object id for the '{@link com.ykb.umap.dsl.product.OPERATORS <em>OPERATORS</em>}' enum.
@@ -473,7 +528,7 @@ public interface ProductPackage extends EPackage
    * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getOPERATORS()
    * @generated
    */
-  int OPERATORS = 12;
+  int OPERATORS = 13;
 
 
   /**
@@ -539,6 +594,60 @@ public interface ProductPackage extends EPackage
    * @generated
    */
   EReference getECompilationUnit_ProductUnit();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.ECompilationUnit#getDataTypes <em>Data Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Data Types</em>'.
+   * @see com.ykb.umap.dsl.product.ECompilationUnit#getDataTypes()
+   * @see #getECompilationUnit()
+   * @generated
+   */
+  EReference getECompilationUnit_DataTypes();
+
+  /**
+   * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EDataType <em>EData Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>EData Type</em>'.
+   * @see com.ykb.umap.dsl.product.EDataType
+   * @generated
+   */
+  EClass getEDataType();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EDataType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ykb.umap.dsl.product.EDataType#getName()
+   * @see #getEDataType()
+   * @generated
+   */
+  EAttribute getEDataType_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.EDataType#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see com.ykb.umap.dsl.product.EDataType#getParameters()
+   * @see #getEDataType()
+   * @generated
+   */
+  EReference getEDataType_Parameters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.ykb.umap.dsl.product.EDataType#getOperationUnits <em>Operation Units</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operation Units</em>'.
+   * @see com.ykb.umap.dsl.product.EDataType#getOperationUnits()
+   * @see #getEDataType()
+   * @generated
+   */
+  EReference getEDataType_OperationUnits();
 
   /**
    * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EUseUnit <em>EUse Unit</em>}'.
@@ -647,15 +756,15 @@ public interface ProductPackage extends EPackage
   EAttribute getEParameterElement_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ykb.umap.dsl.product.EParameterElement#getType <em>Type</em>}'.
+   * Returns the meta object for the reference '{@link com.ykb.umap.dsl.product.EParameterElement#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the reference '<em>Type</em>'.
    * @see com.ykb.umap.dsl.product.EParameterElement#getType()
    * @see #getEParameterElement()
    * @generated
    */
-  EAttribute getEParameterElement_Type();
+  EReference getEParameterElement_Type();
 
   /**
    * Returns the meta object for class '{@link com.ykb.umap.dsl.product.EOperationUnit <em>EOperation Unit</em>}'.
@@ -913,6 +1022,48 @@ public interface ProductPackage extends EPackage
     EReference ECOMPILATION_UNIT__PRODUCT_UNIT = eINSTANCE.getECompilationUnit_ProductUnit();
 
     /**
+     * The meta object literal for the '<em><b>Data Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ECOMPILATION_UNIT__DATA_TYPES = eINSTANCE.getECompilationUnit_DataTypes();
+
+    /**
+     * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EDataTypeImpl <em>EData Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ykb.umap.dsl.product.impl.EDataTypeImpl
+     * @see com.ykb.umap.dsl.product.impl.ProductPackageImpl#getEDataType()
+     * @generated
+     */
+    EClass EDATA_TYPE = eINSTANCE.getEDataType();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EDATA_TYPE__NAME = eINSTANCE.getEDataType_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDATA_TYPE__PARAMETERS = eINSTANCE.getEDataType_Parameters();
+
+    /**
+     * The meta object literal for the '<em><b>Operation Units</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EDATA_TYPE__OPERATION_UNITS = eINSTANCE.getEDataType_OperationUnits();
+
+    /**
      * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EUseUnitImpl <em>EUse Unit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1001,12 +1152,12 @@ public interface ProductPackage extends EPackage
     EAttribute EPARAMETER_ELEMENT__NAME = eINSTANCE.getEParameterElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EPARAMETER_ELEMENT__TYPE = eINSTANCE.getEParameterElement_Type();
+    EReference EPARAMETER_ELEMENT__TYPE = eINSTANCE.getEParameterElement_Type();
 
     /**
      * The meta object literal for the '{@link com.ykb.umap.dsl.product.impl.EOperationUnitImpl <em>EOperation Unit</em>}' class.

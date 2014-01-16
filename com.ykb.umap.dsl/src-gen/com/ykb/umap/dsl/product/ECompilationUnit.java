@@ -2,6 +2,8 @@
  */
 package com.ykb.umap.dsl.product;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.ykb.umap.dsl.product.ECompilationUnit#getNamespaceUnit <em>Namespace Unit</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.ECompilationUnit#getUseUnit <em>Use Unit</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.ECompilationUnit#getProductUnit <em>Product Unit</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.ECompilationUnit#getDataTypes <em>Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,5 +104,21 @@ public interface ECompilationUnit extends EObject
    * @generated
    */
   void setProductUnit(EProductUnit value);
+
+  /**
+   * Returns the value of the '<em><b>Data Types</b></em>' containment reference list.
+   * The list contents are of type {@link com.ykb.umap.dsl.product.EDataType}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Data Types</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Data Types</em>' containment reference list.
+   * @see com.ykb.umap.dsl.product.ProductPackage#getECompilationUnit_DataTypes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<EDataType> getDataTypes();
 
 } // ECompilationUnit

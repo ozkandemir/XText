@@ -18,6 +18,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class ProductSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ProductGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_DataType_ParametersKeyword_2_0_q;
 	protected AbstractElementAlias match_OperationUnit_ControlsKeyword_3_0_q;
 	protected AbstractElementAlias match_XBlockExpression_SemicolonKeyword_2_1_q;
 	protected AbstractElementAlias match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q;
@@ -30,6 +31,7 @@ public class ProductSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ProductGrammarAccess) access;
+		match_DataType_ParametersKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getDataTypeAccess().getParametersKeyword_2_0());
 		match_OperationUnit_ControlsKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getOperationUnitAccess().getControlsKeyword_3_0());
 		match_XBlockExpression_SemicolonKeyword_2_1_q = new TokenAlias(false, true, grammarAccess.getXBlockExpressionAccess().getSemicolonKeyword_2_1());
 		match_XConstructorCall___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getXConstructorCallAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getXConstructorCallAccess().getRightParenthesisKeyword_4_2()));
@@ -77,7 +79,9 @@ public class ProductSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_OperationUnit_ControlsKeyword_3_0_q.equals(syntax))
+			if(match_DataType_ParametersKeyword_2_0_q.equals(syntax))
+				emit_DataType_ParametersKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_OperationUnit_ControlsKeyword_3_0_q.equals(syntax))
 				emit_OperationUnit_ControlsKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_XBlockExpression_SemicolonKeyword_2_1_q.equals(syntax))
 				emit_XBlockExpression_SemicolonKeyword_2_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -97,6 +101,14 @@ public class ProductSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     'parameters'?
+	 */
+	protected void emit_DataType_ParametersKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     'controls'?

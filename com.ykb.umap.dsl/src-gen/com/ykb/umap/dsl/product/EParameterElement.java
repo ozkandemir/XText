@@ -50,32 +50,29 @@ public interface EParameterElement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link com.ykb.umap.dsl.product.UMAPDataTypes}.
+   * Returns the value of the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Type</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see com.ykb.umap.dsl.product.UMAPDataTypes
-   * @see #setType(UMAPDataTypes)
+   * @return the value of the '<em>Type</em>' reference.
+   * @see #setType(EDataType)
    * @see com.ykb.umap.dsl.product.ProductPackage#getEParameterElement_Type()
    * @model
    * @generated
    */
-  UMAPDataTypes getType();
+  EDataType getType();
 
   /**
-   * Sets the value of the '{@link com.ykb.umap.dsl.product.EParameterElement#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link com.ykb.umap.dsl.product.EParameterElement#getType <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
-   * @see com.ykb.umap.dsl.product.UMAPDataTypes
+   * @param value the new value of the '<em>Type</em>' reference.
    * @see #getType()
    * @generated
    */
-  void setType(UMAPDataTypes value);
+  void setType(EDataType value);
 
 } // EParameterElement

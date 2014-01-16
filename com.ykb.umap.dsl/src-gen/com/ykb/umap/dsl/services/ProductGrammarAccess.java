@@ -19,12 +19,12 @@ import org.eclipse.xtext.xbase.services.XtypeGrammarAccess;
 public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
-	public class ProductElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Product");
+	public class UMAPDslElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UMAPDsl");
 		private final Assignment cElementsAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cElementsCompilationUnitParserRuleCall_0 = (RuleCall)cElementsAssignment.eContents().get(0);
 		
-		//Product returns EProduct:
+		//UMAPDsl returns EProduct:
 		//	elements+=CompilationUnit;
 		public ParserRule getRule() { return rule; }
 
@@ -42,14 +42,17 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceUnitNamespaceUnitParserRuleCall_0_0 = (RuleCall)cNamespaceUnitAssignment_0.eContents().get(0);
 		private final Assignment cUseUnitAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cUseUnitUseUnitParserRuleCall_1_0 = (RuleCall)cUseUnitAssignment_1.eContents().get(0);
-		private final Assignment cProductUnitAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cProductUnitProductUnitParserRuleCall_2_0 = (RuleCall)cProductUnitAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cProductUnitAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cProductUnitProductUnitParserRuleCall_2_0_0 = (RuleCall)cProductUnitAssignment_2_0.eContents().get(0);
+		private final Assignment cDataTypesAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cDataTypesDataTypeParserRuleCall_2_1_0 = (RuleCall)cDataTypesAssignment_2_1.eContents().get(0);
 		
 		//CompilationUnit returns ECompilationUnit:
-		//	namespaceUnit=NamespaceUnit useUnit=UseUnit? productUnit=ProductUnit;
+		//	namespaceUnit=NamespaceUnit useUnit=UseUnit? (productUnit=ProductUnit | dataTypes+=DataType*);
 		public ParserRule getRule() { return rule; }
 
-		//namespaceUnit=NamespaceUnit useUnit=UseUnit? productUnit=ProductUnit
+		//namespaceUnit=NamespaceUnit useUnit=UseUnit? (productUnit=ProductUnit | dataTypes+=DataType*)
 		public Group getGroup() { return cGroup; }
 
 		//namespaceUnit=NamespaceUnit
@@ -64,11 +67,68 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 		//UseUnit
 		public RuleCall getUseUnitUseUnitParserRuleCall_1_0() { return cUseUnitUseUnitParserRuleCall_1_0; }
 
+		//productUnit=ProductUnit | dataTypes+=DataType*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//productUnit=ProductUnit
-		public Assignment getProductUnitAssignment_2() { return cProductUnitAssignment_2; }
+		public Assignment getProductUnitAssignment_2_0() { return cProductUnitAssignment_2_0; }
 
 		//ProductUnit
-		public RuleCall getProductUnitProductUnitParserRuleCall_2_0() { return cProductUnitProductUnitParserRuleCall_2_0; }
+		public RuleCall getProductUnitProductUnitParserRuleCall_2_0_0() { return cProductUnitProductUnitParserRuleCall_2_0_0; }
+
+		//dataTypes+=DataType*
+		public Assignment getDataTypesAssignment_2_1() { return cDataTypesAssignment_2_1; }
+
+		//DataType
+		public RuleCall getDataTypesDataTypeParserRuleCall_2_1_0() { return cDataTypesDataTypeParserRuleCall_2_1_0; }
+	}
+
+	public class DataTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDataKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cParametersKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cParametersAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cParametersParameterElementParserRuleCall_2_1_0 = (RuleCall)cParametersAssignment_2_1.eContents().get(0);
+		private final Assignment cOperationUnitsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cOperationUnitsOperationUnitParserRuleCall_3_0 = (RuleCall)cOperationUnitsAssignment_3.eContents().get(0);
+		
+		//DataType returns EDataType:
+		//	"data" name=ID ("parameters" parameters+=ParameterElement*)? operationUnits+=OperationUnit*;
+		public ParserRule getRule() { return rule; }
+
+		//"data" name=ID ("parameters" parameters+=ParameterElement*)? operationUnits+=OperationUnit*
+		public Group getGroup() { return cGroup; }
+
+		//"data"
+		public Keyword getDataKeyword_0() { return cDataKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//("parameters" parameters+=ParameterElement*)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"parameters"
+		public Keyword getParametersKeyword_2_0() { return cParametersKeyword_2_0; }
+
+		//parameters+=ParameterElement*
+		public Assignment getParametersAssignment_2_1() { return cParametersAssignment_2_1; }
+
+		//ParameterElement
+		public RuleCall getParametersParameterElementParserRuleCall_2_1_0() { return cParametersParameterElementParserRuleCall_2_1_0; }
+
+		//operationUnits+=OperationUnit*
+		public Assignment getOperationUnitsAssignment_3() { return cOperationUnitsAssignment_3; }
+
+		//OperationUnit
+		public RuleCall getOperationUnitsOperationUnitParserRuleCall_3_0() { return cOperationUnitsOperationUnitParserRuleCall_3_0; }
 	}
 
 	public class UseUnitElements extends AbstractParserRuleElementFinder {
@@ -207,13 +267,14 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cColonKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cTypeUMAPDataTypesEnumRuleCall_1_1_0 = (RuleCall)cTypeAssignment_1_1.eContents().get(0);
+		private final CrossReference cTypeEDataTypeCrossReference_1_1_0 = (CrossReference)cTypeAssignment_1_1.eContents().get(0);
+		private final RuleCall cTypeEDataTypeIDTerminalRuleCall_1_1_0_1 = (RuleCall)cTypeEDataTypeCrossReference_1_1_0.eContents().get(1);
 		
 		//ParameterElement returns EParameterElement:
-		//	name=ID (":" type=UMAPDataTypes)?;
+		//	name=ID (":" type=[EDataType])?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID (":" type=UMAPDataTypes)?
+		//name=ID (":" type=[EDataType])?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -222,17 +283,20 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
-		//(":" type=UMAPDataTypes)?
+		//(":" type=[EDataType])?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//":"
 		public Keyword getColonKeyword_1_0() { return cColonKeyword_1_0; }
 
-		//type=UMAPDataTypes
+		//type=[EDataType]
 		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 
-		//UMAPDataTypes
-		public RuleCall getTypeUMAPDataTypesEnumRuleCall_1_1_0() { return cTypeUMAPDataTypesEnumRuleCall_1_1_0; }
+		//[EDataType]
+		public CrossReference getTypeEDataTypeCrossReference_1_1_0() { return cTypeEDataTypeCrossReference_1_1_0; }
+
+		//ID
+		public RuleCall getTypeEDataTypeIDTerminalRuleCall_1_1_0_1() { return cTypeEDataTypeIDTerminalRuleCall_1_1_0_1; }
 	}
 
 	public class OperationUnitElements extends AbstractParserRuleElementFinder {
@@ -492,8 +556,9 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getNOTNotKeyword_1_0() { return cNOTNotKeyword_1_0; }
 	}
 	
-	private ProductElements pProduct;
+	private UMAPDslElements pUMAPDsl;
 	private CompilationUnitElements pCompilationUnit;
+	private DataTypeElements pDataType;
 	private UseUnitElements pUseUnit;
 	private NamespaceUnitElements pNamespaceUnit;
 	private QUALIFIEDIDElements pQUALIFIEDID;
@@ -545,24 +610,34 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Product returns EProduct:
+	//UMAPDsl returns EProduct:
 	//	elements+=CompilationUnit;
-	public ProductElements getProductAccess() {
-		return (pProduct != null) ? pProduct : (pProduct = new ProductElements());
+	public UMAPDslElements getUMAPDslAccess() {
+		return (pUMAPDsl != null) ? pUMAPDsl : (pUMAPDsl = new UMAPDslElements());
 	}
 	
-	public ParserRule getProductRule() {
-		return getProductAccess().getRule();
+	public ParserRule getUMAPDslRule() {
+		return getUMAPDslAccess().getRule();
 	}
 
 	//CompilationUnit returns ECompilationUnit:
-	//	namespaceUnit=NamespaceUnit useUnit=UseUnit? productUnit=ProductUnit;
+	//	namespaceUnit=NamespaceUnit useUnit=UseUnit? (productUnit=ProductUnit | dataTypes+=DataType*);
 	public CompilationUnitElements getCompilationUnitAccess() {
 		return (pCompilationUnit != null) ? pCompilationUnit : (pCompilationUnit = new CompilationUnitElements());
 	}
 	
 	public ParserRule getCompilationUnitRule() {
 		return getCompilationUnitAccess().getRule();
+	}
+
+	//DataType returns EDataType:
+	//	"data" name=ID ("parameters" parameters+=ParameterElement*)? operationUnits+=OperationUnit*;
+	public DataTypeElements getDataTypeAccess() {
+		return (pDataType != null) ? pDataType : (pDataType = new DataTypeElements());
+	}
+	
+	public ParserRule getDataTypeRule() {
+		return getDataTypeAccess().getRule();
 	}
 
 	//UseUnit returns EUseUnit:
@@ -606,7 +681,7 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ParameterElement returns EParameterElement:
-	//	name=ID (":" type=UMAPDataTypes)?;
+	//	name=ID (":" type=[EDataType])?;
 	public ParameterElementElements getParameterElementAccess() {
 		return (pParameterElement != null) ? pParameterElement : (pParameterElement = new ParameterElementElements());
 	}

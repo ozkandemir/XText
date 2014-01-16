@@ -2,13 +2,14 @@
  */
 package com.ykb.umap.dsl.product.impl;
 
+import com.ykb.umap.dsl.product.EDataType;
 import com.ykb.umap.dsl.product.EParameterElement;
 import com.ykb.umap.dsl.product.ProductPackage;
-import com.ykb.umap.dsl.product.UMAPDataTypes;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -50,24 +51,14 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final UMAPDataTypes TYPE_EDEFAULT = UMAPDataTypes.BRANCH;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected UMAPDataTypes type = TYPE_EDEFAULT;
+  protected EDataType type;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,7 +109,27 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public UMAPDataTypes getType()
+  public EDataType getType()
+  {
+    if (type != null && type.eIsProxy())
+    {
+      InternalEObject oldType = (InternalEObject)type;
+      type = (EDataType)eResolveProxy(oldType);
+      if (type != oldType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProductPackage.EPARAMETER_ELEMENT__TYPE, oldType, type));
+      }
+    }
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EDataType basicGetType()
   {
     return type;
   }
@@ -128,10 +139,10 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(UMAPDataTypes newType)
+  public void setType(EDataType newType)
   {
-    UMAPDataTypes oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
+    EDataType oldType = type;
+    type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ProductPackage.EPARAMETER_ELEMENT__TYPE, oldType, type));
   }
@@ -149,7 +160,8 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
       case ProductPackage.EPARAMETER_ELEMENT__NAME:
         return getName();
       case ProductPackage.EPARAMETER_ELEMENT__TYPE:
-        return getType();
+        if (resolve) return getType();
+        return basicGetType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,7 +180,7 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
         setName((String)newValue);
         return;
       case ProductPackage.EPARAMETER_ELEMENT__TYPE:
-        setType((UMAPDataTypes)newValue);
+        setType((EDataType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,7 +200,7 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
         setName(NAME_EDEFAULT);
         return;
       case ProductPackage.EPARAMETER_ELEMENT__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((EDataType)null);
         return;
     }
     super.eUnset(featureID);
@@ -207,7 +219,7 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
       case ProductPackage.EPARAMETER_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ProductPackage.EPARAMETER_ELEMENT__TYPE:
-        return type != TYPE_EDEFAULT;
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
@@ -225,8 +237,6 @@ public class EParameterElementImpl extends MinimalEObjectImpl.Container implemen
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", type: ");
-    result.append(type);
     result.append(')');
     return result.toString();
   }

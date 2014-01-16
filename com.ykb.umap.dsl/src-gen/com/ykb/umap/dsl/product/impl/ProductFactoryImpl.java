@@ -67,6 +67,7 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
     {
       case ProductPackage.EPRODUCT: return createEProduct();
       case ProductPackage.ECOMPILATION_UNIT: return createECompilationUnit();
+      case ProductPackage.EDATA_TYPE: return createEDataType();
       case ProductPackage.EUSE_UNIT: return createEUseUnit();
       case ProductPackage.ENAMESPACE_UNIT: return createENamespaceUnit();
       case ProductPackage.EPRODUCT_UNIT: return createEProductUnit();
@@ -139,6 +140,17 @@ public class ProductFactoryImpl extends EFactoryImpl implements ProductFactory
   {
     ECompilationUnitImpl eCompilationUnit = new ECompilationUnitImpl();
     return eCompilationUnit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public com.ykb.umap.dsl.product.EDataType createEDataType()
+  {
+    EDataTypeImpl eDataType = new EDataTypeImpl();
+    return eDataType;
   }
 
   /**

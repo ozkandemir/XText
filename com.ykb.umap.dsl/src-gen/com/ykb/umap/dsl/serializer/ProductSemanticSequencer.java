@@ -5,6 +5,7 @@ import com.google.inject.Provider;
 import com.ykb.umap.dsl.product.ECompilationUnit;
 import com.ykb.umap.dsl.product.EControlElement;
 import com.ykb.umap.dsl.product.EControlStatementElement;
+import com.ykb.umap.dsl.product.EDataType;
 import com.ykb.umap.dsl.product.EExpressionElement;
 import com.ykb.umap.dsl.product.ENamespaceUnit;
 import com.ykb.umap.dsl.product.EOperationUnit;
@@ -94,6 +95,12 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 					return; 
 				}
 				else break;
+			case ProductPackage.EDATA_TYPE:
+				if(context == grammarAccess.getDataTypeRule()) {
+					sequence_DataType(context, (EDataType) semanticObject); 
+					return; 
+				}
+				else break;
 			case ProductPackage.EEXPRESSION_ELEMENT:
 				if(context == grammarAccess.getExpressionElementRule()) {
 					sequence_ExpressionElement(context, (EExpressionElement) semanticObject); 
@@ -119,8 +126,8 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 				}
 				else break;
 			case ProductPackage.EPRODUCT:
-				if(context == grammarAccess.getProductRule()) {
-					sequence_Product(context, (EProduct) semanticObject); 
+				if(context == grammarAccess.getUMAPDslRule()) {
+					sequence_UMAPDsl(context, (EProduct) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1086,7 +1093,7 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (namespaceUnit=NamespaceUnit useUnit=UseUnit? productUnit=ProductUnit)
+	 *     (namespaceUnit=NamespaceUnit useUnit=UseUnit? (productUnit=ProductUnit | dataTypes+=DataType*))
 	 */
 	protected void sequence_CompilationUnit(EObject context, ECompilationUnit semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1125,6 +1132,15 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getControlStatementElementAccess().getErrorXStringLiteralParserRuleCall_1_0(), semanticObject.getError());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID parameters+=ParameterElement* operationUnits+=OperationUnit*)
+	 */
+	protected void sequence_DataType(EObject context, EDataType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1177,7 +1193,7 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=UMAPDataTypes?)
+	 *     (name=ID type=[EDataType|ID]?)
 	 */
 	protected void sequence_ParameterElement(EObject context, EParameterElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1195,15 +1211,6 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     elements+=CompilationUnit
-	 */
-	protected void sequence_Product(EObject context, EProduct semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     statement='Test'
 	 */
 	protected void sequence_Statement(EObject context, EStatement semanticObject) {
@@ -1215,6 +1222,15 @@ public class ProductSemanticSequencer extends XbaseSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getStatementAccess().getStatementTestKeyword_0(), semanticObject.getStatement());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     elements+=CompilationUnit
+	 */
+	protected void sequence_UMAPDsl(EObject context, EProduct semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

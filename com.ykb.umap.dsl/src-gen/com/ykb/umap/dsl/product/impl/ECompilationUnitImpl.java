@@ -3,19 +3,27 @@
 package com.ykb.umap.dsl.product.impl;
 
 import com.ykb.umap.dsl.product.ECompilationUnit;
+import com.ykb.umap.dsl.product.EDataType;
 import com.ykb.umap.dsl.product.ENamespaceUnit;
 import com.ykb.umap.dsl.product.EProductUnit;
 import com.ykb.umap.dsl.product.EUseUnit;
 import com.ykb.umap.dsl.product.ProductPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +35,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.ykb.umap.dsl.product.impl.ECompilationUnitImpl#getNamespaceUnit <em>Namespace Unit</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.impl.ECompilationUnitImpl#getUseUnit <em>Use Unit</em>}</li>
  *   <li>{@link com.ykb.umap.dsl.product.impl.ECompilationUnitImpl#getProductUnit <em>Product Unit</em>}</li>
+ *   <li>{@link com.ykb.umap.dsl.product.impl.ECompilationUnitImpl#getDataTypes <em>Data Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +72,16 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected EProductUnit productUnit;
+
+  /**
+   * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDataTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<EDataType> dataTypes;
 
   /**
    * <!-- begin-user-doc -->
@@ -234,6 +253,20 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<EDataType> getDataTypes()
+  {
+    if (dataTypes == null)
+    {
+      dataTypes = new EObjectContainmentEList<EDataType>(EDataType.class, this, ProductPackage.ECOMPILATION_UNIT__DATA_TYPES);
+    }
+    return dataTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -245,6 +278,8 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
         return basicSetUseUnit(null, msgs);
       case ProductPackage.ECOMPILATION_UNIT__PRODUCT_UNIT:
         return basicSetProductUnit(null, msgs);
+      case ProductPackage.ECOMPILATION_UNIT__DATA_TYPES:
+        return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -265,6 +300,8 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
         return getUseUnit();
       case ProductPackage.ECOMPILATION_UNIT__PRODUCT_UNIT:
         return getProductUnit();
+      case ProductPackage.ECOMPILATION_UNIT__DATA_TYPES:
+        return getDataTypes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -274,6 +311,7 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -287,6 +325,10 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
         return;
       case ProductPackage.ECOMPILATION_UNIT__PRODUCT_UNIT:
         setProductUnit((EProductUnit)newValue);
+        return;
+      case ProductPackage.ECOMPILATION_UNIT__DATA_TYPES:
+        getDataTypes().clear();
+        getDataTypes().addAll((Collection<? extends EDataType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -311,6 +353,9 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
       case ProductPackage.ECOMPILATION_UNIT__PRODUCT_UNIT:
         setProductUnit((EProductUnit)null);
         return;
+      case ProductPackage.ECOMPILATION_UNIT__DATA_TYPES:
+        getDataTypes().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -331,6 +376,8 @@ public class ECompilationUnitImpl extends MinimalEObjectImpl.Container implement
         return useUnit != null;
       case ProductPackage.ECOMPILATION_UNIT__PRODUCT_UNIT:
         return productUnit != null;
+      case ProductPackage.ECOMPILATION_UNIT__DATA_TYPES:
+        return dataTypes != null && !dataTypes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

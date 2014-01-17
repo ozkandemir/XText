@@ -4151,6 +4151,7 @@ rule__ProductUnit__Group__3
     }
 :
 	rule__ProductUnit__Group__3__Impl
+	rule__ProductUnit__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4171,6 +4172,38 @@ rule__ProductUnit__Group__3__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__ProductUnit__Group__4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ProductUnit__Group__4__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ProductUnit__Group__4__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getProductUnitAccess().getEndProductKeyword_4()); }
+
+	'end product' 
+
+{ after(grammarAccess.getProductUnitAccess().getEndProductKeyword_4()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 

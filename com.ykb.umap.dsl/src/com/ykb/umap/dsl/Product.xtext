@@ -32,6 +32,7 @@ ProductUnit returns EProductUnit:
 	'product' name=ID 
 	('parameters' (parameters+=ParameterElement)*) 
 	operationUnits+=OperationUnit*
+	'end product'
 ;
 
 ParameterElement returns EParameterElement:

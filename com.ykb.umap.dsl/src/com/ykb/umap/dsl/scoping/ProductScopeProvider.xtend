@@ -3,6 +3,11 @@
  */
 package com.ykb.umap.dsl.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.scoping.IScope
+import com.ykb.umap.dsl.product.EExpressionElement
+
 /**
  * This class contains custom scoping description.
  * 
@@ -11,5 +16,9 @@ package com.ykb.umap.dsl.scoping
  *
  */
 class ProductScopeProvider extends org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider {
+	
+//	def IScope scope_ExpressionElement_right(EExpressionElement exp, EReference ref) {
+//		IScope::NULLSCOPE
+//	}
 
 }

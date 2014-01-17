@@ -480,7 +480,11 @@ ruleProductUnit returns [EObject current=null]
 	    }
 
 )
-)*)
+)*	otherlv_5='end product' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getProductUnitAccess().getEndProductKeyword_4());
+    }
+)
 ;
 
 

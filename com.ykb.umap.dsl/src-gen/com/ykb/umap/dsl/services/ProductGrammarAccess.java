@@ -223,12 +223,13 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cParametersParameterElementParserRuleCall_2_1_0 = (RuleCall)cParametersAssignment_2_1.eContents().get(0);
 		private final Assignment cOperationUnitsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cOperationUnitsOperationUnitParserRuleCall_3_0 = (RuleCall)cOperationUnitsAssignment_3.eContents().get(0);
+		private final Keyword cEndProductKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ProductUnit returns EProductUnit:
-		//	"product" name=ID ("parameters" parameters+=ParameterElement*) operationUnits+=OperationUnit*;
+		//	"product" name=ID ("parameters" parameters+=ParameterElement*) operationUnits+=OperationUnit* "end product";
 		public ParserRule getRule() { return rule; }
 
-		//"product" name=ID ("parameters" parameters+=ParameterElement*) operationUnits+=OperationUnit*
+		//"product" name=ID ("parameters" parameters+=ParameterElement*) operationUnits+=OperationUnit* "end product"
 		public Group getGroup() { return cGroup; }
 
 		//"product"
@@ -257,6 +258,9 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 
 		//OperationUnit
 		public RuleCall getOperationUnitsOperationUnitParserRuleCall_3_0() { return cOperationUnitsOperationUnitParserRuleCall_3_0; }
+
+		//"end product"
+		public Keyword getEndProductKeyword_4() { return cEndProductKeyword_4; }
 	}
 
 	public class ParameterElementElements extends AbstractParserRuleElementFinder {
@@ -671,7 +675,7 @@ public class ProductGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProductUnit returns EProductUnit:
-	//	"product" name=ID ("parameters" parameters+=ParameterElement*) operationUnits+=OperationUnit*;
+	//	"product" name=ID ("parameters" parameters+=ParameterElement*) operationUnits+=OperationUnit* "end product";
 	public ProductUnitElements getProductUnitAccess() {
 		return (pProductUnit != null) ? pProductUnit : (pProductUnit = new ProductUnitElements());
 	}
